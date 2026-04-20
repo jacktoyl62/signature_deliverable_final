@@ -4,7 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | The Village</title>
+    <meta name="description" content="Your personal dashboard for managing events, connections, and community impact.">
+    <meta property="og:title" content="Your Dashboard">
+    <meta property="og:description" content="Manage your community activities and connections.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wetheville.com/dashboard.html">
+    <meta property="og:image" content="https://wetheville.com/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Your Dashboard">
+    <meta name="twitter:description" content="Manage your community activities and connections.">
+    <meta name="twitter:image" content="https://wetheville.com/images/og-image.png">
+    <title>User Dashboard | Manage Events & Connections | We The Village</title>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&display=swap"
@@ -14,10 +24,11 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- NAV  -->
     <nav class="nav">
-        <div class="hamburger-menu" id="hamburger">
+        <div class="hamburger-menu" id="hamburger" role="button" aria-label="Toggle navigation menu" tabindex="0">
             <span></span>
             <span></span>
             <span></span>
@@ -37,9 +48,7 @@
         </div>
 
         <div class="nav-right">
-            <a href="index.html">
-                <button class="login-btn">Logout</button>
-            </a>
+            <a href="index.html" class="login-btn">Logout</a>
         </div>
     </nav>
 
@@ -53,13 +62,13 @@
         </div>
     </div>
 
-    <div class="dashboard-wrapper">
+    <div class="dashboard-wrapper" id="main-content">
 
         <!-- COLUMN 1: LEFT SIDEBAR (Profile & Nav) -->
         <aside class="left-sidebar">
             <div class="profile-card">
                 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
-                    alt="Avatar" class="avatar-large">
+                    alt="Candice Miller profile photo" class="avatar-large">
                 <h2>Candice Miller</h2>
                 <p>Austin, TX</p>
                 <p>Level 4</p>
@@ -208,7 +217,7 @@
                     🎥 Member Spotlight</h3>
                 <div
                     style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; background: #000;">
-                    <video src="images\AdobeStock_323701059.mov" controls
+                    <video src="images/AdobeStock_323701059.mov" controls
                         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 12px; object-fit: cover;">
                         Your browser does not support the video tag.
                     </video>
@@ -338,7 +347,7 @@
                 <h3>🤖 AI Memories</h3>
 
                 <!-- Slideshow Container -->
-                <div id="memorySlideshow"
+                <div id="memorySlideshow2"
                     style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 15px; margin-bottom: 15px;">
                     <!-- Slide 1 -->
                     <div class="memory-slide" style="display: block;">
@@ -386,17 +395,17 @@
                     <!-- Navigation -->
                     <div
                         style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.2);">
-                        <button id="prevSlide"
+                        <button id="prevSlide2"
                             style="background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">←
                             Prev</button>
-                        <span id="slideCounter" style="font-size: 0.8rem; color: #bbb;">1 / 2</span>
-                        <button id="nextSlide"
+                        <span id="slideCounter2" style="font-size: 0.8rem; color: #bbb;">1 / 2</span>
+                        <button id="nextSlide2"
                             style="background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">Next
                             →</button>
                     </div>
                 </div>
 
-                <button id="generateMemory"
+                <button id="generateMemory2"
                     style="width: 100%; padding: 10px; border-radius: 8px; border: none; background: var(--accent); color: white; font-weight: 700; cursor: pointer;">Generate
                     New Memory</button>
             </div>

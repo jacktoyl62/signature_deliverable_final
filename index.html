@@ -2,23 +2,34 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Village</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stop scrolling and start doing. We The Village is a hyper-local platform for connection, growth, and collective action in your neighborhood.">
+    <meta property="og:title" content="We The Village | Hyper-Local Community Platform">
+    <meta property="og:description" content="Stop scrolling and start doing. Reclaim your community as a productivity engine for your life.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wetheville.com/">
+    <meta property="og:image" content="https://wetheville.com/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="We The Village">
+    <meta name="twitter:description" content="Hyper-local platform for connection, growth, and collective action.">
+    <meta name="twitter:image" content="https://wetheville.com/images/og-image.png">
+    <title>We The Village | Hyper-Local Community Platform for Connection, Growth & Building</title>
 
     <!-- Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="wtvstyle.css" />
+    <link rel="stylesheet" href="wtvstyle.css">
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- NAV  -->
     <nav class="nav">
-        <div class="hamburger-menu" id="hamburger">
+        <div class="hamburger-menu" id="hamburger" role="button" aria-label="Toggle navigation menu" tabindex="0">
             <span></span>
             <span></span>
             <span></span>
@@ -42,7 +53,7 @@
             <input type="text" placeholder="Search...">
         </div>
 
-        <div class="search-icon" id="searchIcon">
+        <div class="search-icon" id="searchIcon" role="button" aria-label="Open search bar">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="8" cy="8" r="6"></circle>
                 <path d="M12 12l5 5"></path>
@@ -50,13 +61,11 @@
         </div>
 
         <div class="nav-right">
-            <a href="dashboard.html">
-                <button class="login-btn">Login</button>
-            </a>
+            <a href="dashboard.html" class="login-btn">Login</a>
         </div>
     </nav>
 
-    <header class="hero-wrap">
+    <header class="hero-wrap" id="main-content">
         <div class="hero-text">
             <h1>Stop Scrolling.<br>Start Doing.</h1>
             <p>Your neighborhood is a goldmine of talent and support. Reclaim your community as a productivity engine
@@ -67,7 +76,7 @@
                     works</a>
             </div>
         </div>
-        <div class="hero-img"></div>
+        <div class="hero-img" role="img" aria-label="A vibrant neighborhood street representing the local Village community"></div>
     </header>
 
     <!-- ACTIVE CITIES TICKER -->
@@ -134,7 +143,7 @@
             <!-- Card 1 -->
             <div class="exchange-card">
                 <div>
-                    <h4>Share a Skill, Gain a Co-Founder</h4>
+                    <h3>Share a Skill, Gain a Co-Founder</h3>
                     <p>Contribution isn't a chore; it's a career move. Offer your professional expertise to a neighbor's
                         project and find the partner for your next big venture.</p>
                 </div>

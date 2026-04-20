@@ -4,7 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messages | The Village</title>
+    <meta name="description" content="Connect with neighbors through direct messaging and community discussions on We The Village.">
+    <meta property="og:title" content="Messages">
+    <meta property="og:description" content="Connect with neighbors through direct messaging.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wetheville.com/messages.html">
+    <meta property="og:image" content="https://wetheville.com/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Messages">
+    <meta name="twitter:description" content="Connect with neighbors through direct messaging.">
+    <meta name="twitter:image" content="https://wetheville.com/images/og-image.png">
+    <title>Messages | Connect with Your Community | We The Village</title>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&display=swap"
@@ -14,10 +24,11 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- NAV  -->
     <nav class="nav">
-        <div class="hamburger-menu" id="hamburger">
+        <div class="hamburger-menu" id="hamburger" role="button" aria-label="Toggle navigation menu" tabindex="0">
             <span></span>
             <span></span>
             <span></span>
@@ -37,9 +48,7 @@
         </div>
 
         <div class="nav-right">
-            <a href="index.html">
-                <button class="login-btn">Logout</button>
-            </a>
+            <a href="index.html" class="login-btn">Logout</a>
         </div>
     </nav>
 
@@ -53,13 +62,13 @@
         </div>
     </div>
 
-    <div class="dashboard-wrapper">
+    <div class="dashboard-wrapper" id="main-content">
 
         <!-- COLUMN 1: LEFT SIDEBAR (Profile & Nav) -->
         <aside class="left-sidebar">
             <div class="profile-card">
                 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
-                    alt="Avatar" class="avatar-large">
+                    alt="Candice Miller profile photo" class="avatar-large">
                 <h2>Candice Miller</h2>
                 <p>Austin, TX</p>
                 <p>Level 4</p>

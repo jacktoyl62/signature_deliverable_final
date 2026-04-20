@@ -4,6 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Village Journal: Your manual for intentional living and blueprints for building a productive local legacy.">
+  <meta property="og:title" content="The Village Blog - Stories & Insights">
+  <meta property="og:description" content="Discover stories of community impact and intentional living.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wetheville.com/blog.html">
+  <meta property="og:image" content="https://wetheville.com/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Village Blog">
+  <meta name="twitter:description" content="Stories of community impact and intentional living.">
+  <meta name="twitter:image" content="https://wetheville.com/images/og-image.png">
   <title>The Village Journal | Blueprints for Intentional Living</title>
 
   <link
@@ -12,11 +22,10 @@
   <link rel="stylesheet" href="wtvstyle.css">
 </head>
 
-<body>
-
+<body>    <a href="#main-content" class="skip-link">Skip to main content</a>
   <!-- NAV  -->
   <nav class="nav">
-    <div class="hamburger-menu" id="hamburger">
+    <div class="hamburger-menu" id="hamburger" role="button" aria-label="Toggle navigation menu" tabindex="0">
       <span></span>
       <span></span>
       <span></span>
@@ -35,9 +44,7 @@
     </div>
 
     <div class="nav-right">
-      <a href="dashboard.html">
-        <button class="login-btn">Dashboard</button>
-      </a>
+      <a href="dashboard.html" class="login-btn">Dashboard</a>
     </div>
   </nav>
 
@@ -51,12 +58,12 @@
     </div>
   </div>
 
-  <div class="dashboard-wrapper">
+  <div class="dashboard-wrapper" id="main-content">
     <!-- LEFT SIDEBAR (Mobile Menu) -->
     <aside class="left-sidebar" style="top: 120px;">
       <div class="profile-card">
         <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
-          alt="Avatar" class="avatar-large" loading="lazy">
+          alt="Candice Miller profile photo" class="avatar-large" loading="lazy">
         <h2>Candice Miller</h2>
         <p>Austin, TX</p>
         <p>Level 4</p>
@@ -137,7 +144,7 @@
             <p class="meta">Posted March 10, 2026 • By Community Member</p>
           </header>
 
-          <img src="images/blog/post2_market.jpeg" alt="Team collaborating on a project together" loading="lazy">
+          <img src="images/blog/post2_market.jpeg" alt="Citizens collaborating at a local night market stalls" loading="lazy">
 
           <span class="blog-category-tag" style="background: #f39c12;">Opportunities</span>
 
@@ -234,7 +241,7 @@
 
       <!-- FEATURED POSTS SECTION -->
       <div class="sidebar-section">
-        <h3>Featured Posts</h3>
+        <h4>Featured Posts</h4>
 
         <a href="#" class="blog-featured-post-link">Why Community Still Matters</a>
         <a href="#" class="blog-featured-post-link">Turning Opportunities Into Action</a>
@@ -243,7 +250,7 @@
 
       <!-- RECENT AUTHORS SECTION -->
       <div class="sidebar-section">
-        <h3>Recent Authors</h3>
+        <h4>Recent Authors</h4>
 
         <div class="blog-author-item">
           <div class="blog-author-name">The Village Team</div>
@@ -447,7 +454,6 @@
         }
       });
     });
-  </script>
   </script>
 
   <!-- ARTICLE MODAL -->

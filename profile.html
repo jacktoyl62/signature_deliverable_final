@@ -4,6 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create your profile and start connecting with neighbors in We The Village community.">
+  <meta property="og:title" content="Create Your Profile">
+  <meta property="og:description" content="Join the Village and start connecting with neighbors.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wetheville.com/profile.html">
+  <meta property="og:image" content="https://wetheville.com/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Create Your Profile">
+  <meta name="twitter:description" content="Join the Village and start connecting.">
+  <meta name="twitter:image" content="https://wetheville.com/images/og-image.png">
   <title>Create Your Profile | We The Village</title>
 
   <link
@@ -13,11 +23,10 @@
 
 </head>
 
-<body>
-
+<body>    <a href="#main-content" class="skip-link">Skip to main content</a>
   <!-- NAV  -->
   <nav class="nav">
-    <div class="hamburger-menu" id="hamburger">
+    <div class="hamburger-menu" id="hamburger" role="button" aria-label="Toggle navigation menu" tabindex="0">
       <span></span>
       <span></span>
       <span></span>
@@ -42,9 +51,7 @@
     </div>
 
     <div class="nav-right">
-      <a href="dashboard.html">
-        <button class="login-btn">Login</button>
-      </a>
+      <a href="dashboard.html" class="login-btn">Login</a>
     </div>
   </nav>
 
@@ -159,9 +166,8 @@
 
       <!-- Interests -->
       <div style="display: flex; flex-direction: column;">
-        <label style="font-weight: 600; color: var(--primary); margin-bottom: 12px; font-size: 0.95rem;">What interests
-          you? (Select all that apply) *</label>
-        <div style="display: flex; flex-direction: column; gap: 12px;">
+        <label style="font-weight: 600; color: var(--primary); margin-bottom: 12px; font-size: 0.95rem;">What interests you? (Select all that apply) *</label>
+        <div style="display: flex; flex-direction: column; gap: 12px;" role="group">
           <label
             style="display: flex; align-items: center; gap: 12px; cursor: pointer; font-size: 0.95rem; color: #555;">
             <input type="checkbox" name="interests" value="connect"

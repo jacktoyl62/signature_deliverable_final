@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /settings/
+Disallow: /dashboard/
+Disallow: /private/
+
+Crawl-delay: 1
+
+Sitemap: https://wetheville.com/sitemap.xml

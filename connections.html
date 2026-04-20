@@ -4,7 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connections | The Village</title>
+    <meta name="description" content="Build and manage your network of neighbors and community members on We The Village.">    <meta property="og:title" content="Manage Your Connections">
+    <meta property="og:description" content="Build and manage your neighborhood network.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wetheville.com/connections.html">
+    <meta property="og:image" content="https://wetheville.com/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Manage Your Connections">
+    <meta name="twitter:description" content="Build and manage your neighborhood network.">
+    <meta name="twitter:image" content="https://wetheville.com/images/og-image.png">    <title>Connections | The Village</title>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&display=swap"
@@ -106,10 +114,11 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- NAV  -->
     <nav class="nav">
-        <div class="hamburger-menu" id="hamburger">
+        <div class="hamburger-menu" id="hamburger" role="button" aria-label="Toggle navigation menu" tabindex="0">
             <span></span>
             <span></span>
             <span></span>
@@ -129,9 +138,7 @@
         </div>
 
         <div class="nav-right">
-            <a href="index.html">
-                <button class="login-btn">Logout</button>
-            </a>
+            <a href="index.html" class="login-btn">Logout</a>
         </div>
     </nav>
 
@@ -145,13 +152,13 @@
         </div>
     </div>
 
-    <div class="dashboard-wrapper">
+<div class="dashboard-wrapper" id="main-content">
 
         <!-- COLUMN 1: LEFT SIDEBAR (Profile & Nav) -->
         <aside class="left-sidebar">
             <div class="profile-card">
                 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
-                    alt="Avatar" class="avatar-large">
+                    alt="Candice Miller profile photo" class="avatar-large">
                 <h2>Candice Miller</h2>
                 <p>Austin, TX</p>
                 <p>Level 4</p>
@@ -225,9 +232,9 @@
                         <div class="connection-header">
                             <div style="display: flex; gap: 15px; align-items: center; flex: 1;">
                                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&q=80"
-                                    alt="Alex" class="connection-avatar">
+                                    alt="Alex Jordan profile photo" class="connection-avatar">
                                 <div>
-                                    <h4 style="margin: 0; color: var(--primary);">Alex Jordan</h4>
+                                    <div style="margin: 0; color: var(--primary);">Alex Jordan</div>
                                     <p style="margin: 3px 0; font-size: 0.9rem; color: #666;">Product Designer • San
                                         Francisco</p>
                                     <p style="margin: 5px 0 0; font-size: 0.85rem; color: #999;">Sent 3 days ago</p>
@@ -247,7 +254,7 @@
                                 <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=60&q=80"
                                     alt="Morgan" class="connection-avatar">
                                 <div>
-                                    <h4 style="margin: 0; color: var(--primary);">Morgan Blake</h4>
+                                    <div style="margin: 0; color: var(--primary);">Morgan Blake</div>
                                     <p style="margin: 3px 0; font-size: 0.9rem; color: #666;">Marketing Manager •
                                         Austin, TX</p>
                                     <p style="margin: 5px 0 0; font-size: 0.85rem; color: #999;">Sent 1 week ago</p>
@@ -273,7 +280,7 @@
                                 <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=60&q=80"
                                     alt="Mike" class="connection-avatar">
                                 <div>
-                                    <h4 style="margin: 0; color: var(--primary);">Mike Rodriguez</h4>
+                                    <div style="margin: 0; color: var(--primary);">Mike Rodriguez</div>
                                     <p style="margin: 3px 0; font-size: 0.9rem; color: #666;">UX Designer • Austin, TX
                                     </p>
                                     <p style="margin: 5px 0 0; font-size: 0.85rem; color: #999;">Connected 2 months ago
@@ -292,9 +299,9 @@
                         <div class="connection-header">
                             <div style="display: flex; gap: 15px; align-items: center; flex: 1;">
                                 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=60&q=80"
-                                    alt="Sarah" class="connection-avatar">
+                                    alt="Sarah Chen profile photo" class="connection-avatar">
                                 <div>
-                                    <h4 style="margin: 0; color: var(--primary);">Sarah Chen</h4>
+                                    <div style="margin: 0; color: var(--primary);">Sarah Chen</div>
                                     <p style="margin: 3px 0; font-size: 0.9rem; color: #666;">Entrepreneur • Austin, TX
                                     </p>
                                     <p style="margin: 5px 0 0; font-size: 0.85rem; color: #999;">Connected 3 months ago
@@ -313,9 +320,9 @@
                         <div class="connection-header">
                             <div style="display: flex; gap: 15px; align-items: center; flex: 1;">
                                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&q=80"
-                                    alt="James" class="connection-avatar">
+                                    alt="James Wilson profile photo" class="connection-avatar">
                                 <div>
-                                    <h4 style="margin: 0; color: var(--primary);">James Wilson</h4>
+                                    <div style="margin: 0; color: var(--primary);">James Wilson</div>
                                     <p style="margin: 3px 0; font-size: 0.9rem; color: #666;">Startup Mentor • Austin,
                                         TX</p>
                                     <p style="margin: 5px 0 0; font-size: 0.85rem; color: #999;">Connected 4 months ago
@@ -452,7 +459,7 @@
                 style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
                 <div
                     style="background: white; border-radius: 12px; padding: 30px; max-width: 400px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
-                    <h2 id="modalGroupName" style="margin: 0 0 15px 0; color: var(--primary);"></h2>
+                    <div id="modalGroupName" style="margin: 0 0 15px 0; color: var(--primary);"></div>
                     <div style="display: flex; flex-direction: column; gap: 12px;">
                         <div>
                             <p style="margin: 0 0 5px 0; font-size: 0.9rem; font-weight: 600; color: var(--primary);">

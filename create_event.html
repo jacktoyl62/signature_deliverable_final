@@ -4,7 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Event | The Village</title>
+    <meta name="description" content="Create and share local events. Launch community gatherings, neighborhood meetups, and collaborative initiatives in your area.">
+    <meta property="og:title" content="Create Community Events">
+    <meta property="og:description" content="Organize events that bring your community together.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wetheville.com/create_event.html">
+    <meta property="og:image" content="https://wetheville.com/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Create Community Events">
+    <meta name="twitter:description" content="Organize events that bring your community together.">
+    <meta name="twitter:image" content="https://wetheville.com/images/og-image.png">
+    <title>Create Community Events | We The Village</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&display=swap"
         rel="stylesheet">
@@ -12,10 +22,11 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- NAV  -->
     <nav class="nav">
-        <div class="hamburger-menu" id="hamburger">
+        <div class="hamburger-menu" id="hamburger" role="button" aria-label="Toggle navigation menu" tabindex="0">
             <span></span>
             <span></span>
             <span></span>
@@ -35,9 +46,7 @@
         </div>
 
         <div class="nav-right">
-            <a href="index.html">
-                <button class="login-btn">Logout</button>
-            </a>
+            <a href="index.html" class="login-btn">Logout</a>
         </div>
     </nav>
 
@@ -51,13 +60,13 @@
         </div>
     </div>
 
-    <div class="dashboard-wrapper">
+<div class="dashboard-wrapper" id="main-content">
 
         <!-- COLUMN 1: LEFT SIDEBAR (Profile & Nav) -->
         <aside class="left-sidebar">
             <div class="profile-card">
                 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
-                    alt="Avatar" class="avatar-large">
+                    alt="Candice Miller profile photo" class="avatar-large">
                 <h2>Candice Miller</h2>
                 <p>Austin, TX</p>
                 <p>Level 4</p>
@@ -110,25 +119,25 @@
                         <!-- SECTION 1: THE BASICS -->
                         <div class="form-section-header">
                             <span style="font-size: 1.5rem;">📝</span>
-                            <h3>The Essentials</h3>
+                            <h2>The Essentials</h2>
                         </div>
 
                         <div class="input-group">
-                            <label>Event Title</label>
-                            <input type="text"
+                            <label for="eventTitle">Event Title</label>
+                            <input type="text" id="eventTitle"
                                 placeholder="e.g. Saturday Morning Skill-Swap or Founder Strategy Circle">
                         </div>
 
                         <div class="input-group">
-                            <label>Description</label>
-                            <textarea rows="4"
+                            <label for="eventDescription">Description</label>
+                            <textarea id="eventDescription" rows="4"
                                 placeholder="What will happen? Why should people come? What is the impact?"></textarea>
                         </div>
 
                         <div class="form-grid-2">
                             <div class="input-group">
-                                <label>Event Category</label>
-                                <select>
+                                <label for="eventCategory">Event Category</label>
+                                <select id="eventCategory">
                                     <option>Social Meetup</option>
                                     <option>Masterclass/Workshop</option>
                                     <option>Local Conference</option>
@@ -355,9 +364,8 @@
                 <div class="video-content collapsed" id="videoContent" style="overflow: hidden;">
                     <div
                         style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px; border-radius: 8px;">
-                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
                             src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="How to Create an Event"
-                            frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
@@ -404,8 +412,8 @@
         <div class="event-modal-content"
             style="background: white; border-radius: 12px; padding: 30px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
             <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
-                <h2 id="modalEventTitle" style="margin: 0; font-family: 'Playfair Display'; color: var(--primary);">
-                </h2>
+                <div id="modalEventTitle" style="margin: 0; font-family: 'Playfair Display'; color: var(--primary);">
+                </div>
                 <button id="closeModal"
                     style="background: none; border: none; font-size: 24px; cursor: pointer; color: #999;">×</button>
             </div>
