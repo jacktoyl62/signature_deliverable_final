@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event | The Village</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="wtvstyle.css">
+</head>
+
+<body>
+
+    <!-- NAV  -->
+    <nav class="nav">
+        <div class="hamburger-menu" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="notification-badge">5</span>
+        </div>
+        <a href="index.html" class="logo">We The Village</a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="connect.html">Connect</a>
+            <a href="grow.html">Grow</a>
+            <a href="build.html">Build</a>
+            <a href="aboutus.html">About</a>
+        </div>
+
+        <div class="nav-search">
+            <input type="text" placeholder="Search...">
+        </div>
+
+        <div class="nav-right">
+            <a href="index.html">
+                <button class="login-btn">Logout</button>
+            </a>
+        </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebarToggle">☰<span class="notification-badge">5</span></button>
+
+    <!-- Mobile Dashboard Header -->
+    <div class="dashboard-mobile-header">
+        <div class="mobile-logo">We The Village</div>
+        <div class="mobile-search">
+            <input type="text" placeholder="Search...">
+        </div>
+    </div>
+
+    <div class="dashboard-wrapper">
+
+        <!-- COLUMN 1: LEFT SIDEBAR (Profile & Nav) -->
+        <aside class="left-sidebar">
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
+                    alt="Avatar" class="avatar-large">
+                <h2>Candice Miller</h2>
+                <p>Austin, TX</p>
+                <p>Level 4</p>
+                <div style="margin-top: 15px; font-size: 1.2rem; font-weight: 700;">85% Growth</div>
+            </div>
+
+            <a href="create_event.html" class="login-btn">+ Create Event</a>
+
+            <ul class="side-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="messages.html" class="menu-with-badge">Messages <span
+                            class="notification-badge">3</span></a></li>
+                <li><a href="connections.html" class="menu-with-badge">Connections <span
+                            class="notification-badge">2</span></a></li>
+                <li><a href="memories.html">Memories</a></li>
+                <li><a href="blog.html">The Village Blog</a></li>
+                <li><a href="news_feed.html">The Village Gazette</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="index.html" style="color: #e74c3c;">Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- COLUMN 2: CENTER MAIN CONTENT -->
+        <main class="center-column">
+            <section class="content-card" style="background: #f8fafc;">
+                <header style="margin-bottom: 30px;">
+                    <h1 style="font-family: 'Playfair Display'; font-size: 2.5rem; color: #2c3e50;">Architect Your Event
+                    </h1>
+                    <p style="color: #64748b;">Turn your "What if" into a neighborhood memory.</p>
+                </header>
+
+                <button type="button" id="widgetsToggleBtn" class="widgets-toggle-btn"
+                    style="display: none; margin-bottom: 30px;">👁️ See Events</button>
+
+                <!-- Toggle Tabs for Event vs Meeting -->
+                <div
+                    style="display: flex; gap: 10px; margin-bottom: 30px; border-bottom: 2px solid #e0e0e0; padding-bottom: 15px;">
+                    <button type="button" id="eventTab" class="form-tab-btn active"
+                        style="background: none; border: none; padding: 10px 20px; font-size: 1rem; font-weight: 600; color: #2c3e50; cursor: pointer; border-bottom: 3px solid #e67e22; margin-bottom: -15px; transition: all 0.3s ease;">📝
+                        Create Event</button>
+                    <button type="button" id="meetingTab" class="form-tab-btn"
+                        style="background: none; border: none; padding: 10px 20px; font-size: 1rem; font-weight: 600; color: #999; cursor: pointer; margin-bottom: -15px; transition: all 0.3s ease;">🎥
+                        Schedule Meeting</button>
+                </div>
+
+                <!-- EVENT FORM -->
+                <div id="eventFormSection">
+                    <form class="create-event-card">
+
+                        <!-- SECTION 1: THE BASICS -->
+                        <div class="form-section-header">
+                            <span style="font-size: 1.5rem;">📝</span>
+                            <h3>The Essentials</h3>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Event Title</label>
+                            <input type="text"
+                                placeholder="e.g. Saturday Morning Skill-Swap or Founder Strategy Circle">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Description</label>
+                            <textarea rows="4"
+                                placeholder="What will happen? Why should people come? What is the impact?"></textarea>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="input-group">
+                                <label>Event Category</label>
+                                <select>
+                                    <option>Social Meetup</option>
+                                    <option>Masterclass/Workshop</option>
+                                    <option>Local Conference</option>
+                                    <option>Collective Action/Volunteer</option>
+                                    <option>Friendly Vacation/Trip</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label>Privacy Setting</label>
+                                <select id="privacy-select">
+                                    <option value="public">🌍 Public (Open to all neighbors)</option>
+                                    <option value="private">🔒 Private (Invite only / Hand-picked)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 2: LOGISTICS -->
+                        <div class="form-section-header">
+                            <span style="font-size: 1.5rem;">📍</span>
+                            <h3>Where & When</h3>
+                        </div>
+
+                        <div class="type-toggle">
+                            <button type="button" class="active" id="btn-physical">Physical Location</button>
+                            <button type="button" id="btn-online">Online / Hybrid</button>
+                        </div>
+
+                        <div class="input-group" id="location-input">
+                            <label>Street Address / Local Hub</label>
+                            <input type="text" placeholder="e.g. 402 Maple St. or The Corner Cafe">
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="input-group">
+                                <label>Date</label>
+                                <input type="date">
+                            </div>
+                            <div class="input-group">
+                                <label>Start Time</label>
+                                <input type="time">
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="input-group">
+                                <label>End Date</label>
+                                <input type="date">
+                            </div>
+                            <div class="input-group">
+                                <label>End Time</label>
+                                <input type="time">
+                            </div>
+                        </div>
+
+                        <!-- SECTION 3: CAPACITY & COST -->
+                        <div class="form-section-header">
+                            <span style="font-size: 1.5rem;">💰</span>
+                            <h3>Capacity & Contribution</h3>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="input-group">
+                                <label>Attendee Limit</label>
+                                <input type="number" placeholder="0 = Unlimited">
+                            </div>
+                            <div class="input-group">
+                                <label>Cost to Attend (USD)</label>
+                                <input type="number" placeholder="0 = Free">
+                            </div>
+                        </div>
+
+                        <!-- SECTION 4: HOST TEAM & INVITEES (Collapsible) -->
+                        <div class="form-section-collapsible">
+                            <div class="form-section-header" id="hostTeamHeader"
+                                style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span style="font-size: 1.5rem;">👥</span>
+                                    <h3 style="margin: 0;">Host Team & Invitees</h3>
+                                </div>
+                                <span class="section-toggle" id="hostTeamToggle"
+                                    style="font-size: 1.2rem; transition: transform 0.2s;">−</span>
+                            </div>
+                            <div class="form-section-content" id="hostTeamContent" style="overflow: hidden;">
+                                <!-- Host Team Section -->
+                                <div style="margin-top: 20px;">
+                                    <h4 style="color: var(--primary); margin-bottom: 12px;">🎯 Host Team (Co-Hosts)</h4>
+                                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 12px;">Add co-hosts to
+                                        share responsibilities and appear as organizers.</p>
+                                    <div style="display: flex; gap: 8px; margin-bottom: 15px;">
+                                        <input type="text" id="hostTeamSearch" placeholder="Search for team members..."
+                                            style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.95rem;">
+                                        <button type="button" id="addHostBtn" class="hero-btn"
+                                            style="padding: 10px 15px; border: none;">+ Add</button>
+                                    </div>
+                                    <div id="hostTeamList"
+                                        style="display: flex; flex-wrap: wrap; gap: 10px; min-height: 30px;">
+                                        <!-- Host team members will be added here -->
+                                    </div>
+                                </div>
+
+                                <!-- Invitees Section (enabled for private events) -->
+                                <div id="inviteesSection"
+                                    style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+                                    <h4 style="color: var(--primary); margin-bottom: 12px;">📬 Invitees (Private Events
+                                        Only)</h4>
+                                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 12px;">Add specific
+                                        neighbors to invite. They'll receive notifications.</p>
+                                    <div style="display: flex; gap: 8px; margin-bottom: 15px;">
+                                        <input type="text" id="inviteesSearch"
+                                            placeholder="Search for people to invite..."
+                                            style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.95rem;">
+                                        <button type="button" id="addInviteeBtn" class="hero-btn"
+                                            style="padding: 10px 15px; border: none;">+ Invite</button>
+                                    </div>
+                                    <div id="inviteesList"
+                                        style="display: flex; flex-wrap: wrap; gap: 10px; min-height: 30px;">
+                                        <!-- Invitees will be added here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 5: SEARCH & TAGS -->
+                        <div class="form-section-header">
+                            <span style="font-size: 1.5rem;">🏷️</span>
+                            <h3>Search Keywords</h3>
+                        </div>
+                        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 10px;">Select tags to help the
+                            right neighbors find you:</p>
+                        <div class="tag-cloud">
+                            <input type="checkbox" id="tag1" class="tag-checkbox"><label for="tag1"
+                                class="tag-label">Professional</label>
+                            <input type="checkbox" id="tag2" class="tag-checkbox"><label for="tag2"
+                                class="tag-label">Outdoors</label>
+                            <input type="checkbox" id="tag3" class="tag-checkbox"><label for="tag3"
+                                class="tag-label">Networking</label>
+                            <input type="checkbox" id="tag4" class="tag-checkbox"><label for="tag4"
+                                class="tag-label">Family-Friendly</label>
+                            <input type="checkbox" id="tag5" class="tag-checkbox"><label for="tag5"
+                                class="tag-label">Education</label>
+                            <input type="checkbox" id="tag6" class="tag-checkbox"><label for="tag6"
+                                class="tag-label">Action</label>
+                        </div>
+
+                        <div class="privacy-notice" style="margin-top: 30px;">
+                            <strong>Village Protocol:</strong> By submitting, you agree to host a safe, inclusive space.
+                            All attendees will be verified by their Village avatars and local profiles.
+                        </div>
+
+                        <div style="display: flex; gap: 15px; margin-top: 40px;">
+                            <button type="submit" class="hero-btn" style="flex: 2; border: none;">Publish to the
+                                Gazette</button>
+                            <button type="button" class="hero-btn-outline"
+                                style="flex: 1; border: 2px solid var(--primary); color: var(--primary);">Save
+                                Draft</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- MEETING FORM -->
+                <div id="meetingFormSection" style="display: none;">
+                    <div style="background: white; border-radius: 12px; padding: 30px; border: 1px solid #e0e0e0;">
+                        <h2 style="margin-top: 0; color: #2c3e50; font-family: 'Playfair Display'; font-size: 1.8rem;">
+                            Schedule a Teams Meeting</h2>
+                        <p style="color: #666; margin-bottom: 20px;">Create a new meeting that will appear in your
+                            events list.</p>
+                        <form id="scheduleMeetingForm">
+                            <div style="margin-bottom: 20px;">
+                                <label
+                                    style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Meeting
+                                    Title</label>
+                                <input type="text" id="meetingTitle" placeholder="e.g., Team Standup" required
+                                    style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; box-sizing: border-box;">
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <label
+                                    style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Meeting
+                                    Type</label>
+                                <div style="display: flex; gap: 15px;">
+                                    <label style="display: flex; align-items: center; cursor: pointer;">
+                                        <input type="radio" name="meetingLocation" value="online" checked
+                                            style="margin-right: 8px;">
+                                        <span>🌐 Online</span>
+                                    </label>
+                                    <label style="display: flex; align-items: center; cursor: pointer;">
+                                        <input type="radio" name="meetingLocation" value="in-person"
+                                            style="margin-right: 8px;">
+                                        <span>📍 In-Person</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <label
+                                    style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Date</label>
+                                <input type="date" id="meetingDate" required
+                                    style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; box-sizing: border-box;">
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <label
+                                    style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Time</label>
+                                <input type="time" id="meetingTime" required
+                                    style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; box-sizing: border-box;">
+                            </div>
+                            <button type="submit"
+                                style="width: 100%; padding: 12px; background: #e67e22; color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 0.2s;">Schedule
+                                Meeting</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- COLUMN 3: RIGHT SIDEBAR (Placeholder for future widget) -->
+        <aside class="right-sidebar">
+            <!-- Video Widget - Collapsible -->
+            <div class="video-widget action-card">
+                <div class="widget-header" id="videoHeader"
+                    style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; margin-bottom: 15px;">
+                    <h3 style="font-family: 'Playfair Display'; font-size: 1.3rem; margin: 0;">How to Create an Event
+                    </h3>
+                    <span class="collapse-toggle collapsed" id="videoToggle"
+                        style="font-size: 1.2rem; transition: transform 0.2s;">+</span>
+                </div>
+                <div class="video-content collapsed" id="videoContent" style="overflow: hidden;">
+                    <div
+                        style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px; border-radius: 8px;">
+                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="How to Create an Event"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <p style="color: #666; font-size: 0.9rem; margin: 0;">Learn best practices for hosting inclusive,
+                        engaging events that build community connections.</p>
+                </div>
+            </div>
+
+            <!-- Calendar Widget -->
+            <div class="calendar-widget action-card">
+                <h3 style="font-family: 'Playfair Display'; font-size: 1.3rem; margin-top: 0; margin-bottom: 20px;">
+                    Event Calendar</h3>
+                <div class="calendar-container" id="calendarContainer"></div>
+            </div>
+
+            <!-- Events Widget -->
+            <div class="events-widget action-card">
+                <h3 style="font-family: 'Playfair Display'; font-size: 1.3rem; margin-top: 0; margin-bottom: 15px;">Your
+                    Events</h3>
+
+                <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                    <button class="event-toggle-btn active" id="upcomingBtn"
+                        style="flex: 1; padding: 8px; background: var(--accent); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600;">Upcoming</button>
+                    <button class="event-toggle-btn" id="previousBtn"
+                        style="flex: 1; padding: 8px; background: #e0e0e0; color: var(--text); border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600;">Previous</button>
+                </div>
+
+                <div class="events-list" id="eventsList">
+                    <!-- Events will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="action-card">
+                <h3 style="font-family: 'Playfair Display'; font-size: 1.3rem; margin-top: 0;">Event Tips</h3>
+                <p style="color: #666; font-size: 0.9rem;">Build your best event with our guides and templates.</p>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Event Detail Modal (Outside sidebar so it always displays) -->
+    <div class="event-modal" id="eventModal"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 2000; align-items: center; justify-content: center;">
+        <div class="event-modal-content"
+            style="background: white; border-radius: 12px; padding: 30px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
+                <h2 id="modalEventTitle" style="margin: 0; font-family: 'Playfair Display'; color: var(--primary);">
+                </h2>
+                <button id="closeModal"
+                    style="background: none; border: none; font-size: 24px; cursor: pointer; color: #999;">×</button>
+            </div>
+            <div id="userOwnedBadge"
+                style="display: none; background: var(--accent); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; width: fit-content; margin-bottom: 15px;">
+                👤 You Host</div>
+            <div style="border-bottom: 1px solid #e0e0e0; padding-bottom: 15px; margin-bottom: 15px;">
+                <p style="margin: 0 0 8px 0; color: #666; font-size: 0.95rem;"><strong>Date & Time:</strong></p>
+                <p id="modalEventDateTime" style="margin: 0; color: var(--text);"></p>
+            </div>
+            <div style="border-bottom: 1px solid #e0e0e0; padding-bottom: 15px; margin-bottom: 15px;">
+                <p style="margin: 0 0 8px 0; color: #666; font-size: 0.95rem;"><strong>Description:</strong></p>
+                <p id="modalEventDescription" style="margin: 0; color: var(--text); line-height: 1.6;"></p>
+            </div>
+            <div id="editButtonContainer" style="display: flex; gap: 10px; margin-top: 20px;">
+                <button id="editEventBtn"
+                    style="flex: 1; padding: 10px; background: var(--accent); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">✏️
+                    Edit Event</button>
+                <button id="closeModalBtn"
+                    style="flex: 1; padding: 10px; background: #e0e0e0; color: var(--text); border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('mobile-open');
+            });
+        }
+
+        // Dashboard sidebar toggle (orange menu icon on mobile)
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const leftSidebar = document.querySelector('.left-sidebar');
+
+        if (sidebarToggle) {
+            sidebarToggle.addEventListener('click', () => {
+                if (leftSidebar) {
+                    leftSidebar.classList.toggle('open');
+                }
+            });
+        }
+
+        // Widgets sidebar toggle (mobile)
+        const widgetsToggleBtn = document.getElementById('widgetsToggleBtn');
+        const rightSidebar = document.querySelector('.right-sidebar');
+
+        function showWidgetsToggleOnMobile() {
+            if (window.innerWidth <= 768) {
+                if (widgetsToggleBtn) widgetsToggleBtn.style.display = 'inline-block';
+            } else {
+                if (widgetsToggleBtn) widgetsToggleBtn.style.display = 'none';
+                // Close sidebar if open when resizing to desktop
+                if (rightSidebar && rightSidebar.classList.contains('mobile-open')) {
+                    rightSidebar.classList.remove('mobile-open');
+                    if (widgetsToggleBtn) widgetsToggleBtn.classList.remove('active');
+                }
+            }
+        }
+
+        // Check on page load
+        showWidgetsToggleOnMobile();
+
+        // Check on resize
+        window.addEventListener('resize', showWidgetsToggleOnMobile);
+
+        // Toggle widgets sidebar
+        if (widgetsToggleBtn) {
+            widgetsToggleBtn.addEventListener('click', () => {
+                if (rightSidebar) {
+                    rightSidebar.classList.toggle('mobile-open');
+                    widgetsToggleBtn.classList.toggle('active');
+                }
+            });
+        }
+
+        // Close widgets sidebar when clicking outside
+        document.addEventListener('click', (e) => {
+            if (rightSidebar && rightSidebar.classList.contains('mobile-open')) {
+                // Close if clicking outside the sidebar and not on the toggle button
+                if (!rightSidebar.contains(e.target) && e.target !== widgetsToggleBtn) {
+                    rightSidebar.classList.remove('mobile-open');
+                    if (widgetsToggleBtn) widgetsToggleBtn.classList.remove('active');
+                }
+            }
+        });
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && rightSidebar && rightSidebar.classList.contains('mobile-open')) {
+                rightSidebar.classList.remove('mobile-open');
+                if (widgetsToggleBtn) widgetsToggleBtn.classList.remove('active');
+            }
+        });
+
+        // Video Widget Collapse/Expand
+        const videoHeader = document.getElementById('videoHeader');
+        const videoToggle = document.getElementById('videoToggle');
+        const videoContent = document.getElementById('videoContent');
+
+        if (videoHeader) {
+            videoHeader.addEventListener('click', () => {
+                videoContent.classList.toggle('collapsed');
+                videoToggle.classList.toggle('collapsed');
+                // Update toggle symbol text
+                videoToggle.textContent = videoToggle.classList.contains('collapsed') ? '+' : '−';
+            });
+        }
+
+        // Host Team & Invitees Functionality
+        let hostTeamMembers = [];
+        let invitees = [];
+
+        // Sample people data for search/add functionality
+        const samplePeople = [
+            { id: 1, name: 'Sarah Johnson', avatar: '👩‍💼' },
+            { id: 2, name: 'Marcus Chen', avatar: '👨‍💻' },
+            { id: 3, name: 'Elena Rodriguez', avatar: '👩‍🎨' },
+            { id: 4, name: 'David Kim', avatar: '👨‍🏫' },
+            { id: 5, name: 'Jessica Lee', avatar: '👩‍🚀' },
+            { id: 6, name: 'James Wilson', avatar: '👨‍⚕️' },
+            { id: 7, name: 'Amara Okafor', avatar: '👩‍⚖️' },
+            { id: 8, name: 'Lucas Martinez', avatar: '👨‍🌾' }
+        ];
+
+        // Collapsible Host Team Section Toggle
+        const hostTeamHeader = document.getElementById('hostTeamHeader');
+        const hostTeamToggle = document.getElementById('hostTeamToggle');
+        const hostTeamContent = document.getElementById('hostTeamContent');
+
+        if (hostTeamHeader) {
+            hostTeamHeader.addEventListener('click', () => {
+                hostTeamContent.classList.toggle('collapsed');
+                hostTeamToggle.classList.toggle('rotated');
+            });
+        }
+
+        // Add Host Team Member
+        const addHostBtn = document.getElementById('addHostBtn');
+        const hostTeamSearch = document.getElementById('hostTeamSearch');
+
+        if (addHostBtn) {
+            addHostBtn.addEventListener('click', () => {
+                const searchValue = hostTeamSearch.value.trim();
+                if (searchValue === '') {
+                    alert('Please enter a name or search for a team member');
+                    return;
+                }
+
+                // Find matching person or create new one
+                let person = samplePeople.find(p => p.name.toLowerCase().includes(searchValue.toLowerCase()));
+                if (!person) {
+                    person = { id: Date.now(), name: searchValue, avatar: '👤' };
+                }
+
+                // Check if already added
+                if (hostTeamMembers.find(m => m.id === person.id)) {
+                    alert('This person is already a co-host');
+                    return;
+                }
+
+                hostTeamMembers.push(person);
+                renderHostTeam();
+                hostTeamSearch.value = '';
+                hostTeamSearch.focus();
+            });
+
+            // Allow Enter key to add
+            hostTeamSearch.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    addHostBtn.click();
+                }
+            });
+        }
+
+        // Render Host Team List
+        function renderHostTeam() {
+            const hostTeamList = document.getElementById('hostTeamList');
+            if (!hostTeamList) return;
+
+            if (hostTeamMembers.length === 0) {
+                hostTeamList.innerHTML = '<span class="empty-state">No co-hosts added yet</span>';
+            } else {
+                hostTeamList.innerHTML = hostTeamMembers.map(member => `
+                    <div class="person-chip">
+                        <span>${member.avatar}</span>
+                        <span>${member.name}</span>
+                        <span class="person-chip-remove" onclick="removeHostMember(${member.id})">×</span>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Remove Host Team Member
+        window.removeHostMember = function (id) {
+            hostTeamMembers = hostTeamMembers.filter(m => m.id !== id);
+            renderHostTeam();
+        };
+
+        // Privacy Setting Change - Enable/Disable Invitees Section
+        const allSelects = document.querySelectorAll('select');
+        let privacySelect = null;
+
+        // Find the privacy select by looking for the "Private" option
+        for (let select of allSelects) {
+            const hasPrivateOption = Array.from(select.options).some(opt => opt.textContent.includes('Private'));
+            if (hasPrivateOption) {
+                privacySelect = select;
+                break;
+            }
+        }
+
+        const inviteesSection = document.getElementById('inviteesSection');
+        const inviteesSearch = document.getElementById('inviteesSearch');
+        const inviteesAddBtn = document.getElementById('addInviteeBtn');
+
+        // Function to update invitees section state
+        function updateInviteesSectionState() {
+            if (!privacySelect || !inviteesSection) return;
+
+            const isPrivate = privacySelect.value.includes('Private') || privacySelect.value === 'private';
+
+            if (isPrivate) {
+                inviteesSection.classList.remove('disabled-section');
+                if (inviteesSearch) inviteesSearch.disabled = false;
+                if (inviteesAddBtn) inviteesAddBtn.disabled = false;
+            } else {
+                inviteesSection.classList.add('disabled-section');
+                if (inviteesSearch) inviteesSearch.disabled = true;
+                if (inviteesAddBtn) inviteesAddBtn.disabled = true;
+            }
+        }
+
+        // Set up event listener
+        if (privacySelect) {
+            privacySelect.addEventListener('change', updateInviteesSectionState);
+            // Initialize state on page load
+            updateInviteesSectionState();
+        }
+
+        // Add Invitee
+
+        if (inviteesAddBtn) {
+            inviteesAddBtn.addEventListener('click', () => {
+                const searchValue = inviteesSearch.value.trim();
+                if (searchValue === '') {
+                    alert('Please enter a name or search for someone to invite');
+                    return;
+                }
+
+                // Find matching person or create new one
+                let person = samplePeople.find(p => p.name.toLowerCase().includes(searchValue.toLowerCase()));
+                if (!person) {
+                    person = { id: Date.now(), name: searchValue, avatar: '👤' };
+                }
+
+                // Check if already invited
+                if (invitees.find(m => m.id === person.id)) {
+                    alert('This person is already invited');
+                    return;
+                }
+
+                // Check if already a co-host
+                if (hostTeamMembers.find(m => m.id === person.id)) {
+                    alert('Co-hosts are automatically invited');
+                    return;
+                }
+
+                invitees.push(person);
+                renderInvitees();
+                inviteesSearch.value = '';
+                inviteesSearch.focus();
+            });
+
+            // Allow Enter key to add
+            inviteesSearch.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    inviteesAddBtn.click();
+                }
+            });
+        }
+
+        // Render Invitees List
+        function renderInvitees() {
+            const inviteesList = document.getElementById('inviteesList');
+            if (!inviteesList) return;
+
+            if (invitees.length === 0) {
+                inviteesList.innerHTML = '<span class="empty-state">No invitees added yet</span>';
+            } else {
+                inviteesList.innerHTML = invitees.map(person => `
+                    <div class="person-chip">
+                        <span>${person.avatar}</span>
+                        <span>${person.name}</span>
+                        <span class="person-chip-remove" onclick="removeInvitee(${person.id})">×</span>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Remove Invitee
+        window.removeInvitee = function (id) {
+            invitees = invitees.filter(m => m.id !== id);
+            renderInvitees();
+        };
+
+        // Initialize
+        renderHostTeam();
+        renderInvitees();
+
+        // Events Widget - Sample Data
+        const upcomingEvents = [
+            { title: 'Builder\'s Brunch', date: 'June 12, 2026', time: '10:30 AM', description: 'A casual morning gathering for builders and makers to share ideas, network, and enjoy coffee and brunch together.', userOwned: true },
+            { title: 'UX Masterclass Part 2', date: 'June 15, 2026', time: '2:00 PM', description: 'Continuing our deep dive into user experience design principles, prototyping, and user testing methodologies.', userOwned: false },
+            { title: 'Networking Mixer Downtown', date: 'June 18, 2026', time: '6:00 PM', description: 'Join professionals from various industries for an evening of networking, connections, and light refreshments.', userOwned: true },
+            { title: 'Team Sync Call', date: 'June 20, 2026', time: '3:00 PM', description: '[Teams Meeting] Weekly sync with the development team to discuss progress, blockers, and next steps.', userOwned: true, isTeamsMeeting: true },
+            { title: 'Project Planning Session', date: 'June 22, 2026', time: '1:00 PM', description: '[Teams Meeting] Quarterly planning meeting to align on goals and resources for the upcoming quarter.', userOwned: true, isTeamsMeeting: true }
+        ];
+
+        const previousEvents = [
+            { title: 'Spring Founder Meetup', date: 'April 5, 2026', time: '7:00 PM', description: 'A wonderful evening with founders discussing growth strategies, challenges, and lessons learned.', userOwned: true },
+            { title: 'Community Coffee Chat', date: 'March 28, 2026', time: '10:00 AM', description: 'An informal coffee session where community members share updates and support each other.', userOwned: false },
+            { title: 'Innovation Workshop', date: 'March 15, 2026', time: '3:00 PM', description: 'Hands-on workshop exploring innovation techniques, design thinking, and creative problem-solving.', userOwned: false }
+        ];
+
+        function renderEvents(events, type) {
+            const eventsList = document.getElementById('eventsList');
+            eventsList.innerHTML = '';
+
+            if (events.length === 0) {
+                eventsList.innerHTML = '<div class="no-events">No ' + type + ' events</div>';
+                return;
+            }
+
+            events.forEach((event, index) => {
+                const eventItem = document.createElement('div');
+                eventItem.className = 'event-item';
+                if (event.userOwned) {
+                    eventItem.classList.add('user-owned-event');
+                }
+                eventItem.style.cursor = 'pointer';
+                eventItem.setAttribute('data-event-index', index);
+                eventItem.setAttribute('data-event-type', type);
+
+                let userBadgeHTML = '';
+                if (event.userOwned) {
+                    userBadgeHTML = '<div style="display: inline-block; background: var(--accent); color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; margin-left: 8px;">👤 Host</div>';
+                }
+
+                eventItem.innerHTML = `
+                    <div class="event-item-title">${event.title}${userBadgeHTML}</div>
+                    <div class="event-item-date">${event.date} at ${event.time}</div>
+                    <button class="duplicate-btn" onclick="event.stopPropagation();">📋 Duplicate</button>
+                `;
+
+                eventItem.addEventListener('click', () => openEventModal(event, type, index));
+                eventsList.appendChild(eventItem);
+            });
+        }
+
+        // Modal Functions
+        function openEventModal(event, type, index) {
+            const modal = document.getElementById('eventModal');
+            const modalTitle = document.getElementById('modalEventTitle');
+            const modalDateTime = document.getElementById('modalEventDateTime');
+            const modalDescription = document.getElementById('modalEventDescription');
+            const userOwnedBadge = document.getElementById('userOwnedBadge');
+            const editBtn = document.getElementById('editEventBtn');
+            const editContainer = document.getElementById('editButtonContainer');
+
+            modalTitle.textContent = event.title;
+            modalDateTime.textContent = event.date + ' at ' + event.time;
+            modalDescription.textContent = event.description || 'No description available.';
+
+            if (event.userOwned) {
+                userOwnedBadge.style.display = 'inline-block';
+            } else {
+                userOwnedBadge.style.display = 'none';
+            }
+
+            // Show edit button only for upcoming user-owned events
+            if (type === 'upcoming' && event.userOwned) {
+                editBtn.style.display = 'block';
+                editBtn.onclick = () => editEvent(event);
+            } else {
+                editBtn.style.display = 'none';
+            }
+
+            modal.style.display = 'flex';
+        }
+
+        function closeEventModal() {
+            const modal = document.getElementById('eventModal');
+            modal.style.display = 'none';
+        }
+
+        function editEvent(event) {
+            // Pre-fill the form with event data
+            const titleInput = document.querySelector('input[placeholder="e.g. Saturday Morning Skill-Swap or Founder Strategy Circle"]');
+            const descriptionInput = document.querySelector('textarea[placeholder*="What will happen"]');
+
+            if (titleInput) titleInput.value = event.title;
+            if (descriptionInput) descriptionInput.value = event.description || '';
+
+            // Scroll form into view
+            const form = document.querySelector('.create-event-card');
+            if (form) {
+                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            closeEventModal();
+        }
+
+        // Modal event listeners
+        const closeBtn = document.getElementById('closeModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const eventModal = document.getElementById('eventModal');
+
+        if (closeBtn) closeBtn.addEventListener('click', closeEventModal);
+        if (closeModalBtn) closeModalBtn.addEventListener('click', closeEventModal);
+
+        // Close modal when clicking outside
+        if (eventModal) {
+            eventModal.addEventListener('click', (e) => {
+                if (e.target === eventModal) {
+                    closeEventModal();
+                }
+            });
+        }
+
+        // Events Widget Toggle
+        const upcomingBtn = document.getElementById('upcomingBtn');
+        const previousBtn = document.getElementById('previousBtn');
+
+        if (upcomingBtn && previousBtn) {
+            // Initialize with upcoming events
+            renderEvents(upcomingEvents, 'upcoming');
+
+            upcomingBtn.addEventListener('click', () => {
+                upcomingBtn.classList.add('active');
+                previousBtn.classList.remove('active');
+                renderEvents(upcomingEvents, 'upcoming');
+            });
+
+            previousBtn.addEventListener('click', () => {
+                previousBtn.classList.add('active');
+                upcomingBtn.classList.remove('active');
+                renderEvents(previousEvents, 'previous');
+            });
+        }
+
+        // Simple UI Toggle Logic
+        const btnPhysical = document.getElementById('btn-physical');
+        const btnOnline = document.getElementById('btn-online');
+        const locationLabel = document.querySelector('#location-input label');
+        const locationPlaceholder = document.querySelector('#location-input input');
+
+        btnOnline.addEventListener('click', () => {
+            btnOnline.classList.add('active');
+            btnPhysical.classList.remove('active');
+            locationLabel.innerText = "Online Meeting Link";
+            locationPlaceholder.placeholder = "Zoom, Google Meet, or Discord URL";
+        });
+
+        btnPhysical.addEventListener('click', () => {
+            btnPhysical.classList.add('active');
+            btnOnline.classList.remove('active');
+            locationLabel.innerText = "Street Address / Local Hub";
+            locationPlaceholder.placeholder = "e.g. 402 Maple St. or The Corner Cafe";
+        });
+
+        // Calendar Widget
+        let currentCalendarMonth = new Date();
+        const today = new Date();
+
+        function renderCalendarMonth(date) {
+            const container = document.getElementById('calendarContainer');
+            container.innerHTML = ''; // Clear previous month
+
+            const monthName = date.toLocaleString('default', { month: 'long', year: 'numeric' });
+
+            // Month navigation
+            const navDiv = document.createElement('div');
+            navDiv.style.display = 'flex';
+            navDiv.style.justifyContent = 'space-between';
+            navDiv.style.alignItems = 'center';
+            navDiv.style.marginBottom = '15px';
+
+            const prevBtn = document.createElement('button');
+            prevBtn.textContent = '← Prev';
+            prevBtn.style.background = 'var(--primary)';
+            prevBtn.style.color = 'white';
+            prevBtn.style.border = 'none';
+            prevBtn.style.padding = '6px 12px';
+            prevBtn.style.borderRadius = '4px';
+            prevBtn.style.cursor = 'pointer';
+            prevBtn.style.fontSize = '0.85rem';
+            prevBtn.style.fontWeight = '600';
+            prevBtn.addEventListener('click', () => {
+                currentCalendarMonth.setMonth(currentCalendarMonth.getMonth() - 1);
+                renderCalendarMonth(currentCalendarMonth);
+            });
+
+            const monthHeader = document.createElement('div');
+            monthHeader.style.fontWeight = '600';
+            monthHeader.style.color = 'var(--primary)';
+            monthHeader.style.fontSize = '0.95rem';
+            monthHeader.textContent = monthName;
+
+            const nextBtn = document.createElement('button');
+            nextBtn.textContent = 'Next →';
+            nextBtn.style.background = 'var(--primary)';
+            nextBtn.style.color = 'white';
+            nextBtn.style.border = 'none';
+            nextBtn.style.padding = '6px 12px';
+            nextBtn.style.borderRadius = '4px';
+            nextBtn.style.cursor = 'pointer';
+            nextBtn.style.fontSize = '0.85rem';
+            nextBtn.style.fontWeight = '600';
+            nextBtn.addEventListener('click', () => {
+                currentCalendarMonth.setMonth(currentCalendarMonth.getMonth() + 1);
+                renderCalendarMonth(currentCalendarMonth);
+            });
+
+            navDiv.appendChild(prevBtn);
+            navDiv.appendChild(monthHeader);
+            navDiv.appendChild(nextBtn);
+            container.appendChild(navDiv);
+
+            // Calendar month
+            const monthDiv = document.createElement('div');
+            monthDiv.className = 'calendar-month';
+
+            // Weekday headers
+            const weekdaysDiv = document.createElement('div');
+            weekdaysDiv.className = 'calendar-weekdays';
+            const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            weekdays.forEach(day => {
+                const dayDiv = document.createElement('div');
+                dayDiv.className = 'weekday';
+                dayDiv.textContent = day;
+                weekdaysDiv.appendChild(dayDiv);
+            });
+            monthDiv.appendChild(weekdaysDiv);
+
+            // Days grid
+            const daysDiv = document.createElement('div');
+            daysDiv.className = 'calendar-days';
+
+            // Get first day of month and number of days
+            const firstDay = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+            const daysInMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+
+            // Previous month's days (grayed out)
+            const prevMonthDays = new Date(date.getFullYear(), date.getMonth(), 0).getDate();
+            for (let j = firstDay - 1; j >= 0; j--) {
+                const dayDiv = document.createElement('div');
+                dayDiv.className = 'calendar-day other-month';
+                dayDiv.textContent = prevMonthDays - j;
+                daysDiv.appendChild(dayDiv);
+            }
+
+            // Current month's days
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayDiv = document.createElement('div');
+                dayDiv.className = 'calendar-day';
+                dayDiv.textContent = day;
+
+                const currentDate = new Date(date.getFullYear(), date.getMonth(), day);
+                const dateString = currentDate.toISOString().split('T')[0];
+                const todayString = today.toISOString().split('T')[0];
+
+                // Mark today
+                if (dateString === todayString) {
+                    dayDiv.classList.add('today');
+                }
+
+                // Click handler to fill date input
+                dayDiv.addEventListener('click', () => {
+                    const dateInputField = document.querySelector('input[type="date"]');
+                    if (dateInputField) {
+                        dateInputField.value = dateString;
+                        dateInputField.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
+
+                    // Remove previous selection
+                    document.querySelectorAll('.calendar-day.selected').forEach(d => {
+                        d.classList.remove('selected');
+                    });
+
+                    // Mark as selected
+                    dayDiv.classList.add('selected');
+                });
+
+                daysDiv.appendChild(dayDiv);
+            }
+
+            // Next month's days (grayed out)
+            const totalCells = firstDay + daysInMonth;
+            const remainingCells = totalCells % 7 === 0 ? 0 : 7 - (totalCells % 7);
+            for (let day = 1; day <= remainingCells; day++) {
+                const dayDiv = document.createElement('div');
+                dayDiv.className = 'calendar-day other-month';
+                dayDiv.textContent = day;
+                daysDiv.appendChild(dayDiv);
+            }
+
+            monthDiv.appendChild(daysDiv);
+            container.appendChild(monthDiv);
+        }
+
+        // Initialize calendar when page loads
+        function initCalendar() {
+            renderCalendarMonth(currentCalendarMonth);
+        }
+
+        document.addEventListener('DOMContentLoaded', initCalendar);
+        if (document.readyState !== 'loading') {
+            initCalendar();
+        }
+        // Create Event button - navigate/scroll to form
+        const createEventBtn = document.getElementById('sidebarCreateEventBtn');
+        if (createEventBtn) {
+            createEventBtn.addEventListener('click', () => {
+                // Scroll to the form
+                document.querySelector('.create-event-card')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Close sidebar on mobile
+                if (leftSidebar) leftSidebar.classList.remove('open');
+            });
+        }
+
+        // TAB SWITCHING - Event vs Meeting
+        const eventTab = document.getElementById('eventTab');
+        const meetingTab = document.getElementById('meetingTab');
+        const eventFormSection = document.getElementById('eventFormSection');
+        const meetingFormSection = document.getElementById('meetingFormSection');
+
+        if (eventTab && meetingTab && eventFormSection && meetingFormSection) {
+            eventTab.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Show event form, hide meeting form
+                eventFormSection.style.display = 'block';
+                meetingFormSection.style.display = 'none';
+                // Update tab styling
+                eventTab.style.color = '#2c3e50';
+                eventTab.style.borderBottom = '3px solid #e67e22';
+                meetingTab.style.color = '#999';
+                meetingTab.style.borderBottom = 'none';
+            });
+
+            meetingTab.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Show meeting form, hide event form
+                eventFormSection.style.display = 'none';
+                meetingFormSection.style.display = 'block';
+                // Update tab styling
+                meetingTab.style.color = '#2c3e50';
+                meetingTab.style.borderBottom = '3px solid #e67e22';
+                eventTab.style.color = '#999';
+                eventTab.style.borderBottom = 'none';
+            });
+        }
+
+        // Meeting Form Submission
+        const scheduleMeetingForm = document.getElementById('scheduleMeetingForm');
+
+        if (scheduleMeetingForm) {
+            scheduleMeetingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const title = document.getElementById('meetingTitle').value;
+                const date = document.getElementById('meetingDate').value;
+                const time = document.getElementById('meetingTime').value;
+                const locationType = document.querySelector('input[name="meetingLocation"]:checked').value;
+
+                if (title && date && time && locationType) {
+                    // Add to upcomingEvents
+                    const newMeeting = {
+                        title: title,
+                        date: new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+                        time: time,
+                        description: `[Teams Meeting - ${locationType === 'online' ? '🌐 Online' : '📍 In-Person'}] Scheduled via The Village.`,
+                        userOwned: true,
+                        isTeamsMeeting: true,
+                        locationType: locationType
+                    };
+                    upcomingEvents.unshift(newMeeting);
+
+                    // Re-render events
+                    renderEvents(upcomingEvents, 'upcoming');
+
+                    // Reset form
+                    scheduleMeetingForm.reset();
+
+                    // Show success message briefly
+                    const originalText = scheduleMeetingForm.querySelector('button[type="submit"]').textContent;
+                    scheduleMeetingForm.querySelector('button[type="submit"]').textContent = '✓ Meeting Scheduled!';
+                    scheduleMeetingForm.querySelector('button[type="submit"]').style.background = '#27ae60';
+
+                    setTimeout(() => {
+                        scheduleMeetingForm.querySelector('button[type="submit"]').textContent = originalText;
+                        scheduleMeetingForm.querySelector('button[type="submit"]').style.background = '#e67e22';
+                    }, 2000);
+
+                    // Close sidebar on mobile
+                    if (leftSidebar) leftSidebar.classList.remove('open');
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

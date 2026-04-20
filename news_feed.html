@@ -1,0 +1,432 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Village Gazette | Local Progress & Collective Impact Reports</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="wtvstyle.css">
+</head>
+
+<body>
+
+    <!-- NAV  -->
+    <nav class="nav">
+        <div class="hamburger-menu" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="notification-badge">5</span>
+        </div>
+        <a href="index.html" class="logo">We The Village</a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="connect.html">Connect</a>
+            <a href="grow.html">Grow</a>
+            <a href="build.html">Build</a>
+            <a href="aboutus.html">About</a>
+        </div>
+
+        <div class="nav-search">
+            <input type="text" placeholder="Search...">
+        </div>
+
+        <div class="nav-right">
+            <a href="dashboard.html">
+                <button class="login-btn">Dashboard</button>
+            </a>
+        </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebarToggle">☰<span class="notification-badge">5</span></button>
+
+    <!-- Mobile Dashboard Header -->
+    <div class="dashboard-mobile-header">
+        <div class="mobile-logo">We The Village</div>
+        <div class="mobile-search">
+            <input type="text" placeholder="Search...">
+        </div>
+    </div>
+
+    <div class="dashboard-wrapper">
+        <!-- LEFT SIDEBAR -->
+        <aside class="left-sidebar" style="top: 120px;">
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
+                    alt="Avatar" class="avatar-large">
+                <h2>Candice Miller</h2>
+                <p>Austin, TX</p>
+                <p>Level 4</p>
+                <div style="margin-top: 15px; font-size: 1.2rem; font-weight: 700;">85% Growth</div>
+            </div>
+
+            <a href="create_event.html" class="login-btn">+ Create Event</a>
+
+            <ul class="side-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="messages.html" class="menu-with-badge">Messages <span
+                            class="notification-badge">3</span></a></li>
+                <li><a href="connections.html" class="menu-with-badge">Connections <span
+                            class="notification-badge">2</span></a></li>
+                <li><a href="memories.html">Memories</a></li>
+                <li><a href="blog.html">The Village Blog</a></li>
+                <li><a href="news_feed.html" class="active">The Village Gazette</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="index.html" style="color: #e74c3c;">Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="center-column news-main">
+            <!-- HEADER -->
+            <div class="news-header">
+                <h1>The Village Gazette</h1>
+                <p>Latest news, trends, and community highlights</p>
+            </div>
+
+            <button type="button" id="widgetsToggleBtn" class="widgets-toggle-btn">📊 See Filters</button>
+
+            <!-- FEATURED ARTICLE -->
+            <article class="featured-article">
+                <div class="featured-text">
+                    <h2>New Community Center Opens Downtown</h2>
+                    <p class="meta">Published March 20, 2026 • By Sarah Chen</p>
+                    <p>
+                        The long-awaited Community Center officially opened its doors this morning in the heart of
+                        downtown. The state-of-the-art facility features multiple meeting rooms, a professional kitchen,
+                        and a 200-seat amphitheater designed for events and performances. Local officials cut the ribbon
+                        at 10 AM with nearly 500 community members in attendance.
+                    </p>
+                    <p>
+                        The center was made possible through a combination of public funding and private donations,
+                        totaling $2.2 million. The building was designed with sustainability in mind, featuring solar
+                        panels, rainwater collection, and energy-efficient systems.
+                    </p>
+                    <a href="#" class="read-more" onclick="openArticleModal(event)">Read full story</a>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+                        alt="Community Center" class="news-img">
+                    <div class="stats-box">
+                        <h4 style="margin: 0 0 15px 0; font-size: 0.9rem; font-weight: 700;">Quick Stats</h4>
+                        <div class="bar-group">
+                            <div class="bar-label"><span>Attendance</span><span>500+</span></div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label"><span>Total Investment</span><span>$2.2M</span></div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label"><span>Meeting Rooms</span><span>12</span></div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- NEWS GRID -->
+            <div class="news-grid">
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+                        alt="Startup" class="news-img" loading="lazy">
+                    <h3>Local Startup Secures Series A Funding</h3>
+                    <p class="meta">March 18, 2026 • Michael Zhang</p>
+                    <p>TechBridge Solutions announces $5M in Series A funding. The Austin-based software company
+                        develops cloud infrastructure tools for small and medium-sized businesses.</p>
+                    <a href="#" class="read-more" onclick="openArticleModal(event)">Read more</a>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80"
+                        alt="Garden Initiative" class="news-img" loading="lazy">
+                    <h3>Community Garden Initiative Expands</h3>
+                    <p class="meta">March 16, 2026 • Community Reporter</p>
+                    <p>The "Grow Together" program expands to five new neighborhood sites. Over 200 residents are
+                        participating in sustainable food production.</p>
+                    <a href="#" class="read-more" onclick="openArticleModal(event)">Read more</a>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+                        alt="Remote Work" class="news-img" loading="lazy">
+                    <h3>Remote Work Trends Reshape City</h3>
+                    <p class="meta">March 14, 2026 • David Wilson</p>
+                    <p>New study shows 35% of professionals work remotely. Mixed-use neighborhoods with co-working
+                        spaces gaining popularity among remote workers.</p>
+                    <a href="#" class="read-more" onclick="openArticleModal(event)">Read more</a>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=800&q=80"
+                        alt="Music Festival" class="news-img" loading="lazy">
+                    <h3>Spring Music Festival Announces 2026 Lineup</h3>
+                    <p class="meta">March 12, 2026 • Event Team</p>
+                    <p>80+ artists announced for April 18-20 event. Expected to draw 50,000+ attendees with performances
+                        across multiple genres.</p>
+                    <a href="#" class="read-more" onclick="openArticleModal(event)">Read more</a>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+                        alt="Local Business" class="news-img" loading="lazy">
+                    <h3>Downtown Retail Gets Major Revamp</h3>
+                    <p class="meta">March 10, 2026 • Jennifer Park</p>
+                    <p>Six new storefronts opened downtown this month. Local merchants report strong foot traffic as
+                        district becomes shopping and dining destination.</p>
+                    <a href="#" class="read-more" onclick="openArticleModal(event)">Read more</a>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+                        alt="Education" class="news-img" loading="lazy">
+                    <h3>New Mentorship Program Launches</h3>
+                    <p class="meta">March 8, 2026 • Education Team</p>
+                    <p>Youth-focused mentorship program connects 100+ young professionals with experienced leaders.
+                        Applications open for summer cohort.</p>
+                    <a href="#" class="read-more" onclick="openArticleModal(event)">Read more</a>
+                </article>
+            </div>
+        </main>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="right-sidebar">
+            <!-- SEARCH -->
+            <div class="sidebar-section">
+                <div class="search-box">
+                    <input type="text" id="gazetteSearch" placeholder="Search articles...">
+                </div>
+            </div>
+
+            <!-- CATEGORIES -->
+            <div class="sidebar-section">
+                <h3>Categories</h3>
+                <div class="category-item">
+                    <input type="checkbox" value="Local News"> Local News
+                    <span class="category-count">24</span>
+                </div>
+                <div class="category-item">
+                    <input type="checkbox" value="Business"> Business
+                    <span class="category-count">18</span>
+                </div>
+                <div class="category-item">
+                    <input type="checkbox" value="Community"> Community
+                    <span class="category-count">32</span>
+                </div>
+                <div class="category-item">
+                    <input type="checkbox" value="Events"> Events
+                    <span class="category-count">15</span>
+                </div>
+                <div class="category-item">
+                    <input type="checkbox" value="Trends"> Trends
+                    <span class="category-count">21</span>
+                </div>
+            </div>
+
+            <!-- MOST POPULAR -->
+            <div class="sidebar-section">
+                <h3>Most Popular</h3>
+                <div class="featured-item">
+                    <a href="#">New Community Center Opens Downtown</a>
+                </div>
+                <div class="featured-item">
+                    <a href="#">Local Startup Secures Series A Funding</a>
+                </div>
+                <div class="featured-item">
+                    <a href="#">Spring Music Festival Announces 2026 Lineup</a>
+                </div>
+                <div class="featured-item">
+                    <a href="#">Community Garden Initiative Expands</a>
+                </div>
+            </div>
+
+            <!-- FEATURED CONTRIBUTORS -->
+            <div class="sidebar-section">
+                <h3>Featured Contributors</h3>
+                <div class="featured-item">
+                    <strong>Sarah Chen</strong><br>
+                    <span style="font-size: 0.8rem; color: #999;">42 articles</span>
+                </div>
+                <div class="featured-item">
+                    <strong>Michael Zhang</strong><br>
+                    <span style="font-size: 0.8rem; color: #999;">38 articles</span>
+                </div>
+                <div class="featured-item">
+                    <strong>David Wilson</strong><br>
+                    <span style="font-size: 0.8rem; color: #999;">35 articles</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- ARTICLE MODAL -->
+    <div id="articleModal" class="article-modal">
+        <div class="article-modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <div class="modal-header">
+                <h2 id="modalTitle">Article</h2>
+            </div>
+            <div class="modal-body" id="modalContent">
+                <!-- Content dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER  -->
+    <footer style="background: var(--primary); color: white; padding: 40px 20px; text-align: center; margin-top: 60px;">
+        <p>&copy; 2024 We The Village. All rights reserved.</p>
+        <div style="margin-top: 15px;">
+            <a href="#" style="color: white; margin: 0 10px; text-decoration: none; font-size: 0.9rem;">Privacy
+                Policy</a>
+            <a href="#" style="color: white; margin: 0 10px; text-decoration: none; font-size: 0.9rem;">Terms of
+                Service</a>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.querySelector('.left-sidebar');
+
+        if (hamburger && sidebar) {
+            hamburger.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+            });
+        }
+
+        // Sidebar toggle
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const leftSidebar = document.querySelector('.left-sidebar');
+
+        if (sidebarToggle) {
+            sidebarToggle.addEventListener('click', () => {
+                leftSidebar.classList.toggle('open');
+            });
+        }
+
+        // Close sidebar when menu item is clicked
+        const menuLinks = document.querySelectorAll('.side-menu a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                leftSidebar.classList.remove('open');
+            });
+        });
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', (e) => {
+            if (leftSidebar && leftSidebar.classList.contains('open')) {
+                if (!leftSidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                    leftSidebar.classList.remove('open');
+                }
+            }
+        });
+
+        // Widgets sidebar toggle (mobile)
+        const widgetsToggleBtn = document.getElementById('widgetsToggleBtn');
+        const rightSidebar = document.querySelector('.right-sidebar');
+
+        function showWidgetsToggleOnMobile() {
+            if (window.innerWidth <= 768) {
+                if (widgetsToggleBtn) widgetsToggleBtn.style.display = 'inline-block';
+            } else {
+                if (widgetsToggleBtn) widgetsToggleBtn.style.display = 'none';
+                if (rightSidebar && rightSidebar.classList.contains('mobile-open')) {
+                    rightSidebar.classList.remove('mobile-open');
+                    if (widgetsToggleBtn) widgetsToggleBtn.classList.remove('active');
+                }
+            }
+        }
+
+        showWidgetsToggleOnMobile();
+        window.addEventListener('resize', showWidgetsToggleOnMobile);
+
+        if (widgetsToggleBtn) {
+            widgetsToggleBtn.addEventListener('click', () => {
+                if (rightSidebar) {
+                    rightSidebar.classList.toggle('mobile-open');
+                    widgetsToggleBtn.classList.toggle('active');
+                }
+            });
+        }
+
+        document.addEventListener('click', (e) => {
+            if (rightSidebar && rightSidebar.classList.contains('mobile-open')) {
+                if (!rightSidebar.contains(e.target) && e.target !== widgetsToggleBtn) {
+                    rightSidebar.classList.remove('mobile-open');
+                    if (widgetsToggleBtn) widgetsToggleBtn.classList.remove('active');
+                }
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && rightSidebar && rightSidebar.classList.contains('mobile-open')) {
+                rightSidebar.classList.remove('mobile-open');
+                if (widgetsToggleBtn) widgetsToggleBtn.classList.remove('active');
+            }
+        });
+
+        // Article Modal Functionality - Robust Implementation
+        let articleModal = null;
+
+        function closeArticleModal() {
+            if (articleModal) {
+                articleModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function openArticleModal(event) {
+            event.preventDefault();
+            articleModal = document.getElementById('articleModal');
+            const article = event.target.closest('article');
+
+            if (article && articleModal) {
+                const title = article.querySelector('h3')?.textContent || 'Article';
+                const content = article.innerHTML;
+                document.getElementById('modalTitle').textContent = title;
+                document.getElementById('modalContent').innerHTML = content;
+                articleModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Initialize modal handlers when page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            articleModal = document.getElementById('articleModal');
+
+            if (!articleModal) return;
+
+            // Close button - use event delegation
+            articleModal.addEventListener('click', function (e) {
+                const closeBtn = e.target.closest('.modal-close-btn');
+                if (closeBtn) {
+                    closeArticleModal();
+                }
+                // Close when clicking the overlay background
+                if (e.target === articleModal) {
+                    closeArticleModal();
+                }
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && articleModal.style.display === 'flex') {
+                    closeArticleModal();
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

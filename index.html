@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Village</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="wtvstyle.css" />
+</head>
+
+<body>
+
+    <!-- NAV  -->
+    <nav class="nav">
+        <div class="hamburger-menu" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <a href="index.html" class="logo">We The Village</a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="active">Home</a>
+            <a href="connect.html">Connect</a>
+            <a href="grow.html">Grow</a>
+            <a href="build.html">Build</a>
+            <div class="nav-dropdown">
+                <a href="aboutus.html">About</a>
+                <div class="dropdown-content">
+                    <a href="testimonials.html">Testimonials</a>
+                    <a href="contactus.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-search" id="navSearch">
+            <input type="text" placeholder="Search...">
+        </div>
+
+        <div class="search-icon" id="searchIcon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="8" cy="8" r="6"></circle>
+                <path d="M12 12l5 5"></path>
+            </svg>
+        </div>
+
+        <div class="nav-right">
+            <a href="dashboard.html">
+                <button class="login-btn">Login</button>
+            </a>
+        </div>
+    </nav>
+
+    <header class="hero-wrap">
+        <div class="hero-text">
+            <h1>Stop Scrolling.<br>Start Doing.</h1>
+            <p>Your neighborhood is a goldmine of talent and support. Reclaim your community as a productivity engine
+                for your life.</p>
+            <div style="display: flex; gap: 15px;">
+                <a href="profile.html" class="hero-btn">Join the Village</a>
+                <a href="#about" class="hero-btn" style="background: transparent; border: 1px solid white;">How it
+                    works</a>
+            </div>
+        </div>
+        <div class="hero-img"></div>
+    </header>
+
+    <!-- ACTIVE CITIES TICKER -->
+    <div class="city-ticker-wrap">
+        <div class="city-ticker-label">Active Villages</div>
+        <div class="ticker-move">
+            <span>Austin, TX</span> <span>Atlanta, GA</span> <span>Chicago, IL</span> <span>Denver, CO</span>
+            <span>San Diego, CA</span> <span>Portland, OR</span> <span>Santa Fe, NM</span> <span>Charlotte, NC</span>
+            <span>Seattle, WA</span> <span>Miami, FL</span> <span>Nashville, TN</span> <span>Boston, MA</span>
+            <span>New Orleans, LA</span> <span>Phoenix, AZ</span> <span>Detroit, MI</span> <span>New York, NY</span>
+            <!-- Repeat for seamless loop -->
+            <span>Austin, TX</span> <span>Atlanta, GA</span> <span>Chicago, IL</span> <span>Denver, CO</span>
+            <span>San Diego, CA</span> <span>Portland, OR</span> <span>Santa Fe, NM</span> <span>Charlotte, NC</span>
+            <span>Seattle, WA</span> <span>Miami, FL</span> <span>Nashville, TN</span> <span>Boston, MA</span>
+            <span>New Orleans, LA</span> <span>Phoenix, AZ</span> <span>Detroit, MI</span> <span>New York, NY</span>
+        </div>
+    </div>
+
+    <!-- THE REALITY SPLIT -->
+    <section class="reality-section" id="about">
+        <div class="section-container">
+            <h2 style="font-family: 'Playfair Display'; font-size: 2.8rem; color: #2c3e50;">Intention is the new
+                Currency.</h2>
+            <p style="color: #666; max-width: 600px; margin: 20px auto 0;">We swapped the addiction of the global
+                algorithm for the impact of local intention.</p>
+
+            <div class="reality-grid">
+                <!-- Left Side: The Problem -->
+                <div class="reality-panel scroll">
+                    <span class="reality-tag">The Old Way</span>
+                    <h3>The Scroll</h3>
+                    <p>
+                        A digital void of endless content, performance culture, and global noise.
+                        It was designed to keep you <strong>watching</strong> while the real world passed you by.
+                        Isolated connectivity that leaves you empty.
+                    </p>
+                </div>
+
+                <!-- Right Side: The Solution -->
+                <div class="reality-panel village">
+                    <div class="vs-circle">VS</div>
+                    <span class="reality-tag">The Village Way</span>
+                    <h3>The Village</h3>
+                    <p>
+                        A physical productivity engine for your life. Reclaim your time for front-porch handshakes,
+                        collective action, and career-shifting mentorship.
+                        Built to keep you <strong>doing</strong>, locally.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE LOCAL EXCHANGE SECTION -->
+    <section class="exchange-section">
+        <div style="max-width: 800px; margin: 0 auto 50px;">
+            <h2 style="font-family: 'Playfair Display'; font-size: 2.8rem; color: #2c3e50; margin: 0 0 20px 0;">The
+                Local Exchange</h2>
+            <p style="font-size: 1.2rem; color: #64748b; line-height: 1.5;">Your life is built on what you contribute.
+                The Village is where those contributions turn into a high-performance lifestyle.</p>
+        </div>
+
+        <div class="exchange-grid">
+            <!-- Card 1 -->
+            <div class="exchange-card">
+                <div>
+                    <h4>Share a Skill, Gain a Co-Founder</h4>
+                    <p>Contribution isn't a chore; it's a career move. Offer your professional expertise to a neighbor's
+                        project and find the partner for your next big venture.</p>
+                </div>
+                <div class="exchange-footer">
+                    <span class="exchange-label">Work + Growth</span>
+                    <a href="grow.html" class="explore-link">Explore Grow →</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="exchange-card">
+                <div>
+                    <h4>Host a Hike, Find an Adventure</h4>
+                    <p>Tired of generic vacations? Use your local knowledge to lead a weekend escape. Unlock a circle of
+                        friends ready to turn every Saturday into a memory.</p>
+                </div>
+                <div class="exchange-footer">
+                    <span class="exchange-label">Play + Connection</span>
+                    <a href="connect.html" class="explore-link">Explore Connect →</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="exchange-card">
+                <div>
+                    <h4>Crowdsource the Change You Need</h4>
+                    <p>Stop waiting for the city to fix your street. Bring your vision for a community garden or
+                        tool-share. Build the neighborhood you actually want to live in.</p>
+                </div>
+                <div class="exchange-footer">
+                    <span class="exchange-label">Collective Action</span>
+                    <a href="build.html" class="explore-link">Explore Build →</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 60px;">
+            <p style="font-style: italic; color: #94a3b8; margin-bottom: 25px;">"The more you put in, the more your
+                neighborhood becomes an engine for your life."</p>
+            <a href="profile.html" class="hero-btn">Start Contributing Locally</a>
+        </div>
+    </section>
+
+    <section class="home-section" style="background: #fcfcfc;">
+        <div class="section-container">
+            <h2
+                style="text-align: center; margin-bottom: 40px; font-family: var(--font-heading); font-size: var(--h2-size);">
+                Built for Your 5-Mile Radius</h2>
+            <div class="pillar-grid">
+                <div class="pillar-box">
+                    <div style="font-size: 2.5rem;">📍</div>
+                    <h3>Connect Locally</h3>
+                    <p>Build your social circle within walking distance. From brunch groups to hiking partners, find
+                        your tribe on your block.</p>
+                    <a href="connect.html" class="pillar-link">Meet Neighbors →</a>
+                </div>
+                <div class="pillar-box">
+                    <div style="font-size: 2.5rem;">📈</div>
+                    <h3>Grow Professionally</h3>
+                    <p>Neighborhood mentorship is life-changing. Access Masterclasses and mentors living three blocks
+                        away.</p>
+                    <a href="grow.html" class="pillar-link">Level Up Locally →</a>
+                </div>
+                <div class="pillar-box">
+                    <div style="font-size: 2.5rem;">🛠️</div>
+                    <h3>Build Collectively</h3>
+                    <p>Architect a better community. Launch the initiatives, festivals, or tool-shares that make your
+                        area shine.</p>
+                    <a href="build.html" class="pillar-link">Start a Movement →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-section" style="background: var(--primary); color: white;">
+        <div class="section-container" style="text-align: center;">
+            <h2 style="font-family: var(--font-heading); margin-bottom: 40px;">Community Assets, Locally Sourced.</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+                <div style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                    <strong>Tool Sharing</strong>
+                    <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.8;">Borrow what you need from neighbors
+                        you trust.</p>
+                </div>
+                <div style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                    <strong>Skill Swaps</strong>
+                    <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.8;">Exchange professional help for local
+                        lessons.</p>
+                </div>
+                <div style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                    <strong>Collective Care</strong>
+                    <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.8;">Build support systems that save time
+                        and money.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: #111; color: white; padding: 60px 20px; text-align: center;">
+        <p>&copy; 2024 We The Village. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

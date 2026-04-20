@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages | The Village</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="wtvstyle.css">
+
+</head>
+
+<body>
+
+    <!-- NAV  -->
+    <nav class="nav">
+        <div class="hamburger-menu" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="notification-badge">5</span>
+        </div>
+        <a href="index.html" class="logo">We The Village</a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="connect.html">Connect</a>
+            <a href="grow.html">Grow</a>
+            <a href="build.html">Build</a>
+            <a href="aboutus.html">About</a>
+        </div>
+
+        <div class="nav-search">
+            <input type="text" placeholder="Search...">
+        </div>
+
+        <div class="nav-right">
+            <a href="index.html">
+                <button class="login-btn">Logout</button>
+            </a>
+        </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebarToggle">☰<span class="notification-badge">5</span></button>
+
+    <!-- Mobile Dashboard Header -->
+    <div class="dashboard-mobile-header">
+        <div class="mobile-logo">We The Village</div>
+        <div class="mobile-search">
+            <input type="text" placeholder="Search messages...">
+        </div>
+    </div>
+
+    <div class="dashboard-wrapper">
+
+        <!-- COLUMN 1: LEFT SIDEBAR (Profile & Nav) -->
+        <aside class="left-sidebar">
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
+                    alt="Avatar" class="avatar-large">
+                <h2>Candice Miller</h2>
+                <p>Austin, TX</p>
+                <p>Level 4</p>
+                <div style="margin-top: 15px; font-size: 1.2rem; font-weight: 700;">85% Growth</div>
+            </div>
+
+            <a href="create_event.html" class="login-btn">+ Create Event</a>
+
+            <ul class="side-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="messages.html" class="active menu-with-badge">Messages <span
+                            class="notification-badge">3</span></a></li>
+                <li><a href="connections.html" class="menu-with-badge">Connections <span
+                            class="notification-badge">2</span></a></li>
+                <li><a href="memories.html">Memories</a></li>
+                <li><a href="blog.html">The Village Blog</a></li>
+                <li><a href="news_feed.html">The Village Gazette</a></li>
+                <li><a href="index.html" style="color: #e74c3c;">Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- COLUMN 2: CENTER MAIN CONTENT (Messages) -->
+        <main class="center-column">
+
+            <!-- MESSAGES HEADER -->
+            <section class="content-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2 style="margin: 0;">Messages</h2>
+                    <button class="compose-btn mobile-compose-btn" id="mobileComposeBtn">+ Compose</button>
+                </div>
+
+                <!-- MESSAGE LIST -->
+                <div class="message-list">
+                    <!-- Message 1 -->
+                    <div class="message-item" onclick="expandMessage(this)">
+                        <div class="message-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=50&q=80"
+                                alt="Sarah">
+                        </div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <strong>Sarah Chen</strong>
+                                <span class="message-time">2 hours ago</span>
+                            </div>
+                            <p class="message-subject">Coffee this week?</p>
+                            <p class="message-preview">Hey! I've been meaning to catch up. Are you free for coffee this
+                                Thursday? I have some ideas to share about the project...</p>
+                        </div>
+                        <span class="unread-indicator"></span>
+                    </div>
+
+                    <!-- Message 2 -->
+                    <div class="message-item" onclick="expandMessage(this)">
+                        <div class="message-avatar">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=50&q=80"
+                                alt="Mike">
+                        </div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <strong>Mike Rodriguez</strong>
+                                <span class="message-time">5 hours ago</span>
+                            </div>
+                            <p class="message-subject">Re: Your portfolio feedback</p>
+                            <p class="message-preview">Thanks for the detailed review! The UX suggestions were really
+                                helpful. I'll incorporate them this week...</p>
+                        </div>
+                    </div>
+
+                    <!-- Message 3 -->
+                    <div class="message-item" onclick="expandMessage(this)">
+                        <div class="message-avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=50&q=80"
+                                alt="Jessica">
+                        </div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <strong>Jessica Park</strong>
+                                <span class="message-time">1 day ago</span>
+                            </div>
+                            <p class="message-subject">Workshop invitation: Product Strategy</p>
+                            <p class="message-preview">Hi Candice! We're hosting a workshop on Product Strategy next
+                                month. Based on your profile, we thought you'd be interested...</p>
+                        </div>
+                    </div>
+
+                    <!-- Message 4 -->
+                    <div class="message-item" onclick="expandMessage(this)">
+                        <div class="message-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=50&q=80"
+                                alt="David">
+                        </div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <strong>David Thompson</strong>
+                                <span class="message-time">2 days ago</span>
+                            </div>
+                            <p class="message-subject">Let's collaborate on the AI ethics project</p>
+                            <p class="message-preview">I saw your comment on the community forum about AI ethics. I'm
+                                starting a working group on this topic...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- COLUMN 3: RIGHT SIDEBAR (Multi-Action Composer) -->
+        <aside class="right-sidebar">
+            <div class="action-card">
+                <h3
+                    style="margin-top: 0; margin-bottom: 20px; font-family: var(--font-heading); color: var(--primary); font-size: 1.15rem;">
+                    Compose</h3>
+
+                <!-- RECIPIENT/GROUP FIELD -->
+                <div id="composeRecipientField" style="margin-bottom: 10px;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.85rem;">To:</label>
+                    <div style="margin-bottom: 0;">
+                        <button class="drop-btn" id="composeRecipientBtn">
+                            <span>Select recipient</span>
+                            <span>▼</span>
+                        </button>
+                        <div
+                            style="max-height: 200px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 12px; background: #f8fafc;">
+                            <div style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; display: flex; gap: 10px; align-items: center;"
+                                onclick="selectComposeRecipient('Sarah Chen')">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=35&q=80"
+                                    alt="Sarah"
+                                    style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+                                <span>Sarah Chen</span>
+                            </div>
+                            <div style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; display: flex; gap: 10px; align-items: center;"
+                                onclick="selectComposeRecipient('Mike Rodriguez')">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=35&q=80"
+                                    alt="Mike"
+                                    style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+                                <span>Mike Rodriguez</span>
+                            </div>
+                            <div style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; display: flex; gap: 10px; align-items: center;"
+                                onclick="selectComposeRecipient('Jessica Park')">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=35&q=80"
+                                    alt="Jessica"
+                                    style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+                                <span>Jessica Park</span>
+                            </div>
+                            <div style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; display: flex; gap: 10px; align-items: center;"
+                                onclick="selectComposeRecipient('David Thompson')">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=35&q=80"
+                                    alt="David"
+                                    style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+                                <span>David Thompson</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUBJECT LINE (Email only) -->
+                <div id="composeSubjectField" style="display: none; margin-bottom: 10px;">
+                    <label
+                        style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.85rem;">Subject:</label>
+                    <input type="text" id="composeSubject" placeholder="Email subject..."
+                        style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.85rem;">
+                </div>
+
+                <!-- MEETING DATE (Meeting only) -->
+                <div id="composeDateField" style="display: none; margin-bottom: 10px;">
+                    <label
+                        style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.85rem;">Date:</label>
+                    <input type="date" id="composeDate"
+                        style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.85rem;">
+                </div>
+
+                <!-- MEETING TIME (Meeting only) -->
+                <div id="composeTimeField" style="display: none; margin-bottom: 10px;">
+                    <label
+                        style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.85rem;">Time:</label>
+                    <input type="time" id="composeTime"
+                        style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.85rem;">
+                </div>
+
+                <!-- GROUPS (Announcement only) -->
+                <div id="composeGroupsField" style="display: none; margin-bottom: 10px;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.85rem;">Post to
+                        Groups:</label>
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <label
+                            style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 400; cursor: pointer;">
+                            <input type="checkbox" id="groupVillageLeaders" value="Village Leaders"> Village Leaders
+                        </label>
+                        <label
+                            style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 400; cursor: pointer;">
+                            <input type="checkbox" id="groupCommunity" value="Community"> Community
+                        </label>
+                        <label
+                            style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 400; cursor: pointer;">
+                            <input type="checkbox" id="groupVolunteers" value="Volunteers"> Volunteers
+                        </label>
+                    </div>
+                </div>
+
+                <!-- CONTENT TEXTAREA -->
+                <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.85rem;"
+                    id="composeContentLabel">Message:</label>
+                <textarea id="composeContent" placeholder="Type your message here..."
+                    style="width: 100%; height: 100px; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.85rem; resize: none; margin-bottom: 12px;"></textarea>
+
+                <!-- ACTION BUTTONS -->
+                <div
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; border-top: 1px solid #eee; padding-top: 12px;">
+                    <button id="btnMessage" class="action-btn active"
+                        style="padding: 8px; border: 2px solid #e67e22; background: #e67e22; color: white; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer;"
+                        onclick="switchComposeAction('message')">💬 Message</button>
+                    <button id="btnEmail" class="action-btn"
+                        style="padding: 8px; border: 2px solid #ddd; background: white; color: #333; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer;"
+                        onclick="switchComposeAction('email')">✉️ Email</button>
+                    <button id="btnMeeting" class="action-btn"
+                        style="padding: 8px; border: 2px solid #ddd; background: white; color: #333; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer;"
+                        onclick="switchComposeAction('meeting')">📅 Meeting</button>
+                    <button id="btnAnnounce" class="action-btn"
+                        style="padding: 8px; border: 2px solid #ddd; background: white; color: #333; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer;"
+                        onclick="switchComposeAction('announce')">📢 Announce</button>
+                </div>
+
+                <!-- SEND BUTTON -->
+                <button class="login-btn" id="composeSendBtn" style="width: 100%; padding: 10px;"
+                    onclick="sendCompose()">Send Message</button>
+            </div>
+
+            <div class="action-card">
+                <h3 style="margin-top: 0; margin-bottom: 15px;">💡 Quick Tips</h3>
+                <ul style="margin: 0; padding-left: 20px; font-size: 0.8rem; color: #666; line-height: 1.6;">
+                    <li>Keep messages concise and clear</li>
+                    <li>Share relevant links or resources</li>
+                    <li>Follow up within 48 hours</li>
+                    <li>Be respectful and professional</li>
+                </ul>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- MOBILE COMPOSE SIDEBAR -->
+    <div class="mobile-compose-overlay" id="composeOverlay"></div>
+    <aside class="mobile-compose-sidebar" id="mobileComposeSidebar">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 12px;">
+            <h3 style="margin: 0; font-size: 1rem;" id="mobileComposeTitle">Compose</h3>
+            <button style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #333;"
+                onclick="closeMobileCompose()">✕</button>
+        </div>
+
+        <!-- RECIPIENT FIELD -->
+        <div id="mobileComposeRecipientField" style="margin-bottom: 12px;">
+            <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.85rem;">To:</label>
+            <div style="margin-bottom: 0;">
+                <button class="drop-btn" id="mobileComposeRecipientBtn" style="font-size: 0.85rem;">
+                    <span>Select recipient</span>
+                    <span>▼</span>
+                </button>
+                <div
+                    style="max-height: 150px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 12px; background: #f8fafc;">
+                    <div style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; display: flex; gap: 8px; align-items: center;"
+                        onclick="selectMobileComposeRecipient('Sarah Chen')">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=30&q=80"
+                            alt="Sarah" style="width: 25px; height: 25px; border-radius: 50%; object-fit: cover;">
+                        <span>Sarah Chen</span>
+                    </div>
+                    <div style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; display: flex; gap: 8px; align-items: center;"
+                        onclick="selectMobileComposeRecipient('Mike Rodriguez')">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=30&q=80"
+                            alt="Mike" style="width: 25px; height: 25px; border-radius: 50%; object-fit: cover;">
+                        <span>Mike Rodriguez</span>
+                    </div>
+                    <div style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; display: flex; gap: 8px; align-items: center;"
+                        onclick="selectMobileComposeRecipient('Jessica Park')">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=30&q=80"
+                            alt="Jessica" style="width: 25px; height: 25px; border-radius: 50%; object-fit: cover;">
+                        <span>Jessica Park</span>
+                    </div>
+                    <div style="padding: 8px 12px; cursor: pointer; font-size: 0.85rem; display: flex; gap: 8px; align-items: center;"
+                        onclick="selectMobileComposeRecipient('David Thompson')">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=30&q=80"
+                            alt="David" style="width: 25px; height: 25px; border-radius: 50%; object-fit: cover;">
+                        <span>David Thompson</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SUBJECT LINE (Email only) -->
+        <div id="mobileComposeSubjectField" style="display: none; margin-bottom: 12px;">
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.85rem;">Subject:</label>
+            <input type="text" id="mobileComposeSubject" placeholder="Subject..."
+                style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.85rem;">
+        </div>
+
+        <!-- MEETING DATE (Meeting only) -->
+        <div id="mobileComposeDateField" style="display: none; margin-bottom: 12px;">
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.85rem;">Date:</label>
+            <input type="date" id="mobileComposeDate"
+                style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.85rem;">
+        </div>
+
+        <!-- MEETING TIME (Meeting only) -->
+        <div id="mobileComposeTimeField" style="display: none; margin-bottom: 12px;">
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.85rem;">Time:</label>
+            <input type="time" id="mobileComposeTime"
+                style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.85rem;">
+        </div>
+
+        <!-- GROUPS (Announcement only) -->
+        <div id="mobileComposeGroupsField" style="display: none; margin-bottom: 12px;">
+            <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.85rem;">Groups:</label>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+                <label
+                    style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 400; cursor: pointer;">
+                    <input type="checkbox" id="mobileGroupVillageLeaders" value="Village Leaders"
+                        style="width: 16px; height: 16px;"> Village Leaders
+                </label>
+                <label
+                    style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 400; cursor: pointer;">
+                    <input type="checkbox" id="mobileGroupCommunity" value="Community"
+                        style="width: 16px; height: 16px;"> Community
+                </label>
+                <label
+                    style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 400; cursor: pointer;">
+                    <input type="checkbox" id="mobileGroupVolunteers" value="Volunteers"
+                        style="width: 16px; height: 16px;"> Volunteers
+                </label>
+            </div>
+        </div>
+
+        <!-- CONTENT TEXTAREA -->
+        <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.85rem;"
+            id="mobileComposeContentLabel">Message:</label>
+        <textarea id="mobileComposeContent" placeholder="Type your message..."
+            style="width: 100%; height: 100px; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.85rem; resize: none; margin-bottom: 12px;"></textarea>
+
+        <!-- ACTION BUTTONS -->
+        <div
+            style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 12px; padding-top: 10px; border-top: 1px solid #eee;">
+            <button id="mobileBtnMessage" class="action-btn active"
+                style="padding: 8px; border: 2px solid #e67e22; background: #e67e22; color: white; border-radius: 6px; font-size: 0.75rem; font-weight: 600; cursor: pointer;"
+                onclick="switchMobileComposeAction('message')">Message</button>
+            <button id="mobileBtnEmail" class="action-btn"
+                style="padding: 8px; border: 2px solid #ddd; background: white; color: #333; border-radius: 6px; font-size: 0.75rem; font-weight: 600; cursor: pointer;"
+                onclick="switchMobileComposeAction('email')">Email</button>
+            <button id="mobileBtnMeeting" class="action-btn"
+                style="padding: 8px; border: 2px solid #ddd; background: white; color: #333; border-radius: 6px; font-size: 0.75rem; font-weight: 600; cursor: pointer;"
+                onclick="switchMobileComposeAction('meeting')">Meeting</button>
+            <button id="mobileBtnAnnounce" class="action-btn"
+                style="padding: 8px; border: 2px solid #ddd; background: white; color: #333; border-radius: 6px; font-size: 0.75rem; font-weight: 600; cursor: pointer;"
+                onclick="switchMobileComposeAction('announce')">Announce</button>
+        </div>
+
+        <!-- SEND BUTTON -->
+        <button class="login-btn" id="mobileComposeSendBtn" style="width: 100%; padding: 10px; font-size: 0.9rem;"
+            onclick="sendMobileCompose()">Send Message</button>
+    </aside>
+
+    <!-- EXPANDED MESSAGE MODAL -->
+    <div class="message-modal" id="messageModal">
+        <div class="message-modal-content">
+            <button class="modal-close" onclick="closeMessageModal()">✕</button>
+
+            <div class="message-modal-header" id="modalHeader">
+                <!-- Will be populated by expandMessage function -->
+            </div>
+
+            <div class="message-modal-body" id="modalBody">
+                <!-- Will be populated by expandMessage function -->
+            </div>
+
+            <div class="message-reply-section">
+                <textarea id="replyText" placeholder="Write your reply..." class="reply-input"></textarea>
+                <button class="reply-btn" onclick="sendReply()">Send Reply</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-open');
+        });
+
+        // Sidebar toggle
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const leftSidebar = document.querySelector('.left-sidebar');
+
+        sidebarToggle.addEventListener('click', () => {
+            leftSidebar.classList.toggle('open');
+        });
+
+        // Close sidebar when menu item is clicked
+        const menuLinks = document.querySelectorAll('.side-menu a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                leftSidebar.classList.remove('open');
+            });
+        });
+
+        // Close sidebar when clicking outside of it
+        document.addEventListener('click', (e) => {
+            if (leftSidebar && leftSidebar.classList.contains('open')) {
+                if (!leftSidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                    leftSidebar.classList.remove('open');
+                }
+            }
+        });
+
+        // Message expansion
+        function expandMessage(element) {
+            const avatar = element.querySelector('.message-avatar img').src;
+            const name = element.querySelector('.message-header strong').textContent;
+            const subject = element.querySelector('.message-subject').textContent;
+            const fullMessage = element.querySelector('.message-preview').textContent;
+
+            const modalHeader = document.getElementById('modalHeader');
+            modalHeader.innerHTML = `
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <img src="${avatar}" alt="${name}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                    <div>
+                        <h3 style="margin: 0; color: var(--primary);">${name}</h3>
+                        <p style="margin: 5px 0 0; font-size: 0.9rem; color: #999;">${subject}</p>
+                    </div>
+                </div>
+            `;
+
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <p style="line-height: 1.6; color: #555; margin: 20px 0;">${fullMessage}</p>
+                <p style="font-size: 0.85rem; color: #999; margin-top: 15px;">This is a preview of the full message thread. In a live app, conversation history would appear here.</p>
+            `;
+
+            document.getElementById('messageModal').style.display = 'flex';
+        }
+
+        function closeMessageModal() {
+            document.getElementById('messageModal').style.display = 'none';
+            document.getElementById('replyText').value = '';
+        }
+
+        function sendReply() {
+            const replyText = document.getElementById('replyText').value;
+            if (replyText.trim()) {
+                alert('Reply sent: ' + replyText);
+                closeMessageModal();
+            }
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('messageModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('messageModal')) {
+                closeMessageModal();
+            }
+        });
+
+        // Multi-Action Composer - Desktop
+        let selectedRecipient = null;
+        let currentAction = 'message'; // message, email, meeting, announce
+
+        function selectComposeRecipient(name) {
+            selectedRecipient = name;
+            const recipientBtn = document.getElementById('composeRecipientBtn');
+            recipientBtn.innerHTML = `<span>${name}</span><span>▼</span>`;
+        }
+
+        function switchComposeAction(action) {
+            currentAction = action;
+
+            // Update button styles
+            ['message', 'email', 'meeting', 'announce'].forEach(a => {
+                const btn = document.getElementById('btnMessage' === a ? 'btnMessage' : 'btn' + a.charAt(0).toUpperCase() + a.slice(1));
+                if (a === action) {
+                    btn.style.border = '2px solid #e67e22';
+                    btn.style.background = '#e67e22';
+                    btn.style.color = 'white';
+                } else {
+                    btn.style.border = '2px solid #ddd';
+                    btn.style.background = 'white';
+                    btn.style.color = '#333';
+                }
+            });
+
+            // Show/hide fields based on action
+            document.getElementById('composeSubjectField').style.display = action === 'email' ? 'block' : 'none';
+            document.getElementById('composeDateField').style.display = action === 'meeting' ? 'block' : 'none';
+            document.getElementById('composeTimeField').style.display = action === 'meeting' ? 'block' : 'none';
+            document.getElementById('composeGroupsField').style.display = action === 'announce' ? 'block' : 'none';
+
+            // Update textarea label and button text
+            const contentLabel = document.getElementById('composeContentLabel');
+            const sendBtn = document.getElementById('composeSendBtn');
+
+            switch (action) {
+                case 'message':
+                    contentLabel.textContent = 'Message:';
+                    sendBtn.textContent = 'Send Message';
+                    document.getElementById('composeRecipientField').style.display = 'block';
+                    document.getElementById('composeRecipientField').querySelector('label').textContent = 'To:';
+                    break;
+                case 'email':
+                    contentLabel.textContent = 'Body:';
+                    sendBtn.textContent = 'Send Email';
+                    document.getElementById('composeRecipientField').style.display = 'block';
+                    document.getElementById('composeRecipientField').querySelector('label').textContent = 'To:';
+                    break;
+                case 'meeting':
+                    contentLabel.textContent = 'Topic:';
+                    sendBtn.textContent = 'Schedule Meeting';
+                    document.getElementById('composeRecipientField').style.display = 'block';
+                    document.getElementById('composeRecipientField').querySelector('label').textContent = 'With:';
+                    break;
+                case 'announce':
+                    contentLabel.textContent = 'Announcement:';
+                    sendBtn.textContent = 'Post Announcement';
+                    document.getElementById('composeRecipientField').style.display = 'none';
+                    break;
+            }
+        }
+
+        function sendCompose() {
+            let valid = true;
+            let message = '';
+
+            if (currentAction === 'announce') {
+                // Check at least one group selected
+                const groups = [];
+                ['groupVillageLeaders', 'groupCommunity', 'groupVolunteers'].forEach(id => {
+                    if (document.getElementById(id).checked) {
+                        groups.push(document.getElementById(id).value);
+                    }
+                });
+
+                if (groups.length === 0) {
+                    alert('Please select at least one group');
+                    return;
+                }
+
+                const content = document.getElementById('composeContent').value.trim();
+                if (!content) {
+                    alert('Please write your announcement');
+                    return;
+                }
+
+                message = `Announcement posted to: ${groups.join(', ')}\n\n"${content}"`;
+            } else {
+                const recipient = selectedRecipient;
+                if (!recipient) {
+                    alert('Please select a recipient');
+                    return;
+                }
+
+                if (currentAction === 'message') {
+                    const msgContent = document.getElementById('composeContent').value.trim();
+                    if (!msgContent) {
+                        alert('Please type a message');
+                        return;
+                    }
+                    message = `Message sent to ${recipient}:\n\n"${msgContent}"`;
+                } else if (currentAction === 'email') {
+                    const subject = document.getElementById('composeSubject').value.trim();
+                    const body = document.getElementById('composeContent').value.trim();
+                    if (!subject) {
+                        alert('Please enter a subject');
+                        return;
+                    }
+                    if (!body) {
+                        alert('Please type an email body');
+                        return;
+                    }
+                    message = `Email sent to ${recipient}\n\nSubject: ${subject}\n\nBody: "${body}"`;
+                } else if (currentAction === 'meeting') {
+                    const date = document.getElementById('composeDate').value;
+                    const time = document.getElementById('composeTime').value;
+                    const topic = document.getElementById('composeContent').value.trim();
+                    if (!date) {
+                        alert('Please select a date');
+                        return;
+                    }
+                    if (!time) {
+                        alert('Please select a time');
+                        return;
+                    }
+                    if (!topic) {
+                        alert('Please enter a meeting topic');
+                        return;
+                    }
+                    message = `Meeting scheduled with ${recipient}\n\nDate: ${date}\nTime: ${time}\nTopic: ${topic}`;
+                }
+            }
+
+            alert(message);
+            resetComposeForm();
+        }
+
+        function resetComposeForm() {
+            selectedRecipient = null;
+            currentAction = 'message';
+            document.getElementById('composeRecipientBtn').innerHTML = `<span>Select recipient</span><span>▼</span>`;
+            document.getElementById('composeRecipientBtn').style.display = 'block';
+            document.getElementById('composeRecipientBtn').parentElement.style.display = 'block';
+            document.getElementById('composeSubject').value = '';
+            document.getElementById('composeDate').value = '';
+            document.getElementById('composeTime').value = '';
+            document.getElementById('composeContent').value = '';
+            ['groupVillageLeaders', 'groupCommunity', 'groupVolunteers'].forEach(id => {
+                document.getElementById(id).checked = false;
+            });
+            switchComposeAction('message');
+        }
+
+        // Mobile Multi-Action Composer
+        let mobileSelectedRecipient = null;
+        let mobileCurrentAction = 'message';
+
+        function openMobileCompose() {
+            const sidebar = document.getElementById('mobileComposeSidebar');
+            const overlay = document.getElementById('composeOverlay');
+            sidebar.classList.add('open');
+            overlay.classList.add('open');
+        }
+
+        function closeMobileCompose() {
+            const sidebar = document.getElementById('mobileComposeSidebar');
+            const overlay = document.getElementById('composeOverlay');
+            sidebar.classList.remove('open');
+            overlay.classList.remove('open');
+        }
+
+        function selectMobileComposeRecipient(name) {
+            mobileSelectedRecipient = name;
+            const recipientBtn = document.getElementById('mobileComposeRecipientBtn');
+            recipientBtn.innerHTML = `<span>${name}</span><span>▼</span>`;
+        }
+
+        function switchMobileComposeAction(action) {
+            mobileCurrentAction = action;
+
+            // Update button styles
+            ['message', 'email', 'meeting', 'announce'].forEach(a => {
+                const btnId = 'mobileBtnMessage' === ('mobile' + a.charAt(0).toUpperCase() + a.slice(1)) ? 'mobileBtnMessage' : 'mobileBtn' + a.charAt(0).toUpperCase() + a.slice(1);
+                const btn = document.getElementById(btnId);
+                if (a === action) {
+                    btn.style.border = '2px solid #e67e22';
+                    btn.style.background = '#e67e22';
+                    btn.style.color = 'white';
+                } else {
+                    btn.style.border = '2px solid #ddd';
+                    btn.style.background = 'white';
+                    btn.style.color = '#333';
+                }
+            });
+
+            // Show/hide fields
+            document.getElementById('mobileComposeSubjectField').style.display = action === 'email' ? 'block' : 'none';
+            document.getElementById('mobileComposeDateField').style.display = action === 'meeting' ? 'block' : 'none';
+            document.getElementById('mobileComposeTimeField').style.display = action === 'meeting' ? 'block' : 'none';
+            document.getElementById('mobileComposeGroupsField').style.display = action === 'announce' ? 'block' : 'none';
+
+            // Update labels and button
+            const contentLabel = document.getElementById('mobileComposeContentLabel');
+            const sendBtn = document.getElementById('mobileComposeSendBtn');
+
+            switch (action) {
+                case 'message':
+                    contentLabel.textContent = 'Message:';
+                    sendBtn.textContent = 'Send Message';
+                    document.getElementById('mobileComposeRecipientField').style.display = 'block';
+                    document.getElementById('mobileComposeRecipientField').querySelector('label').textContent = 'To:';
+                    break;
+                case 'email':
+                    contentLabel.textContent = 'Body:';
+                    sendBtn.textContent = 'Send Email';
+                    document.getElementById('mobileComposeRecipientField').style.display = 'block';
+                    document.getElementById('mobileComposeRecipientField').querySelector('label').textContent = 'To:';
+                    break;
+                case 'meeting':
+                    contentLabel.textContent = 'Topic:';
+                    sendBtn.textContent = 'Schedule Meeting';
+                    document.getElementById('mobileComposeRecipientField').style.display = 'block';
+                    document.getElementById('mobileComposeRecipientField').querySelector('label').textContent = 'With:';
+                    break;
+                case 'announce':
+                    contentLabel.textContent = 'Announcement:';
+                    sendBtn.textContent = 'Post Announcement';
+                    document.getElementById('mobileComposeRecipientField').style.display = 'none';
+                    break;
+            }
+        }
+
+        function sendMobileCompose() {
+            let valid = true;
+            let message = '';
+
+            if (mobileCurrentAction === 'announce') {
+                const groups = [];
+                ['mobileGroupVillageLeaders', 'mobileGroupCommunity', 'mobileGroupVolunteers'].forEach(id => {
+                    if (document.getElementById(id).checked) {
+                        groups.push(document.getElementById(id).value);
+                    }
+                });
+
+                if (groups.length === 0) {
+                    alert('Please select at least one group');
+                    return;
+                }
+
+                const content = document.getElementById('mobileComposeContent').value.trim();
+                if (!content) {
+                    alert('Please write your announcement');
+                    return;
+                }
+
+                message = `Announcement posted to: ${groups.join(', ')}\n\n"${content}"`;
+            } else {
+                const recipient = mobileSelectedRecipient;
+                if (!recipient) {
+                    alert('Please select a recipient');
+                    return;
+                }
+
+                if (mobileCurrentAction === 'message') {
+                    const msgContent = document.getElementById('mobileComposeContent').value.trim();
+                    if (!msgContent) {
+                        alert('Please type a message');
+                        return;
+                    }
+                    message = `Message sent to ${recipient}:\n\n"${msgContent}"`;
+                } else if (mobileCurrentAction === 'email') {
+                    const subject = document.getElementById('mobileComposeSubject').value.trim();
+                    const body = document.getElementById('mobileComposeContent').value.trim();
+                    if (!subject) {
+                        alert('Please enter a subject');
+                        return;
+                    }
+                    if (!body) {
+                        alert('Please type an email body');
+                        return;
+                    }
+                    message = `Email sent to ${recipient}\n\nSubject: ${subject}\n\nBody: "${body}"`;
+                } else if (mobileCurrentAction === 'meeting') {
+                    const date = document.getElementById('mobileComposeDate').value;
+                    const time = document.getElementById('mobileComposeTime').value;
+                    const topic = document.getElementById('mobileComposeContent').value.trim();
+                    if (!date) {
+                        alert('Please select a date');
+                        return;
+                    }
+                    if (!time) {
+                        alert('Please select a time');
+                        return;
+                    }
+                    if (!topic) {
+                        alert('Please enter a meeting topic');
+                        return;
+                    }
+                    message = `Meeting scheduled with ${recipient}\n\nDate: ${date}\nTime: ${time}\nTopic: ${topic}`;
+                }
+            }
+
+            alert(message);
+            resetMobileComposeForm();
+            closeMobileCompose();
+        }
+
+        function resetMobileComposeForm() {
+            mobileSelectedRecipient = null;
+            mobileCurrentAction = 'message';
+            document.getElementById('mobileComposeRecipientBtn').innerHTML = `<span>Select recipient</span><span>▼</span>`;
+            document.getElementById('mobileComposeSubject').value = '';
+            document.getElementById('mobileComposeDate').value = '';
+            document.getElementById('mobileComposeTime').value = '';
+            document.getElementById('mobileComposeContent').value = '';
+            ['mobileGroupVillageLeaders', 'mobileGroupCommunity', 'mobileGroupVolunteers'].forEach(id => {
+                document.getElementById(id).checked = false;
+            });
+            switchMobileComposeAction('message');
+        }
+
+        // Mobile Compose Button Event Listener
+        const mobileComposeBtn = document.getElementById('mobileComposeBtn');
+        if (mobileComposeBtn) {
+            mobileComposeBtn.addEventListener('click', openMobileCompose);
+        }
+
+        // Close mobile compose on overlay click
+        const composeOverlay = document.getElementById('composeOverlay');
+        if (composeOverlay) {
+            composeOverlay.addEventListener('click', closeMobileCompose);
+        }
+    </script>
+
+</body>
+
+</html>

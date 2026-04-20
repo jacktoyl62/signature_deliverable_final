@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow | We The Village</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="wtvstyle.css">
+
+
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="hamburger-menu" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <a href="index.html" class="logo">We The Village</a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="connect.html">Connect</a>
+            <a href="grow.html" style="font-weight: bold; color: var(--accent);">Grow</a>
+            <a href="build.html">Build</a>
+            <div class="nav-dropdown">
+                <a href="aboutus.html">About</a>
+                <div class="dropdown-content">
+                    <a href="testimonials.html">Testimonials</a>
+                    <a href="contactus.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-search">
+            <input type="text" placeholder="Search...">
+        </div>
+
+        <div class="nav-right">
+            <button class="login-btn">Login</button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="grow-hero">
+        <h1>🌱 Grow Your Skills & Network</h1>
+        <p>Discover opportunities to level up, connect with community members, and unlock your potential through events,
+            workshops, conferences, and more.</p>
+        <a href="profile.html" class="cta-button"
+            style="background: var(--accent); color: white; border: none; display: inline-block; text-decoration: none; padding: 10px 30px; border-radius: 12px; transition: background 0.3s ease;">Create
+            Your Profile</a>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="grow-container">
+
+        <!-- EXPLANATION SECTION -->
+        <section class="grow-section">
+            <div class="info-box">
+                <h3>Your Personal and Professional Evolution.</h3>
+                <p>
+                    Why should networking be boring? Here, the "Conference" feels like a dinner party, and the
+                    "Workshop" feels like a breakthrough. Grow is where high-achieving citizens come to sharpen their
+                    skills without losing their souls. Discover a hybrid world where learning a new coding language and
+                    planning a group retreat to Santa Fe happen in the same space.
+                </p>
+            </div>
+        </section>
+
+        <!-- SEARCH & FILTER SECTION -->
+        <section class="grow-section">
+            <div class="grow-search-container">
+                <div class="grow-search-wrapper">
+                    <input type="text"
+                        placeholder="Search opportunities by keyword (e.g., 'Python', 'Startups', 'Design')...">
+                    <button class="cta-button" style="background: var(--accent);">🔍 Search</button>
+                </div>
+                <div class="filter-badges">
+                    <span class="filter-badge active">All</span>
+                    <span class="filter-badge">🎓 Skill Building</span>
+                    <span class="filter-badge">🎤 Conferences</span>
+                    <span class="filter-badge">🤝 Networking</span>
+                    <span class="filter-badge">🙋 Volunteering</span>
+                    <span class="filter-badge">👨‍💻 Projects</span>
+                    <span class="filter-badge">✊ Movements</span>
+                    <span class="filter-badge">🏙️ City Events</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- OPPORTUNITIES GRID -->
+        <section class="grow-section">
+            <div class="section-header">
+                <h2>Featured Opportunities</h2>
+                <p>Browse upcoming events and opportunities curated for community members</p>
+            </div>
+
+            <div class="opportunities-grid">
+                <!-- Card 1: Skill Building Event -->
+                <div class="opportunity-card">
+                    <div class="opportunity-icon">🎓</div>
+                    <div class="opportunity-content">
+                        <h3 class="opportunity-title">Web Development Bootcamp</h3>
+                        <p class="opportunity-description">Master modern web development with React, Node.js, and
+                            full-stack technologies in this intensive 8-week program.</p>
+                        <div class="opportunity-meta">
+                            <div class="opportunity-meta-item">📅 Jun 15 - Aug 10</div>
+                            <div class="opportunity-meta-item">👥 25 spots</div>
+                        </div>
+                        <button class="opportunity-btn">Subscribe to Join</button>
+                    </div>
+                </div>
+
+                <!-- Card 2: Conference -->
+                <div class="opportunity-card">
+                    <div class="opportunity-icon">🎤</div>
+                    <div class="opportunity-content">
+                        <h3 class="opportunity-title">Tech Innovation Summit 2026</h3>
+                        <p class="opportunity-description">Connect with industry leaders, innovators, and entrepreneurs
+                            exploring the future of AI, blockchain, and sustainable tech.</p>
+                        <div class="opportunity-meta">
+                            <div class="opportunity-meta-item">📅 July 22-24</div>
+                            <div class="opportunity-meta-item">📍 Austin Convention Center</div>
+                        </div>
+                        <button class="opportunity-btn">Subscribe to Join</button>
+                    </div>
+                </div>
+
+                <!-- Card 3: Networking -->
+                <div class="opportunity-card">
+                    <div class="opportunity-icon">🤝</div>
+                    <div class="opportunity-content">
+                        <h3 class="opportunity-title">Weekly Networking Mixer</h3>
+                        <p class="opportunity-description">Casual weekly meetup for community members to network, share
+                            ideas, and build meaningful connections over drinks and appetizers.</p>
+                        <div class="opportunity-meta">
+                            <div class="opportunity-meta-item">📅 Every Friday, 5:30 PM</div>
+                            <div class="opportunity-meta-item">📍 Downtown Austin</div>
+                        </div>
+                        <button class="opportunity-btn">Subscribe to Join</button>
+                    </div>
+                </div>
+
+                <!-- Card 4: Volunteering -->
+                <div class="opportunity-card">
+                    <div class="opportunity-icon">🙋</div>
+                    <div class="opportunity-content">
+                        <h3 class="opportunity-title">Community Mentor Program</h3>
+                        <p class="opportunity-description">Mentor up-and-coming entrepreneurs and professionals. Share
+                            your expertise and help shape the next generation of community leaders.</p>
+                        <div class="opportunity-meta">
+                            <div class="opportunity-meta-item">⏱️ Flexible schedule</div>
+                            <div class="opportunity-meta-item">🎯 Ongoing</div>
+                        </div>
+                        <button class="opportunity-btn">Subscribe to Join</button>
+                    </div>
+                </div>
+
+                <!-- Card 5: Projects -->
+                <div class="opportunity-card">
+                    <div class="opportunity-icon">👨‍💻</div>
+                    <div class="opportunity-content">
+                        <h3 class="opportunity-title">Open-Source Collaboration</h3>
+                        <p class="opportunity-description">Contribute to impactful open-source projects that solve real
+                            community problems. All skill levels welcome!</p>
+                        <div class="opportunity-meta">
+                            <div class="opportunity-meta-item">🔧 Full Stack, Mobile, Data</div>
+                            <div class="opportunity-meta-item">📍 Remote</div>
+                        </div>
+                        <button class="opportunity-btn">Subscribe to Join</button>
+                    </div>
+                </div>
+
+                <!-- Card 6: Movements -->
+                <div class="opportunity-card">
+                    <div class="opportunity-icon">✊</div>
+                    <div class="opportunity-content">
+                        <h3 class="opportunity-title">Social Impact Initiative</h3>
+                        <p class="opportunity-description">Join a growing movement focused on using technology and
+                            community to create positive social and environmental change.</p>
+                        <div class="opportunity-meta">
+                            <div class="opportunity-meta-item">🌍 Multiple initiatives</div>
+                            <div class="opportunity-meta-item">👥 500+ members</div>
+                        </div>
+                        <button class="opportunity-btn">Subscribe to Join</button>
+                    </div>
+                </div>
+
+                <!-- Card 7: City Events -->
+                <div class="opportunity-card">
+                    <div class="opportunity-icon">🏙️</div>
+                    <div class="opportunity-content">
+                        <h3 class="opportunity-title">Austin Tech Week</h3>
+                        <p class="opportunity-description">Week-long celebration of Austin's tech scene featuring
+                            startup showcases, hackathons, keynote talks, and networking events.</p>
+                        <div class="opportunity-meta">
+                            <div class="opportunity-meta-item">📅 September 8-14</div>
+                            <div class="opportunity-meta-item">🎉 50+ events</div>
+                        </div>
+                        <button class="opportunity-btn">Subscribe to Join</button>
+                    </div>
+                </div>
+
+                <!-- Card 8: Specialized Skills -->
+                <div class="opportunity-card">
+                    <div class="opportunity-icon">🚀</div>
+                    <div class="opportunity-content">
+                        <h3 class="opportunity-title">Startup Accelerator Track</h3>
+                        <p class="opportunity-description">3-month intensive program for early-stage founders seeking
+                            mentorship, funding connections, and peer support to scale their startups.</p>
+                        <div class="opportunity-meta">
+                            <div class="opportunity-meta-item">📅 Fall cohort launching</div>
+                            <div class="opportunity-meta-item">💰 Mentorship + connections</div>
+                        </div>
+                        <button class="opportunity-btn">Subscribe to Join</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="cta-section">
+            <h2>Ready to Grow?</h2>
+            <p>
+                Join thousands of community members who are building skills, making connections,
+                and creating impact together. Subscribe now to get notifications for new opportunities
+                and exclusive member-only events.
+            </p>
+            <a href="profile.html" class="cta-button"
+                style="background: var(--accent); color: white; border: none; display: inline-block; padding: 10px 30px; border-radius: 12px; text-decoration: none;">Subscribe
+                to Grow</a>
+        </section>
+
+    </div>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('mobile-open');
+            });
+        }
+    </script>
+
+</body>
+
+</html>

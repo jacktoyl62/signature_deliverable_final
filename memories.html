@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories | The Village</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="wtvstyle.css">
+
+</head>
+
+<body>
+
+    <!-- NAV  -->
+    <nav class="nav">
+        <div class="hamburger-menu" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="notification-badge">5</span>
+        </div>
+        <a href="index.html" class="logo">We The Village</a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="connect.html">Connect</a>
+            <a href="grow.html">Grow</a>
+            <a href="build.html">Build</a>
+            <a href="aboutus.html">About</a>
+        </div>
+
+        <div class="nav-search">
+            <input type="text" placeholder="Search...">
+        </div>
+
+        <div class="nav-right">
+            <a href="index.html">
+                <button class="login-btn">Logout</button>
+            </a>
+        </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebarToggle">☰<span class="notification-badge">5</span></button>
+
+    <!-- Mobile Dashboard Header -->
+    <div class="dashboard-mobile-header">
+        <div class="mobile-logo">We The Village</div>
+        <div class="mobile-search">
+            <input type="text" placeholder="Search memories...">
+        </div>
+    </div>
+
+    <div class="dashboard-wrapper">
+
+        <!-- COLUMN 1: LEFT SIDEBAR (Profile & Nav) -->
+        <aside class="left-sidebar">
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
+                    alt="Avatar" class="avatar-large">
+                <h2>Candice Miller</h2>
+                <p>Austin, TX</p>
+                <p>Level 4</p>
+                <div style="margin-top: 15px; font-size: 1.2rem; font-weight: 700;">85% Growth</div>
+            </div>
+
+            <a href="create_event.html" class="login-btn">+ Create Event</a>
+
+            <ul class="side-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="messages.html" class="menu-with-badge">Messages <span
+                            class="notification-badge">3</span></a></li>
+                <li><a href="connections.html" class="menu-with-badge">Connections <span
+                            class="notification-badge">2</span></a></li>
+                <li><a href="memories.html" class="active">Memories</a></li>
+                <li><a href="blog.html">The Village Blog</a></li>
+                <li><a href="news_feed.html">The Village Gazette</a></li>
+                <li><a href="index.html" style="color: #e74c3c;">Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- COLUMN 2: CENTER MAIN CONTENT (Memories) -->
+        <main class="center-column">
+
+            <!-- MEMORIES HEADER -->
+            <section class="content-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2 style="margin: 0;">My Memories</h2>
+                    <button class="compose-btn mobile-generate-btn" id="mobileGenerateBtn">✨ Generate</button>
+                </div>
+            </section>
+
+            <!-- MEMORIES GRID -->
+            <div class="memory-grid">
+                <!-- Memory Card 1 -->
+                <div class="memory-card tagged">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&h=300&q=80"
+                        alt="Community Cleanup" class="memory-image">
+                    <div class="memory-creator">Posted by Sarah Chen</div>
+                    <div class="memory-date">April 15, 2026</div>
+                    <div class="memory-title">Community Cleanup Day</div>
+                    <div class="memory-description">Had an amazing time organizing the community cleanup event! We
+                        collected 50 bags of trash and made our neighborhood sparkle. Great teamwork everyone!</div>
+                    <div class="memory-tags">
+                        <span class="memory-tag">Community</span>
+                        <span class="memory-tag">Environmental</span>
+                        <span class="memory-tag">Service</span>
+                    </div>
+                    <div class="tagged-users">
+                        <small style="color: var(--accent); font-weight: 700;">Tagged: </small>
+                        <div style="display: flex; gap: 8px;">
+                            <div class="user-avatar" title="Sarah Chen"
+                                style="background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40');">
+                            </div>
+                            <div class="user-avatar" title="Marcus Brown"
+                                style="background: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=40');">
+                            </div>
+                            <div class="user-avatar" title="Alex Rivera"
+                                style="background: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=40');">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="memory-actions">
+                        <button class="memory-action-btn">❤️ Like</button>
+                        <button class="memory-action-btn">💬 Comment</button>
+                        <button class="memory-action-btn">↗️ Share</button>
+                    </div>
+                    <div class="memory-comments">
+                        <div class="comment">
+                            <div class="comment-author">Sarah Chen:</div>
+                            <div class="comment-text">This was so inspiring! Great work everyone.</div>
+                        </div>
+                        <div class="comment">
+                            <div class="comment-author">Marcus Brown:</div>
+                            <div class="comment-text">Can't wait for the next cleanup day! 🌱</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Memory Card 2 -->
+                <div class="memory-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&h=300&q=80"
+                        alt="UX Masterclass" class="memory-image">
+                    <div class="memory-date">April 10, 2026</div>
+                    <div class="memory-title">UX Masterclass Completed</div>
+                    <div class="memory-description">Finished an incredible UX design workshop led by industry experts.
+                        Learned so much about user research and prototyping. Excited to apply these skills!</div>
+                    <div class="memory-tags">
+                        <span class="memory-tag">Learning</span>
+                        <span class="memory-tag">Professional</span>
+                        <span class="memory-tag">Design</span>
+                    </div>
+                    <div class="tagged-users">
+                        <small style="color: var(--accent); font-weight: 700;">Tagged: </small>
+                        <div style="display: flex; gap: 8px;">
+                            <div class="user-avatar" title="Elena Cross"
+                                style="background: url('https://images.unsplash.com/photo-1519085360771-9852ef158dba?auto=format&fit=crop&w=40');">
+                            </div>
+                            <div class="user-avatar" title="Jordan Lee"
+                                style="background: url('https://images.unsplash.com/photo-1507065341162-391b8f90d0e7?auto=format&fit=crop&w=40');">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="memory-actions">
+                        <button class="memory-action-btn">❤️ Like</button>
+                        <button class="memory-action-btn">💬 Comment</button>
+                        <button class="memory-action-btn">↗️ Share</button>
+                    </div>
+                    <div class="memory-comments">
+                        <div class="comment">
+                            <div class="comment-author">Elena Cross:</div>
+                            <div class="comment-text">Congrats! That's amazing! 🎉</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Memory Card 3 -->
+                <div class="memory-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&h=300&q=80"
+                        alt="Community Meetup" class="memory-image">
+                    <div class="memory-date">March 20, 2026</div>
+                    <div class="memory-title">Met Marcus at the Meetup</div>
+                    <div class="memory-description">Attended the tech community meetup and met some fantastic
+                        developers. Had great conversations about web development trends and future projects!</div>
+                    <div class="memory-tags">
+                        <span class="memory-tag">Networking</span>
+                        <span class="memory-tag">Tech</span>
+                        <span class="memory-tag">Community</span>
+                    </div>
+                    <div class="tagged-users">
+                        <small style="color: var(--accent); font-weight: 700;">Tagged: </small>
+                        <div style="display: flex; gap: 8px;">
+                            <div class="user-avatar" title="Marcus Brown"
+                                style="background: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=40');">
+                            </div>
+                            <div class="user-avatar" title="Casey Morgan"
+                                style="background: url('https://images.unsplash.com/photo-1507065341162-391b8f90d0e7?auto=format&fit=crop&w=40');">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="memory-actions">
+                        <button class="memory-action-btn">❤️ Like</button>
+                        <button class="memory-action-btn">💬 Comment</button>
+                        <button class="memory-action-btn">↗️ Share</button>
+                    </div>
+                    <div class="memory-comments">
+                        <div class="comment">
+                            <div class="comment-author">Marcus Brown:</div>
+                            <div class="comment-text">Looking forward to our collaboration! 🚀</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Memory Card 4 -->
+                <div class="memory-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&h=300&q=80"
+                        alt="Welcome to Village" class="memory-image">
+                    <div class="memory-date">February 15, 2026</div>
+                    <div class="memory-title">Welcome to The Village Community</div>
+                    <div class="memory-description">Just joined The Village! Excited to be part of this amazing
+                        community focused on connection and growth. Looking forward to making meaningful connections
+                        here!</div>
+                    <div class="memory-tags">
+                        <span class="memory-tag">Community</span>
+                        <span class="memory-tag">Growth</span>
+                        <span class="memory-tag">New Members</span>
+                    </div>
+                    <div class="tagged-users">
+                        <small style="color: var(--accent); font-weight: 700;">Tagged: </small>
+                        <div style="display: flex; gap: 8px;">
+                            <div class="user-avatar" title="Sarah Chen"
+                                style="background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40');">
+                            </div>
+                            <div class="user-avatar" title="Jordan Lee"
+                                style="background: url('https://images.unsplash.com/photo-1519085360771-9852ef158dba?auto=format&fit=crop&w=40');">
+                            </div>
+                            <div class="user-avatar" title="Maya Patel"
+                                style="background: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=40');">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="memory-actions">
+                        <button class="memory-action-btn">❤️ Like</button>
+                        <button class="memory-action-btn">💬 Comment</button>
+                        <button class="memory-action-btn">↗️ Share</button>
+                    </div>
+                    <div class="memory-comments">
+                        <div class="comment">
+                            <div class="comment-author">The Village Team:</div>
+                            <div class="comment-text">Welcome to the community! 🎊</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- COLUMN 3: RIGHT SIDEBAR (Add Memory) -->
+        <aside class="right-sidebar">
+
+            <div class="sidebar-card">
+                <h3
+                    style="margin-top: 0; margin-bottom: 5px; font-family: var(--font-heading); color: var(--primary); font-size: 1.15rem;">
+                    ✨ AI Memory Generator</h3>
+                <p style="margin: 0 0 15px 0; font-size: 0.8rem; color: #999;">Let AI help tell your story</p>
+                <form style="display: flex; flex-direction: column; gap: 12px;">
+                    <div
+                        style="border: 2px dashed #ddd; padding: 20px; border-radius: 8px; text-align: center; cursor: pointer; background: linear-gradient(135deg, rgba(230, 126, 34, 0.05) 0%, rgba(230, 126, 34, 0.02) 100%);">
+                        <input type="file" id="photoInput" style="display: none;" accept="image/*,video/*">
+                        <label for="photoInput" style="cursor: pointer; display: block;">
+                            📸 Upload Photo<br>
+                            <small style="color: #999;">JPG, PNG, MP4</small>
+                        </label>
+                    </div>
+                    <input type="text" placeholder="What's in this memory?"
+                        style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.85rem; font-family: 'Inter', sans-serif;">
+                    <textarea placeholder="Brief description or key moments..."
+                        style="padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.85rem; font-family: 'Inter', sans-serif; min-height: 60px; resize: vertical;"></textarea>
+                    <div
+                        style="background: linear-gradient(135deg, var(--accent) 0%, #d86a2c 100%); padding: 12px; border-radius: 8px;">
+                        <button type="submit"
+                            style="background: none; border: none; color: white; padding: 0; font-weight: 700; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.9rem; width: 100%; text-align: center;">🤖
+                            Generate Memory</button>
+                        <small
+                            style="color: rgba(255,255,255,0.9); display: block; text-align: center; margin-top: 4px; font-size: 0.75rem;">AI
+                            will enhance your story</small>
+                    </div>
+                </form>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- Image Modal -->
+    <div class="image-modal" id="imageModal">
+        <div class="image-modal-content">
+            <button class="image-modal-close" id="imageModalClose">&times;</button>
+            <img id="modalImage" src="" alt="Memory">
+        </div>
+    </div>
+
+    <script>
+        // Image Modal Functionality
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const imageModalClose = document.getElementById('imageModalClose');
+        const memoryImages = document.querySelectorAll('.memory-image');
+
+        memoryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                modalImage.src = img.src;
+                imageModal.classList.add('active');
+            });
+        });
+
+        imageModalClose.addEventListener('click', () => {
+            imageModal.classList.remove('active');
+        });
+
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) {
+                imageModal.classList.remove('active');
+            }
+        });
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.querySelector('.left-sidebar');
+
+        if (hamburger && sidebar) {
+            hamburger.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+            });
+        }
+
+        // Sidebar toggle for mobile
+        const sidebarToggle = document.getElementById('sidebarToggle');
+
+        if (sidebarToggle && sidebar) {
+            sidebarToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+            });
+        }
+
+        // Mobile generate button
+        const mobileGenerateBtn = document.getElementById('mobileGenerateBtn');
+        const rightSidebar = document.querySelector('.right-sidebar');
+
+        if (mobileGenerateBtn && rightSidebar) {
+            mobileGenerateBtn.addEventListener('click', () => {
+                rightSidebar.classList.toggle('mobile-open');
+            });
+        }
+
+        // Close memory generator when clicking outside
+        document.addEventListener('click', (e) => {
+            if (rightSidebar && rightSidebar.classList.contains('mobile-open')) {
+                if (!rightSidebar.contains(e.target) && !mobileGenerateBtn.contains(e.target)) {
+                    rightSidebar.classList.remove('mobile-open');
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

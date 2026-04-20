@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect | We The Village</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="wtvstyle.css">
+
+
+</head>
+
+<body>
+
+  <!-- NAV  -->
+  <nav class="nav">
+    <div class="hamburger-menu" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <a href="index.html" class="logo">We The Village</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="connect.html" style="font-weight: bold; color: var(--accent);">Connect</a>
+      <a href="grow.html">Grow</a>
+      <a href="build.html">Build</a>
+      <div class="nav-dropdown">
+        <a href="aboutus.html">About</a>
+        <div class="dropdown-content">
+          <a href="testimonials.html">Testimonials</a>
+          <a href="contactus.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-search">
+      <input type="text" placeholder="Search...">
+    </div>
+
+    <div class="nav-right">
+      <a href="dashboard.html">
+        <button class="login-btn">Login</button>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="connect-hero">
+    <h1>🤝 Connect & Build Community</h1>
+    <p>Meet neighbors, friends, and fellow community builders. From game nights to volunteering, concerts to career
+      talks—find your people.</p>
+    <a href="profile.html" class="cta-button"
+      style="background: var(--accent); color: white; border: none; display: inline-block; text-decoration: none; padding: 10px 30px; border-radius: 12px; transition: background 0.3s ease;">Create
+      Your Profile</a>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="connect-container">
+
+    <!-- EXPLANATION SECTION -->
+    <section class="connect-section">
+      <div class="info-box">
+        <h3>Socially Active, Not Social Media.</h3>
+        <p>
+          We don’t have ads. We don’t have algorithms. We just have humans. Connect is your portal to the
+          "life-enhancing" moments that don't happen behind a screen: spontaneous brunch groups, weekend escapes to the
+          mountains, and the deep, life-changing conversations that only happen in person.
+        </p>
+      </div>
+    </section>
+
+    <!-- SEARCH & FILTER SECTION -->
+    <section class="connect-section">
+      <div class="connect-search-container">
+        <div class="connect-search-wrapper">
+          <input type="text" placeholder="Search posts, people, and opportunities...">
+          <button class="cta-button" style="background: var(--accent);">🔍 Search</button>
+        </div>
+        <div class="filter-badges">
+          <span class="filter-badge active">All Posts</span>
+          <span class="filter-badge">💬 Discussions</span>
+          <span class="filter-badge">🤝 Looking to Connect</span>
+          <span class="filter-badge">💼 Job / Opportunity</span>
+          <span class="filter-badge">📚 Learning & Resources</span>
+          <span class="filter-badge">🎊 Community Updates</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEED & SIDEBAR -->
+    <section class="connect-feed">
+
+      <!-- MAIN FEED -->
+      <div class="feed-cards">
+
+        <!-- Post 1 -->
+        <div class="post-card">
+          <div class="post-image-container">
+            <img src="images/connect/community_meetup.jpeg" alt="Community Meetup">
+          </div>
+          <div class="post-body">
+            <div class="post-header">
+              <div class="post-avatar"></div>
+              <div class="post-meta">
+                <h4>Sarah Chen</h4>
+                <p>2 hours ago</p>
+              </div>
+            </div>
+            <h3 class="post-title">Game Night This Friday</h3>
+            <p class="post-description">
+              Looking for people to join an epic game night! Board games, cards, pizza, and good company.
+              New people welcome - this is all about having fun and meeting cool folks in the community.
+              Ages 20+, all skill levels. Bring your competitive spirit or just come to hang out.
+            </p>
+            <div class="post-actions">
+              <button class="post-btn">👍 Interested (24)</button>
+              <button class="post-btn">💬 Comment</button>
+              <button class="post-btn">Share</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="post-card">
+          <div class="post-image-container">
+            <img src="images/connect/seeking_creators.jpeg" alt="Seeking Creators">
+          </div>
+          <div class="post-body">
+            <div class="post-header">
+              <div class="post-avatar"></div>
+              <div class="post-meta">
+                <h4>Marcus Brown</h4>
+                <p>5 hours ago</p>
+              </div>
+            </div>
+            <h3 class="post-title">Live Concert - Local Artist Series</h3>
+            <p class="post-description">
+              Local indie band playing Saturday night at the community venue. Looking for a group to
+              go with! Great chance to support local talent and meet music lovers in the area.
+              Tickets available, meet up beforehand for drinks and appetizers.
+            </p>
+            <div class="post-actions">
+              <button class="post-btn">👍 Interested (18)</button>
+              <button class="post-btn">💬 Comment</button>
+              <button class="post-btn">Share</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="post-card">
+          <div class="post-image-container">
+            <img src="images/connect/volunteer_opportunity.jpeg" alt="Volunteer Opportunity">
+          </div>
+          <div class="post-body">
+            <div class="post-header">
+              <div class="post-avatar"></div>
+              <div class="post-meta">
+                <h4>Alex Rivera</h4>
+                <p>1 day ago</p>
+              </div>
+            </div>
+            <h3 class="post-title">Weekend Volunteer: Community Garden</h3>
+            <p class="post-description">
+              Help us build and maintain a community garden! No experience needed. We're planting trees,
+              setting up garden beds, and creating a green space for the neighborhood. Great way to
+              meet people while making a real difference. Saturday morning, snacks provided.
+            </p>
+            <div class="post-actions">
+              <button class="post-btn">👍 Interested (32)</button>
+              <button class="post-btn">💬 Comment</button>
+              <button class="post-btn">Share</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 4 -->
+        <div class="post-card">
+          <div class="post-body">
+            <div class="post-header">
+              <div class="post-avatar"></div>
+              <div class="post-meta">
+                <h4>Jordan Lee</h4>
+                <p>1 day ago</p>
+              </div>
+            </div>
+            <h3 class="post-title">Day Trip: Hiking & Brunch Group</h3>
+            <p class="post-description">
+              Want to get outside and meet new people? We're doing an easy morning hike followed by
+              brunch at that new spot downtown. Perfect for people who want to connect, stay active,
+              and explore the area. All fitness levels welcome. Next Sunday, sign up below!
+            </p>
+            <div class="post-actions">
+              <button class="post-btn">👍 Interested (45)</button>
+              <button class="post-btn">💬 Comment (8)</button>
+              <button class="post-btn">Share</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT SIDEBAR -->
+      <aside class="connect-sidebar">
+
+        <!-- DISCOVER PEOPLE -->
+        <div class="sidebar-card">
+          <h3>🌟 Discover People</h3>
+          <div class="members-grid">
+            <div class="member-mini-card">
+              <div class="member-avatar"></div>
+              <div class="member-info">
+                <div class="member-name">Casey Morgan</div>
+                <div class="member-title">Product Designer</div>
+              </div>
+              <button class="member-connect-btn">+ Connect</button>
+            </div>
+
+            <div class="member-mini-card">
+              <div class="member-avatar"></div>
+              <div class="member-info">
+                <div class="member-name">Morgan Ellis</div>
+                <div class="member-title">Entrepreneur</div>
+              </div>
+              <button class="member-connect-btn">+ Connect</button>
+            </div>
+
+            <div class="member-mini-card">
+              <div class="member-avatar"></div>
+              <div class="member-info">
+                <div class="member-name">Taylor Kim</div>
+                <div class="member-title">Marketing Specialist</div>
+              </div>
+              <button class="member-connect-btn">+ Connect</button>
+            </div>
+
+            <div class="member-mini-card">
+              <div class="member-avatar"></div>
+              <div class="member-info">
+                <div class="member-name">Adrian Foster</div>
+                <div class="member-title">Software Engineer</div>
+              </div>
+              <button class="member-connect-btn">+ Connect</button>
+            </div>
+
+            <div class="member-mini-card">
+              <div class="member-avatar"></div>
+              <div class="member-info">
+                <div class="member-name">Dakota Chen</div>
+                <div class="member-title">UX Researcher</div>
+              </div>
+              <button class="member-connect-btn">+ Connect</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- FEATURED POSTS -->
+        <div class="sidebar-card">
+          <h3>🔥 Featured</h3>
+          <div class="members-grid">
+            <div style="padding: 12px; background: #fff9f2; border-radius: 10px; border-left: 4px solid var(--accent);">
+              <div style="font-weight: 700; color: var(--primary); font-size: 0.9rem; margin-bottom: 5px;">Community
+                Startup Week</div>
+              <div style="font-size: 0.8rem; color: #666;">Next week | 50+ events</div>
+            </div>
+            <div style="padding: 12px; background: #fff9f2; border-radius: 10px; border-left: 4px solid var(--accent);">
+              <div style="font-weight: 700; color: var(--primary); font-size: 0.9rem; margin-bottom: 5px;">Tech
+                Leadership Summit</div>
+              <div style="font-size: 0.8rem; color: #666;">June 15 | Register now</div>
+            </div>
+            <div style="padding: 12px; background: #fff9f2; border-radius: 10px; border-left: 4px solid var(--accent);">
+              <div style="font-weight: 700; color: var(--primary); font-size: 0.9rem; margin-bottom: 5px;">Community
+                Feedback</div>
+              <div style="font-size: 0.8rem; color: #666;">Tell us what you want!</div>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+      <h2>Ready to Connect?</h2>
+      <p>
+        Join your neighbors and fellow community members. Whether you're looking for adventure, friendship, volunteer
+        opportunities,
+        or just a fun night out—We The Village is where your community comes together.
+      </p>
+      <a href="profile.html" class="cta-button"
+        style="background: var(--accent); color: white; border: none; display: inline-block; padding: 10px 30px; border-radius: 12px; text-decoration: none; margin: 0 auto;">Create
+        Your Profile</a>
+    </section>
+
+  </div>
+
+  <!-- FOOTER  -->
+  <footer style="background: var(--primary); color: white; padding: 40px 20px; text-align: center; margin-top: 60px;">
+    <p>&copy; 2026 We The Village. All rights reserved.</p>
+    <div style="margin-top: 15px;">
+      <a href="#" style="color: white; margin: 0 10px; text-decoration: none; font-size: 0.9rem;">Privacy Policy</a>
+      <a href="#" style="color: white; margin: 0 10px; text-decoration: none; font-size: 0.9rem;">Terms of Service</a>
+    </div>
+  </footer>
+
+  <script>
+    // Filter functionality
+    const filterBadges = document.querySelectorAll('.filter-badge');
+    filterBadges.forEach(badge => {
+      badge.addEventListener('click', function () {
+        filterBadges.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // Connect button functionality
+    const connectBtns = document.querySelectorAll('.member-connect-btn');
+    connectBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        alert('Connection request sent! They\'ll receive a notification shortly.');
+      });
+    });
+
+    // Post action buttons
+    const postBtns = document.querySelectorAll('.post-btn');
+    postBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        if (btn.textContent.includes('Interested')) {
+          alert('Thanks for showing interest!');
+        } else if (btn.textContent.includes('Comment')) {
+          alert('Comment feature coming soon!');
+        } else if (btn.textContent.includes('Share')) {
+          alert('Share this post with your network!');
+        }
+      });
+    });
+
+    // CTA button
+    const ctaButton = document.querySelector('.cta-section .cta-button');
+    if (ctaButton) {
+      ctaButton.addEventListener('click', function () {
+        alert('Create your We The Village profile to connect with the community!');
+      });
+    }
+
+    // Search functionality
+    const searchBtn = document.querySelector('.connect-search-wrapper button');
+    const searchInput = document.querySelector('.connect-search-wrapper input');
+
+    if (searchBtn) {
+      searchBtn.addEventListener('click', function () {
+        const searchTerm = searchInput.value;
+        if (searchTerm) {
+          alert('Searching for: ' + searchTerm);
+        }
+      });
+    }
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+      });
+    }
+  </script>
+
+</body>
+
+</html>

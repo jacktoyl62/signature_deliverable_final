@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | The Village</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="wtvstyle.css">
+
+</head>
+
+<body>
+
+    <!-- NAV  -->
+    <nav class="nav">
+        <div class="hamburger-menu" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="notification-badge">5</span>
+        </div>
+        <a href="index.html" class="logo">We The Village</a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="connect.html">Connect</a>
+            <a href="grow.html">Grow</a>
+            <a href="build.html">Build</a>
+            <a href="aboutus.html">About</a>
+        </div>
+
+        <div class="nav-search">
+            <input type="text" placeholder="Search...">
+        </div>
+
+        <div class="nav-right">
+            <a href="index.html">
+                <button class="login-btn">Logout</button>
+            </a>
+        </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebarToggle">☰<span class="notification-badge">5</span></button>
+
+    <!-- Mobile Dashboard Header -->
+    <div class="dashboard-mobile-header">
+        <div class="mobile-logo">We The Village</div>
+        <div class="mobile-search">
+            <input type="text" placeholder="Search...">
+        </div>
+    </div>
+
+    <div class="dashboard-wrapper">
+
+        <!-- COLUMN 1: LEFT SIDEBAR (Profile & Nav) -->
+        <aside class="left-sidebar">
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
+                    alt="Avatar" class="avatar-large">
+                <h2>Candice Miller</h2>
+                <p>Austin, TX</p>
+                <p>Level 4</p>
+                <div style="margin-top: 15px; font-size: 1.2rem; font-weight: 700;">85% Growth</div>
+            </div>
+
+            <a href="create_event.html" class="login-btn">+ Create Event</a>
+
+            <ul class="side-menu">
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="messages.html" class="menu-with-badge">Messages <span
+                            class="notification-badge">3</span></a></li>
+                <li><a href="connections.html" class="menu-with-badge">Connections <span
+                            class="notification-badge">2</span></a></li>
+                <li><a href="memories.html">Memories</a></li>
+                <li><a href="blog.html">The Village Blog</a></li>
+                <li><a href="news_feed.html">The Village Gazette</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="index.html" style="color: #e74c3c;">Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- COLUMN 2: CENTER MAIN CONTENT (News & Calendar) -->
+        <main class="center-column">
+
+            <!-- SCHEDULE CARD WITH FILTERS -->
+            <section class="content-card">
+                <header class="collapsible-header" id="calendarToggle">
+                    <h3>📅 Your Upcoming Events</h3>
+
+                    <div class="vertical-ticker" id="tickerContainer">
+                        <ul class="ticker-list">
+                            <li><span>JUN 12</span> Builder's Brunch @ 10:30am</li>
+                            <li><span>JUN 15</span> UX Masterclass Part 2</li>
+                            <li><span>JUN 18</span> Networking Mixer Downtown</li>
+                            <li><span>JUN 22</span> Founder Talk: AI Ethics</li>
+                        </ul>
+                    </div>
+
+                    <span style="font-size: 0.7rem; font-weight: 800; color: #bbb;" id="calIcon">Find
+                        Events/Opportunities ▾</span>
+                </header>
+
+                <div id="calendarContent" class="hidden">
+
+                    <!-- EVENTBRITE STYLE SEARCH & FILTERS -->
+                    <div class="filter-container">
+                        <div class="search-input-wrapper">
+                            <input type="text" placeholder="Search for events by name or keyword...">
+                        </div>
+
+                        <div class="filter-row">
+                            <select class="filter-select">
+                                <option>Event Type</option>
+                                <option>Workshop</option>
+                                <option>Social</option>
+                                <option>Mentorship</option>
+                            </select>
+
+                            <select class="filter-select">
+                                <option>Any Date</option>
+                                <option>Today</option>
+                                <option>This Weekend</option>
+                                <option>Next Month</option>
+                            </select>
+
+                            <select class="filter-select">
+                                <option>Location</option>
+                                <option>In-Person (Austin)</option>
+                                <option>Online / Zoom</option>
+                                <option>Hybrid</option>
+                            </select>
+
+                            <button class="filter-select" style="background: var(--bg-light); border: none;">Reset
+                                Filters</button>
+                        </div>
+                    </div>
+
+                    <!-- THE VISUAL INTERFACE -->
+                    <div class="calendar-ui-placeholder">
+                        [ Interactive Calendar Grid ]
+                    </div>
+                </div>
+            </section>
+
+            <!-- Village Bulletin: Collapsible News & Opportunities -->
+            <section class="news-strip" id="bulletinToggle" style="cursor: pointer;">
+                <h3 style="cursor: pointer;">
+                    <span>📢 BULLETIN: Latest updates and opportunities...</span>
+                    <span>See Updates ▾</span>
+                </h3>
+                <div id="bulletinContent"
+                    style="max-height: 250px; overflow-y: auto; font-size: 0.85rem; display: none; flex-direction: column; padding-top: 15px; margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <div style="padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; gap: 10px; align-items: start; cursor: pointer; transition: background 0.2s;"
+                        onmouseover="this.style.background='rgba(255,255,255,0.05)'"
+                        onmouseout="this.style.background='transparent'">
+                        <span style="font-size: 1.3rem;">📰</span>
+                        <div style="flex: 1;">
+                            <small style="color: var(--accent); font-weight: 700;">GAZETTE</small>
+                            <p style="margin: 3px 0 0; color: #ddd;">Digital Nomad migration trends in Q2</p>
+                        </div>
+                    </div>
+                    <div style="padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; gap: 10px; align-items: start; cursor: pointer; transition: background 0.2s;"
+                        onmouseover="this.style.background='rgba(255,255,255,0.05)'"
+                        onmouseout="this.style.background='transparent'">
+                        <span style="font-size: 1.3rem;">📄</span>
+                        <div style="flex: 1;">
+                            <small style="color: var(--accent); font-weight: 700;">BLOG</small>
+                            <p style="margin: 3px 0 0; color: #ddd;">Why community is the new career currency</p>
+                        </div>
+                    </div>
+                    <div style="padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; gap: 10px; align-items: start; cursor: pointer; transition: background 0.2s;"
+                        onmouseover="this.style.background='rgba(255,255,255,0.05)'"
+                        onmouseout="this.style.background='transparent'">
+                        <span style="font-size: 1.3rem;">⭐</span>
+                        <div style="flex: 1;">
+                            <small style="color: var(--accent); font-weight: 700;">OPPORTUNITY</small>
+                            <p style="margin: 3px 0 0; color: #ddd;">Co-Founder Match: 3 members match your profile</p>
+                        </div>
+                    </div>
+                    <div style="padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; gap: 10px; align-items: start; cursor: pointer; transition: background 0.2s;"
+                        onmouseover="this.style.background='rgba(255,255,255,0.05)'"
+                        onmouseout="this.style.background='transparent'">
+                        <span style="font-size: 1.3rem;">📰</span>
+                        <div style="flex: 1;">
+                            <small style="color: var(--accent); font-weight: 700;">GAZETTE</small>
+                            <p style="margin: 3px 0 0; color: #ddd;">Builder's Brunch this Sunday @ 10:30am</p>
+                        </div>
+                    </div>
+                    <div style="padding: 8px; display: flex; gap: 10px; align-items: start; cursor: pointer; transition: background 0.2s;"
+                        onmouseover="this.style.background='rgba(255,255,255,0.05)'"
+                        onmouseout="this.style.background='transparent'">
+                        <span style="font-size: 1.3rem;">⭐</span>
+                        <div style="flex: 1;">
+                            <small style="color: var(--accent); font-weight: 700;">OPPORTUNITY</small>
+                            <p style="margin: 3px 0 0; color: #ddd;">Seed Funding Round now open for startups</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIDEO SECTION -->
+            <section class="content-card">
+                <h3
+                    style="font-family: 'Playfair Display'; margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                    🎥 Member Spotlight</h3>
+                <div
+                    style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; background: #000;">
+                    <video src="images\AdobeStock_323701059.mov" controls
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 12px; object-fit: cover;">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+
+            <!-- AI MEMORIES FOR MOBILE ONLY -->
+            <section class="content-card" id="memoriesMobileSection" style="display: none;">
+                <h3
+                    style="font-family: 'Playfair Display'; margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                    🤖 AI Memories</h3>
+
+                <!-- Slideshow Container -->
+                <div id="memorySlideshow"
+                    style="background: #f9f9f9; border-radius: 12px; padding: 15px; margin-bottom: 15px;">
+                    <!-- Slide 1 -->
+                    <div class="memory-slide" style="display: block;">
+                        <p style="font-size: 0.85rem; margin-bottom: 12px; color: #333;">Week of June 12: Team building
+                            breakthrough! An incredible week of collaboration and growth with our amazing community
+                            members.</p>
+                        <div
+                            style="width: 100%; height: 180px; background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&h=180'); background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 12px;">
+                        </div>
+                        <div style="border-top: 1px solid #ddd; padding-top: 10px;">
+                            <small
+                                style="color: var(--accent); font-weight: 700; display: block; margin-bottom: 8px;">👥
+                                Tagged Connections</small>
+                            <div style="display: flex; gap: 8px;">
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40'); background-size: cover; cursor: pointer; border: 2px solid var(--accent);"
+                                    title="Sarah Chen"></div>
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=40'); background-size: cover; cursor: pointer; border: 2px solid var(--accent);"
+                                    title="Marcus Brown"></div>
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=40'); background-size: cover; cursor: pointer; border: 2px solid var(--accent);"
+                                    title="Alex Rivera"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="memory-slide" style="display: none;">
+                        <p style="font-size: 0.85rem; margin-bottom: 12px; color: #333;">Week of June 5: Founder talks
+                            and insights from industry leaders. A powerful week of learning and networking.</p>
+                        <div
+                            style="width: 100%; height: 180px; background: url('images/blog/post2_street_level.jpeg'); background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 12px;">
+                        </div>
+                        <div style="border-top: 1px solid #ddd; padding-top: 10px;">
+                            <small
+                                style="color: var(--accent); font-weight: 700; display: block; margin-bottom: 8px;">👥
+                                Tagged Connections</small>
+                            <div style="display: flex; gap: 8px;">
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: url('https://images.unsplash.com/photo-1519085360771-9852ef158dba?auto=format&fit=crop&w=40'); background-size: cover; cursor: pointer; border: 2px solid var(--accent);"
+                                    title="Jordan Lee"></div>
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: url('https://images.unsplash.com/photo-1507065341162-391b8f90d0e7?auto=format&fit=crop&w=40'); background-size: cover; cursor: pointer; border: 2px solid var(--accent);"
+                                    title="Casey Morgan"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation -->
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px solid #ddd;">
+                        <button id="prevSlide"
+                            style="background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">←
+                            Prev</button>
+                        <span id="slideCounter" style="font-size: 0.8rem; color: #666;">1 / 2</span>
+                        <button id="nextSlide"
+                            style="background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">Next
+                            →</button>
+                    </div>
+                </div>
+
+                <button id="generateMemory"
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: none; background: var(--accent); color: white; font-weight: 700; cursor: pointer;">Generate
+                    New Memory</button>
+            </section>
+
+            <section class="content-card">
+                <h3>📝 Recent Activity</h3>
+                <div style="font-size: 0.9rem; color: #666;">
+                    <p>✅ You completed the <strong>UX Masterclass</strong> • 2h ago</p>
+                    <p>🤝 New connection request from <strong>Marcus Brown</strong> • 5h ago</p>
+                    <p>💬 You commented on <strong>"Sustainable Architecture"</strong> • 1d ago</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- COLUMN 3: RIGHT SIDEBAR (Opportunities) -->
+        <aside class="right-sidebar">
+
+            <div class="action-card">
+                <h3 style="font-family: 'Playfair Display'; font-size: 1.3rem; margin-top: 0;">💬 Message Center</h3>
+
+                <div style="margin-bottom: 20px;">
+                    <strong style="color: var(--accent); font-size: 0.9rem;">New Unread Messages</strong>
+                    <div style="margin-top: 10px; max-height: 120px; overflow-y: auto;">
+                        <div
+                            style="background: #f8fafc; padding: 10px; border-radius: 8px; margin-bottom: 8px; font-size: 0.8rem;">
+                            <strong>Sarah Chen</strong><br>
+                            <span style="color: #666;">Can we discuss the project next week?</span>
+                        </div>
+                        <div
+                            style="background: #f8fafc; padding: 10px; border-radius: 8px; margin-bottom: 8px; font-size: 0.8rem;">
+                            <strong>Marcus Brown</strong><br>
+                            <span style="color: #666;">Thanks for the feedback on my proposal</span>
+                        </div>
+                        <div style="background: #f8fafc; padding: 10px; border-radius: 8px; font-size: 0.8rem;">
+                            <strong>Alex Rivera</strong><br>
+                            <span style="color: #666;">Interested in collaborating on the...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px; border-top: 1px solid #eee; padding-top: 15px;">
+                    <strong style="color: var(--accent); font-size: 0.9rem;">⭐ Starred Messages</strong>
+                    <div style="margin-top: 10px; font-size: 0.8rem; color: #666;">
+                        <p style="margin: 5px 0;">📌 "Investment opportunity in Q2"</p>
+                        <p style="margin: 5px 0;">📌 "Partnership proposal from TechHub"</p>
+                    </div>
+                </div>
+
+                <button class="drop-btn"
+                    style="font-size: 0.9rem; padding: 12px; background: var(--primary); color: white;">📅 Schedule
+                    Meeting</button>
+            </div>
+
+            <div class="action-card" style="background: var(--primary); color: white;">
+                <h3>🤖 AI Memories</h3>
+
+                <!-- Slideshow Container -->
+                <div id="memorySlideshow"
+                    style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 15px; margin-bottom: 15px;">
+                    <!-- Slide 1 -->
+                    <div class="memory-slide" style="display: block;">
+                        <p style="font-size: 0.85rem; margin-bottom: 12px; color: #ddd;">Week of June 12: Team building
+                            breakthrough! An incredible week of collaboration and growth with our amazing community
+                            members.</p>
+                        <div
+                            style="width: 100%; height: 180px; background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&h=180'); background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 12px;">
+                        </div>
+                        <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 10px;">
+                            <small
+                                style="color: var(--accent); font-weight: 700; display: block; margin-bottom: 8px;">👥
+                                Tagged Connections</small>
+                            <div style="display: flex; gap: 8px;">
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40'); background-size: cover; cursor: pointer; border: 2px solid var(--accent);"
+                                    title="Sarah Chen"></div>
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=40'); background-size: cover; cursor: pointer; border: 2px solid var(--accent);"
+                                    title="Marcus Brown"></div>
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=40'); background-size: cover; cursor: pointer; border: 2px solid var(--accent);"
+                                    title="Alex Rivera"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="memory-slide" style="display: none;">
+                        <p style="font-size: 0.85rem; margin-bottom: 12px; color: #ddd;">Week of June 5: Founder talks
+                            and insights from industry leaders. A powerful week of learning and networking.</p>
+                        <div
+                            style="width: 100%; height: 180px; background: url('images/blog/post2_street_level.jpeg'); background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 12px;">
+                        </div>
+                        <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 10px;">
+                            <small
+                                style="color: var(--accent); font-weight: 700; display: block; margin-bottom: 8px;">👥
+                                Tagged Connections</small>
+                            <div style="display: flex; gap: 8px;">
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: url('https://images.unsplash.com/photo-1519085360771-9852ef158dba?auto=format&fit=crop&w=40'); background-size: cover; cursor: pointer; border: 2px solid var(--accent);"
+                                    title="Jordan Lee"></div>
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: url('https://images.unsplash.com/photo-1507065341162-391b8f90d0e7?auto=format&fit=crop&w=40'); background-size: cover; cursor: pointer; border: 2px solid var(--accent);"
+                                    title="Casey Morgan"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation -->
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.2);">
+                        <button id="prevSlide"
+                            style="background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">←
+                            Prev</button>
+                        <span id="slideCounter" style="font-size: 0.8rem; color: #bbb;">1 / 2</span>
+                        <button id="nextSlide"
+                            style="background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">Next
+                            →</button>
+                    </div>
+                </div>
+
+                <button id="generateMemory"
+                    style="width: 100%; padding: 10px; border-radius: 8px; border: none; background: var(--accent); color: white; font-weight: 700; cursor: pointer;">Generate
+                    New Memory</button>
+            </div>
+        </aside>
+
+    </div>
+
+    <script>
+        const bulletinToggle = document.getElementById('bulletinToggle');
+        const bulletinContent = document.getElementById('bulletinContent');
+        const calToggle = document.getElementById('calendarToggle');
+        const calContent = document.getElementById('calendarContent');
+        const ticker = document.getElementById('tickerContainer');
+        const calIcon = document.getElementById('calIcon');
+
+        bulletinToggle.addEventListener('click', () => {
+            if (bulletinContent.style.display === 'none') {
+                bulletinContent.style.display = 'flex';
+            } else {
+                bulletinContent.style.display = 'none';
+            }
+        });
+
+        calToggle.addEventListener('click', () => {
+            const isHidden = calContent.classList.toggle('hidden');
+            ticker.classList.toggle('hidden');
+            calIcon.innerText = isHidden ? 'Find Events/Opportunities ▾' : 'HIDE ▴';
+        });
+
+        // Memory Slideshow
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.memory-slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.style.display = 'none');
+            slides[n].style.display = 'block';
+            document.getElementById('slideCounter').innerText = (n + 1) + ' / ' + totalSlides;
+        }
+
+        document.getElementById('nextSlide').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('prevSlide').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('generateMemory').addEventListener('click', () => {
+            alert('Opening photo upload for new memory...');
+        });
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('mobile-open');
+            });
+        }
+
+        // Sidebar toggle on mobile
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const leftSidebar = document.querySelector('.left-sidebar');
+
+        if (sidebarToggle) {
+            sidebarToggle.addEventListener('click', () => {
+                leftSidebar.classList.toggle('open');
+                sidebarToggle.textContent = leftSidebar.classList.contains('open') ? '✕' : '☰';
+            });
+        }
+
+        // Close sidebar when clicking on a menu item
+        if (leftSidebar) {
+            const menuLinks = leftSidebar.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    leftSidebar.classList.remove('open');
+                    if (sidebarToggle) {
+                        sidebarToggle.textContent = '☰';
+                    }
+                });
+            });
+        }
+
+        // Close sidebar when clicking outside of it
+        document.addEventListener('click', (e) => {
+            if (leftSidebar && leftSidebar.classList.contains('open')) {
+                // Check if click is outside the sidebar and toggle button
+                if (!leftSidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                    leftSidebar.classList.remove('open');
+                    if (sidebarToggle) {
+                        sidebarToggle.textContent = '☰';
+                    }
+                }
+            }
+
+            // Close right sidebar when clicking outside of it
+            const rightSidebar = document.querySelector('.right-sidebar');
+            if (rightSidebar && rightSidebar.classList.contains('mobile-open')) {
+                // Check if click is outside the right sidebar
+                if (!rightSidebar.contains(e.target)) {
+                    rightSidebar.classList.remove('mobile-open');
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

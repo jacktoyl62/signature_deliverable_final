@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connections | The Village</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="wtvstyle.css">
+    <style>
+        /* Mobile Sidebar Styles */
+        @media (max-width: 900px) {
+            .right-sidebar {
+                display: none;
+            }
+
+            #mobileGroupsBtn {
+                display: block !important;
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 0 !important;
+                background: var(--accent);
+                color: white;
+                border: none;
+                border-radius: 6px;
+                font-weight: 600;
+                font-size: 0.95rem;
+                cursor: pointer;
+                transition: background 0.2s;
+            }
+
+            #mobileGroupsBtn:hover {
+                background: #d67817;
+            }
+
+            .mobile-sidebar-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+            }
+
+            .mobile-sidebar-overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .mobile-groups-sidebar {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 100%;
+                max-width: 380px;
+                height: 100vh;
+                background: white;
+                z-index: 1000;
+                overflow-y: auto;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+            }
+
+            .mobile-groups-sidebar.active {
+                transform: translateX(0);
+            }
+
+            .mobile-sidebar-header {
+                padding: 20px;
+                border-bottom: 1px solid #eee;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: white;
+                color: #333;
+                position: sticky;
+                top: 0;
+                z-index: 10;
+            }
+
+            .mobile-sidebar-content {
+                padding: 20px;
+            }
+        }
+
+        @media (min-width: 901px) {
+            #mobileGroupsBtn {
+                display: none !important;
+            }
+
+            .mobile-sidebar-overlay,
+            .mobile-groups-sidebar {
+                display: none !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAV  -->
+    <nav class="nav">
+        <div class="hamburger-menu" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="notification-badge">5</span>
+        </div>
+        <a href="index.html" class="logo">We The Village</a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="connect.html">Connect</a>
+            <a href="grow.html">Grow</a>
+            <a href="build.html">Build</a>
+            <a href="aboutus.html">About</a>
+        </div>
+
+        <div class="nav-search">
+            <input type="text" placeholder="Search...">
+        </div>
+
+        <div class="nav-right">
+            <a href="index.html">
+                <button class="login-btn">Logout</button>
+            </a>
+        </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebarToggle">☰<span class="notification-badge">5</span></button>
+
+    <!-- Mobile Dashboard Header -->
+    <div class="dashboard-mobile-header">
+        <div class="mobile-logo">We The Village</div>
+        <div class="mobile-search">
+            <input type="text" placeholder="Search connections...">
+        </div>
+    </div>
+
+    <div class="dashboard-wrapper">
+
+        <!-- COLUMN 1: LEFT SIDEBAR (Profile & Nav) -->
+        <aside class="left-sidebar">
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
+                    alt="Avatar" class="avatar-large">
+                <h2>Candice Miller</h2>
+                <p>Austin, TX</p>
+                <p>Level 4</p>
+                <div style="margin-top: 15px; font-size: 1.2rem; font-weight: 700;">85% Growth</div>
+            </div>
+
+            <a href="create_event.html" class="login-btn">+ Create Event</a>
+
+            <ul class="side-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="messages.html" class="menu-with-badge">Messages <span
+                            class="notification-badge">3</span></a></li>
+                <li><a href="connections.html" class="active menu-with-badge">Connections <span
+                            class="notification-badge">2</span></a></li>
+                <li><a href="memories.html">Memories</a></li>
+                <li><a href="blog.html">The Village Blog</a></li>
+                <li><a href="news_feed.html">The Village Gazette</a></li>
+                <li><a href="index.html" style="color: #e74c3c;">Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- COLUMN 2: CENTER MAIN CONTENT (Connections) -->
+        <main class="center-column">
+
+            <!-- STATS PANEL -->
+            <div class="content-card" style="margin-bottom: 30px;">
+                <!-- Stats Grid -->
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 25px;">
+                    <div style="padding: 18px 12px; background: #f8f9fa; border-radius: 10px; text-align: center;">
+                        <div style="font-size: 1.75rem; font-weight: 700; color: var(--primary); margin-bottom: 8px;">12
+                        </div>
+                        <div style="font-size: 0.8rem; color: #666; font-weight: 500;">Total</div>
+                    </div>
+                    <div style="padding: 18px 12px; background: #f8f9fa; border-radius: 10px; text-align: center;">
+                        <div style="font-size: 1.75rem; font-weight: 700; color: #27ae60; margin-bottom: 8px;">3</div>
+                        <div style="font-size: 0.8rem; color: #666; font-weight: 500;">Groups</div>
+                    </div>
+                    <div style="padding: 18px 12px; background: #f8f9fa; border-radius: 10px; text-align: center;">
+                        <div style="font-size: 1.75rem; font-weight: 700; color: var(--accent); margin-bottom: 8px;">2
+                        </div>
+                        <div style="font-size: 0.8rem; color: #666; font-weight: 500;">Pending</div>
+                    </div>
+                    <div style="padding: 18px 12px; background: #f8f9fa; border-radius: 10px; text-align: center;">
+                        <div style="font-size: 1.75rem; font-weight: 700; color: #3498db; margin-bottom: 8px;">5</div>
+                        <div style="font-size: 0.8rem; color: #666; font-weight: 500;">Activity</div>
+                    </div>
+                </div>
+
+                <!-- My Groups Button (Mobile) -->
+                <button id="mobileGroupsBtn"
+                    style="display: none; width: 100%; padding: 12px 12px; margin-bottom: 30px; background: var(--accent); color: white; border: none; border-radius: 6px; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: background 0.2s;">My
+                    Groups & Teams</button>
+
+                <!-- Search and Filter -->
+                <div style="display: flex; gap: 8px; align-items: center; margin-top: 15px;">
+                    <input type="text" id="searchConnections" placeholder="Search by name, profession, or location..."
+                        style="flex: 1; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.9rem; font-family: 'Inter', sans-serif;">
+                    <button id="filterBtn"
+                        style="padding: 10px 14px; background: var(--primary); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600; transition: background 0.2s;"
+                        onmouseover="this.style.background='#1e2d3d'"
+                        onmouseout="this.style.background='var(--primary)'">Filter</button>
+                </div>
+            </div>
+
+            <!-- PENDING REQUESTS SECTION -->
+            <section class="content-card">
+                <h2 style="margin-top: 0;">Connection Requests (2)</h2>
+                <div class="connections-list">
+                    <!-- Request 1 -->
+                    <div class="connection-card pending">
+                        <div class="connection-header">
+                            <div style="display: flex; gap: 15px; align-items: center; flex: 1;">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&q=80"
+                                    alt="Alex" class="connection-avatar">
+                                <div>
+                                    <h4 style="margin: 0; color: var(--primary);">Alex Jordan</h4>
+                                    <p style="margin: 3px 0; font-size: 0.9rem; color: #666;">Product Designer • San
+                                        Francisco</p>
+                                    <p style="margin: 5px 0 0; font-size: 0.85rem; color: #999;">Sent 3 days ago</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="connection-actions">
+                            <button class="btn-accept" onclick="acceptConnection(this)">Accept</button>
+                            <button class="btn-decline" onclick="declineConnection(this)">Decline</button>
+                        </div>
+                    </div>
+
+                    <!-- Request 2 -->
+                    <div class="connection-card pending">
+                        <div class="connection-header">
+                            <div style="display: flex; gap: 15px; align-items: center; flex: 1;">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=60&q=80"
+                                    alt="Morgan" class="connection-avatar">
+                                <div>
+                                    <h4 style="margin: 0; color: var(--primary);">Morgan Blake</h4>
+                                    <p style="margin: 3px 0; font-size: 0.9rem; color: #666;">Marketing Manager •
+                                        Austin, TX</p>
+                                    <p style="margin: 5px 0 0; font-size: 0.85rem; color: #999;">Sent 1 week ago</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="connection-actions">
+                            <button class="btn-accept" onclick="acceptConnection(this)">Accept</button>
+                            <button class="btn-decline" onclick="declineConnection(this)">Decline</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ACCEPTED CONNECTIONS SECTION -->
+            <section class="content-card">
+                <h2>Your Connections (12)</h2>
+                <div class="connections-list">
+                    <!-- Connection 1 -->
+                    <div class="connection-card accepted">
+                        <div class="connection-header">
+                            <div style="display: flex; gap: 15px; align-items: center; flex: 1;">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=60&q=80"
+                                    alt="Mike" class="connection-avatar">
+                                <div>
+                                    <h4 style="margin: 0; color: var(--primary);">Mike Rodriguez</h4>
+                                    <p style="margin: 3px 0; font-size: 0.9rem; color: #666;">UX Designer • Austin, TX
+                                    </p>
+                                    <p style="margin: 5px 0 0; font-size: 0.85rem; color: #999;">Connected 2 months ago
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="connection-actions">
+                            <button class="btn-message" onclick="messageConnection()">Message</button>
+                            <button class="btn-view" onclick="viewProfile()">View Profile</button>
+                        </div>
+                    </div>
+
+                    <!-- Connection 2 -->
+                    <div class="connection-card accepted">
+                        <div class="connection-header">
+                            <div style="display: flex; gap: 15px; align-items: center; flex: 1;">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=60&q=80"
+                                    alt="Sarah" class="connection-avatar">
+                                <div>
+                                    <h4 style="margin: 0; color: var(--primary);">Sarah Chen</h4>
+                                    <p style="margin: 3px 0; font-size: 0.9rem; color: #666;">Entrepreneur • Austin, TX
+                                    </p>
+                                    <p style="margin: 5px 0 0; font-size: 0.85rem; color: #999;">Connected 3 months ago
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="connection-actions">
+                            <button class="btn-message" onclick="messageConnection()">Message</button>
+                            <button class="btn-view" onclick="viewProfile()">View Profile</button>
+                        </div>
+                    </div>
+
+                    <!-- Connection 3 -->
+                    <div class="connection-card accepted">
+                        <div class="connection-header">
+                            <div style="display: flex; gap: 15px; align-items: center; flex: 1;">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&q=80"
+                                    alt="James" class="connection-avatar">
+                                <div>
+                                    <h4 style="margin: 0; color: var(--primary);">James Wilson</h4>
+                                    <p style="margin: 3px 0; font-size: 0.9rem; color: #666;">Startup Mentor • Austin,
+                                        TX</p>
+                                    <p style="margin: 5px 0 0; font-size: 0.85rem; color: #999;">Connected 4 months ago
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="connection-actions">
+                            <button class="btn-message" onclick="messageConnection()">Message</button>
+                            <button class="btn-view" onclick="viewProfile()">View Profile</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- RIGHT SIDEBAR - GROUP MANAGEMENT WIDGETS -->
+        <aside class="right-sidebar">
+
+            <!-- CREATE GROUP CARD -->
+            <div class="sidebar-card">
+                <h3
+                    style="margin-top: 0; margin-bottom: 20px; font-family: var(--font-heading); color: var(--primary); font-size: 1.15rem;">
+                    Create Group</h3>
+                <form id="createGroupForm" style="display: flex; flex-direction: column; gap: 0;">
+                    <div style="margin-bottom: 10px;">
+                        <label
+                            style="display: block; font-size: 0.85rem; font-weight: 600; color: #333; margin-bottom: 6px;">Group
+                            Name</label>
+                        <input type="text" placeholder="Enter group name" required
+                            style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.85rem; font-family: 'Inter', sans-serif; box-sizing: border-box; color: #333;">
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label
+                            style="display: block; font-size: 0.85rem; font-weight: 600; color: #333; margin-bottom: 6px;">Purpose
+                            & Goals</label>
+                        <textarea placeholder="Describe the group's purpose and goals..." required
+                            style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.85rem; font-family: 'Inter', sans-serif; min-height: 60px; box-sizing: border-box; resize: vertical; color: #333;"></textarea>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label
+                            style="display: block; font-size: 0.85rem; font-weight: 600; color: #333; margin-bottom: 6px;">Add
+                            Members</label>
+                        <div
+                            style="max-height: 200px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 8px; background: #f8fafc;">
+                            <div style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; display: flex; gap: 10px; align-items: center;"
+                                onclick="toggleGroupMember(this, 'sarah')">
+                                <input type="checkbox" value="sarah"
+                                    style="width: 16px; height: 16px; cursor: pointer;">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=35&q=80"
+                                    alt="Sarah"
+                                    style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+                                <span>Sarah Chen</span>
+                            </div>
+                            <div style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; display: flex; gap: 10px; align-items: center;"
+                                onclick="toggleGroupMember(this, 'marcus')">
+                                <input type="checkbox" value="marcus"
+                                    style="width: 16px; height: 16px; cursor: pointer;">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=35&q=80"
+                                    alt="Marcus"
+                                    style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+                                <span>Marcus Brown</span>
+                            </div>
+                            <div style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; display: flex; gap: 10px; align-items: center;"
+                                onclick="toggleGroupMember(this, 'alex')">
+                                <input type="checkbox" value="alex" style="width: 16px; height: 16px; cursor: pointer;">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=35&q=80"
+                                    alt="Alex"
+                                    style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+                                <span>Alex Rivera</span>
+                            </div>
+                            <div style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; display: flex; gap: 10px; align-items: center;"
+                                onclick="toggleGroupMember(this, 'jordan')">
+                                <input type="checkbox" value="jordan"
+                                    style="width: 16px; height: 16px; cursor: pointer;">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=35&q=80"
+                                    alt="Jordan"
+                                    style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+                                <span>Jordan Lee</span>
+                            </div>
+                            <div style="padding: 8px 12px; cursor: pointer; font-size: 0.85rem; display: flex; gap: 10px; align-items: center;"
+                                onclick="toggleGroupMember(this, 'casey')">
+                                <input type="checkbox" value="casey"
+                                    style="width: 16px; height: 16px; cursor: pointer;">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=35&q=80"
+                                    alt="Casey"
+                                    style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+                                <span>Casey Morgan</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit"
+                        style="padding: 8px; background: var(--accent); color: white; border: none; border-radius: 8px; font-weight: 600; font-family: 'Inter', sans-serif; font-size: 0.85rem; cursor: pointer; transition: background 0.2s;"
+                        onmouseover="this.style.background='#d67817'"
+                        onmouseout="this.style.background='var(--accent)'">Add to Group Profile</button>
+                </form>
+            </div>
+
+            <!-- MY GROUPS & TEAMS CARD -->
+            <div class="sidebar-card">
+                <h3 style="margin-top: 0; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">📊 My
+                    Groups & Teams</h3>
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div class="group-list-item"
+                        onclick="openGroupModal('Austin Tech Community', 'Product designers & engineers', 2400, 'Member', 'Jan 2023')"
+                        style="cursor: pointer; padding: 12px; border-radius: 6px; border: 1px solid #f0f0f0; transition: background 0.2s;"
+                        onmouseover="this.style.background='#f9f9f9'" onmouseout="this.style.background='transparent'">
+                        <h4 style="margin: 0 0 6px 0; color: var(--primary); font-size: 0.95rem;">Austin Tech Community
+                        </h4>
+                        <p style="margin: 0; font-size: 0.85rem; color: #666;">2,400 members • Joined Jan 2023</p>
+                    </div>
+                    <div class="group-list-item"
+                        onclick="openGroupModal('Entrepreneurs Circle', 'Startup founders & business owners', 856, 'Admin', 'Mar 2023')"
+                        style="cursor: pointer; padding: 12px; border-radius: 6px; border: 1px solid #f0f0f0; transition: background 0.2s;"
+                        onmouseover="this.style.background='#f9f9f9'" onmouseout="this.style.background='transparent'">
+                        <h4 style="margin: 0 0 6px 0; color: var(--primary); font-size: 0.95rem;">Entrepreneurs Circle
+                        </h4>
+                        <p style="margin: 0; font-size: 0.85rem; color: #666;">856 members • Joined Mar 2023</p>
+                    </div>
+                    <div class="group-list-item"
+                        onclick="openGroupModal('Community Volunteers', 'Local impact & volunteering', 1200, 'Contributor', 'Feb 2023')"
+                        style="cursor: pointer; padding: 12px; border-radius: 6px; border: 1px solid #f0f0f0; transition: background 0.2s;"
+                        onmouseover="this.style.background='#f9f9f9'" onmouseout="this.style.background='transparent'">
+                        <h4 style="margin: 0 0 6px 0; color: var(--primary); font-size: 0.95rem;">Community Volunteers
+                        </h4>
+                        <p style="margin: 0; font-size: 0.85rem; color: #666;">1,200 members • Joined Feb 2023</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GROUP PROFILE MODAL (Hidden by default) -->
+            <div id="groupModal"
+                style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+                <div
+                    style="background: white; border-radius: 12px; padding: 30px; max-width: 400px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
+                    <h2 id="modalGroupName" style="margin: 0 0 15px 0; color: var(--primary);"></h2>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div>
+                            <p style="margin: 0 0 5px 0; font-size: 0.9rem; font-weight: 600; color: var(--primary);">
+                                Purpose & Goals</p>
+                            <p id="modalGroupPurpose" style="margin: 0; font-size: 0.9rem; color: #666;"></p>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div>
+                                <p
+                                    style="margin: 0 0 5px 0; font-size: 0.9rem; font-weight: 600; color: var(--primary);">
+                                    Members</p>
+                                <p id="modalGroupMembers" style="margin: 0; font-size: 0.9rem; color: #666;"></p>
+                            </div>
+                            <div>
+                                <p
+                                    style="margin: 0 0 5px 0; font-size: 0.9rem; font-weight: 600; color: var(--primary);">
+                                    Your Role</p>
+                                <p id="modalGroupRole" style="margin: 0; font-size: 0.9rem; color: #666;"></p>
+                            </div>
+                        </div>
+                        <div>
+                            <p style="margin: 0 0 5px 0; font-size: 0.9rem; font-weight: 600; color: var(--primary);">
+                                Date Joined</p>
+                            <p id="modalGroupDate" style="margin: 0; font-size: 0.9rem; color: #666;"></p>
+                        </div>
+                        <button onclick="viewGroupMembers()"
+                            style="padding: 10px; background: var(--accent); color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; margin-top: 10px;"
+                            onmouseover="this.style.background='#d67817'"
+                            onmouseout="this.style.background='var(--accent)'">View Members</button>
+                    </div>
+                    <button onclick="closeGroupModal()"
+                        style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999;">&times;</button>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div id="mobileOverlay" class="mobile-sidebar-overlay" onclick="closeMobileGroupsSidebar()"></div>
+
+    <!-- Mobile Groups Sidebar -->
+    <div id="mobileGroupsSidebar" class="mobile-groups-sidebar">
+        <div class="mobile-sidebar-header">
+            <h3
+                style="margin-top: 0; margin-bottom: 15px; font-weight: 600; font-family: var(--font-heading); color: var(--primary); font-size: 1.15rem;">
+                Create Group</h3>
+            <button onclick="closeMobileGroupsSidebar()"
+                style="background: none; border: none; color: #333; font-size: 1.5rem; cursor: pointer;">&times;</button>
+        </div>
+        <div class="mobile-sidebar-content">
+            <!-- Create Group Card -->
+            <div class="sidebar-card" style="margin-bottom: 20px;">
+                <form id="createGroupFormMobile" style="display: flex; flex-direction: column; gap: 0;">
+                    <div style="margin-bottom: 10px;">
+                        <label
+                            style="display: block; font-size: 0.85rem; font-weight: 600; color: #333; margin-bottom: 6px;">Group
+                            Name</label>
+                        <input type="text" placeholder="Enter group name" required
+                            style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.85rem; font-family: 'Inter', sans-serif; box-sizing: border-box; color: #333;">
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label
+                            style="display: block; font-size: 0.85rem; font-weight: 600; color: #333; margin-bottom: 6px;">Purpose
+                            & Goals</label>
+                        <textarea placeholder="Describe the group's purpose and goals..." required
+                            style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.85rem; font-family: 'Inter', sans-serif; min-height: 60px; box-sizing: border-box; resize: vertical; color: #333;"></textarea>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <label
+                            style="display: block; font-size: 0.85rem; font-weight: 600; color: #333; margin-bottom: 6px;">Add
+                            Members</label>
+                        <div
+                            style="max-height: 200px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 8px; background: #f8fafc;">
+                            <div style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; display: flex; gap: 10px; align-items: center;"
+                                onclick="toggleGroupMember(this, 'sarah')">
+                                <input type="checkbox" value="sarah"
+                                    style="width: 16px; height: 16px; cursor: pointer;">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=35&q=80"
+                                    alt="Sarah"
+                                    style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+                                <span>Sarah Chen</span>
+                            </div>
+                            <div style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; display: flex; gap: 10px; align-items: center;"
+                                onclick="toggleGroupMember(this, 'marcus')">
+                                <input type="checkbox" value="marcus"
+                                    style="width: 16px; height: 16px; cursor: pointer;">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=35&q=80"
+                                    alt="Marcus"
+                                    style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+                                <span>Marcus Brown</span>
+                            </div>
+                            <div style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; display: flex; gap: 10px; align-items: center;"
+                                onclick="toggleGroupMember(this, 'alex')">
+                                <input type="checkbox" value="alex" style="width: 16px; height: 16px; cursor: pointer;">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=35&q=80"
+                                    alt="Alex"
+                                    style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+                                <span>Alex Rivera</span>
+                            </div>
+                            <div style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; display: flex; gap: 10px; align-items: center;"
+                                onclick="toggleGroupMember(this, 'jordan')">
+                                <input type="checkbox" value="jordan"
+                                    style="width: 16px; height: 16px; cursor: pointer;">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=35&q=80"
+                                    alt="Jordan"
+                                    style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+                                <span>Jordan Lee</span>
+                            </div>
+                            <div style="padding: 8px 12px; cursor: pointer; font-size: 0.85rem; display: flex; gap: 10px; align-items: center;"
+                                onclick="toggleGroupMember(this, 'casey')">
+                                <input type="checkbox" value="casey"
+                                    style="width: 16px; height: 16px; cursor: pointer;">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=35&q=80"
+                                    alt="Casey"
+                                    style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+                                <span>Casey Morgan</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit"
+                        style="padding: 8px; background: var(--accent); color: white; border: none; border-radius: 8px; font-weight: 600; font-family: 'Inter', sans-serif; font-size: 0.85rem; cursor: pointer; transition: background 0.2s;"
+                        onmouseover="this.style.background='#d67817'"
+                        onmouseout="this.style.background='var(--accent)'">Add to Group Profile</button>
+                </form>
+            </div>
+
+            <!-- My Groups & Teams Card -->
+            <div class="sidebar-card">
+                <h4 style="margin-top: 0; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">My Groups
+                    & Teams</h4>
+                <div style="display: flex; flex-direction: column; gap: 18px;">
+                    <div class="group-list-item"
+                        onclick="openGroupModal('Austin Tech Community', 'Product designers & engineers', 2400, 'Member', 'Jan 2023')"
+                        style="cursor: pointer; padding: 12px; border-radius: 6px; border: 1px solid #f0f0f0; transition: background 0.2s;"
+                        onmouseover="this.style.background='#f9f9f9'" onmouseout="this.style.background='transparent'">
+                        <h5 style="margin: 0 0 6px 0; color: var(--primary); font-size: 0.95rem;">Austin Tech Community
+                        </h5>
+                        <p style="margin: 0; font-size: 0.85rem; color: #666;">2,400 members • Joined Jan 2023</p>
+                    </div>
+                    <div class="group-list-item"
+                        onclick="openGroupModal('Entrepreneurs Circle', 'Startup founders & business owners', 856, 'Admin', 'Mar 2023')"
+                        style="cursor: pointer; padding: 12px; border-radius: 6px; border: 1px solid #f0f0f0; transition: background 0.2s;"
+                        onmouseover="this.style.background='#f9f9f9'" onmouseout="this.style.background='transparent'">
+                        <h5 style="margin: 0 0 6px 0; color: var(--primary); font-size: 0.95rem;">Entrepreneurs Circle
+                        </h5>
+                        <p style="margin: 0; font-size: 0.85rem; color: #666;">856 members • Joined Mar 2023</p>
+                    </div>
+                    <div class="group-list-item"
+                        onclick="openGroupModal('Community Volunteers', 'Local impact & volunteering', 1200, 'Contributor', 'Feb 2023')"
+                        style="cursor: pointer; padding: 12px; border-radius: 6px; border: 1px solid #f0f0f0; transition: background 0.2s;"
+                        onmouseover="this.style.background='#f9f9f9'" onmouseout="this.style.background='transparent'">
+                        <h5 style="margin: 0 0 6px 0; color: var(--primary); font-size: 0.95rem;">Community Volunteers
+                        </h5>
+                        <p style="margin: 0; font-size: 0.85rem; color: #666;">1,200 members • Joined Feb 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-open');
+        });
+
+        // Sidebar toggle
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const leftSidebar = document.querySelector('.left-sidebar');
+
+        sidebarToggle.addEventListener('click', () => {
+            leftSidebar.classList.toggle('open');
+        });
+
+        // Close sidebar when menu item is clicked
+        const menuLinks = document.querySelectorAll('.side-menu a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                leftSidebar.classList.remove('open');
+            });
+        });
+
+        // Close sidebar when clicking outside of it
+        document.addEventListener('click', (e) => {
+            if (leftSidebar && leftSidebar.classList.contains('open')) {
+                if (!leftSidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                    leftSidebar.classList.remove('open');
+                }
+            }
+        });
+
+        // Connection actions
+        function acceptConnection(button) {
+            const card = button.closest('.connection-card');
+            card.classList.remove('pending');
+            card.classList.add('accepted');
+
+            const actionsDiv = card.querySelector('.connection-actions');
+            actionsDiv.innerHTML = `
+                <button class="btn-message" onclick="messageConnection()">Message</button>
+                <button class="btn-view" onclick="viewProfile()">View Profile</button>
+            `;
+        }
+
+        function declineConnection(button) {
+            const card = button.closest('.connection-card');
+            card.style.opacity = '0.5';
+            card.style.pointerEvents = 'none';
+
+            const actionsDiv = card.querySelector('.connection-actions');
+            actionsDiv.innerHTML = `<p style="margin: 0; color: #999; font-size: 0.9rem;">Connection declined</p>`;
+        }
+
+        function messageConnection() {
+            window.location.href = 'messages.html';
+        }
+
+        function viewProfile() {
+            alert('In a live app, this would navigate to the user profile page');
+        }
+
+        // Group Modal Functions
+        function openGroupModal(groupName, purpose, memberCount, role, dateJoined) {
+            const modal = document.getElementById('groupModal');
+            document.getElementById('modalGroupName').textContent = groupName;
+            document.getElementById('modalGroupPurpose').textContent = purpose;
+            document.getElementById('modalGroupMembers').textContent = memberCount.toLocaleString();
+            document.getElementById('modalGroupRole').textContent = role;
+            document.getElementById('modalGroupDate').textContent = dateJoined;
+            modal.style.display = 'flex';
+        }
+
+        function closeGroupModal() {
+            const modal = document.getElementById('groupModal');
+            modal.style.display = 'none';
+        }
+
+        function viewGroupMembers() {
+            alert('In a live app, this would show the group members list');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('groupModal').addEventListener('click', (e) => {
+            if (e.target.id === 'groupModal') {
+                closeGroupModal();
+            }
+        });
+
+        // Create Group Form Handler
+        document.getElementById('createGroupForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Group created successfully! Your form has been cleared.');
+            document.getElementById('createGroupForm').reset();
+        });
+
+        // Mobile Groups Sidebar Functions
+        function openMobileGroupsSidebar() {
+            const sidebar = document.getElementById('mobileGroupsSidebar');
+            const overlay = document.getElementById('mobileOverlay');
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+        }
+
+        function closeMobileGroupsSidebar() {
+            const sidebar = document.getElementById('mobileGroupsSidebar');
+            const overlay = document.getElementById('mobileOverlay');
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+
+        // Toggle Group Member Selection
+        function toggleGroupMember(element, memberId) {
+            const checkbox = element.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+
+            // Visual feedback
+            if (checkbox.checked) {
+                element.style.background = '#f0f0f0';
+            } else {
+                element.style.background = 'transparent';
+            }
+        }
+
+        // Mobile Groups Button Event Listener
+        const mobileBtn = document.getElementById('mobileGroupsBtn');
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', openMobileGroupsSidebar);
+        }
+
+        // Search Functionality
+        const searchInput = document.getElementById('searchConnections');
+        if (searchInput) {
+            searchInput.addEventListener('keyup', (e) => {
+                const query = e.target.value.toLowerCase();
+                const connectionCards = document.querySelectorAll('.connection-card');
+
+                connectionCards.forEach(card => {
+                    const nameEl = card.querySelector('h4');
+                    const profEl = card.querySelector('p');
+
+                    if (nameEl && profEl) {
+                        const name = nameEl.textContent.toLowerCase();
+                        const profession = profEl.textContent.toLowerCase();
+
+                        // Show if matches name or profession
+                        if (name.includes(query) || profession.includes(query)) {
+                            card.style.display = '';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        }
+
+        // Mobile Form Handler
+        const mobileForm = document.getElementById('createGroupFormMobile');
+        if (mobileForm) {
+            mobileForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Group created successfully! Your form has been cleared.');
+                mobileForm.reset();
+            });
+        }
+
+        // Filter Modal Functions
+        function openFilterModal() {
+            const modal = document.getElementById('filterModal');
+            modal.style.display = 'flex';
+        }
+
+        function closeFilterModal() {
+            const modal = document.getElementById('filterModal');
+            modal.style.display = 'none';
+        }
+
+        function applyFilters() {
+            const profession = document.getElementById('professionFilter').value;
+            const location = document.getElementById('locationFilter').value;
+            const connectionCards = document.querySelectorAll('.connection-card');
+
+            connectionCards.forEach(card => {
+                const profEl = card.querySelector('p');
+                const text = profEl ? profEl.textContent.toLowerCase() : '';
+
+                let showCard = true;
+
+                if (profession && !text.includes(profession.toLowerCase())) {
+                    showCard = false;
+                }
+                if (location && !text.includes(location.toLowerCase())) {
+                    showCard = false;
+                }
+
+                card.style.display = showCard ? '' : 'none';
+            });
+
+            closeFilterModal();
+        }
+
+        function clearFilters() {
+            document.getElementById('professionFilter').value = '';
+            document.getElementById('locationFilter').value = '';
+            const connectionCards = document.querySelectorAll('.connection-card');
+            connectionCards.forEach(card => {
+                card.style.display = '';
+            });
+            closeFilterModal();
+        }
+
+        // Filter Button Event Listener
+        const filterBtn = document.getElementById('filterBtn');
+        if (filterBtn) {
+            filterBtn.addEventListener('click', openFilterModal);
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('filterModal')?.addEventListener('click', (e) => {
+            if (e.target.id === 'filterModal') {
+                closeFilterModal();
+            }
+        });
+    </script>
+
+    <!-- FILTER MODAL -->
+    <div id="filterModal"
+        style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+        <div
+            style="background: white; border-radius: 12px; padding: 30px; max-width: 400px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
+            <h2 style="margin: 0 0 20px 0; color: var(--primary);">Filter Connections</h2>
+
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px;">
+                <div>
+                    <label
+                        style="display: block; font-size: 0.9rem; font-weight: 600; color: var(--primary); margin-bottom: 8px;">Profession</label>
+                    <select id="professionFilter"
+                        style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.9rem; font-family: 'Inter', sans-serif; color: #333;">
+                        <option value="">All Professions</option>
+                        <option value="Designer">Designer</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Entrepreneur">Entrepreneur</option>
+                        <option value="Mentor">Mentor</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label
+                        style="display: block; font-size: 0.9rem; font-weight: 600; color: var(--primary); margin-bottom: 8px;">Location</label>
+                    <select id="locationFilter"
+                        style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.9rem; font-family: 'Inter', sans-serif; color: #333;">
+                        <option value="">All Locations</option>
+                        <option value="Austin">Austin, TX</option>
+                        <option value="San Francisco">San Francisco</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 10px;">
+                <button onclick="applyFilters()"
+                    style="flex: 1; padding: 12px; background: var(--accent); color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.2s; font-family: 'Inter', sans-serif;"
+                    onmouseover="this.style.background='#d67817'"
+                    onmouseout="this.style.background='var(--accent)'">Apply Filters</button>
+                <button onclick="clearFilters()"
+                    style="flex: 1; padding: 12px; background: #f0f0f0; color: #333; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.2s; font-family: 'Inter', sans-serif;"
+                    onmouseover="this.style.background='#e0e0e0'" onmouseout="this.style.background='#f0f0f0'">Clear
+                    All</button>
+            </div>
+
+            <button onclick="closeFilterModal()"
+                style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999;">&times;</button>
+        </div>
+    </div>
