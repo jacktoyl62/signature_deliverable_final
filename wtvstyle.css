@@ -335,6 +335,7 @@ select:focus {
     position: absolute;
     right: 20px;
     gap: 0;
+    z-index: 1003;
   }
 
   .login-btn {
@@ -525,6 +526,7 @@ select:focus {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 0;
+  min-height: 140px;
 }
 
 .reality-tag {
@@ -2023,12 +2025,20 @@ iframe {
 }
 
 @media (max-width: 768px) {
+  .grow-hero {
+    padding: 50px 20px;
+    padding-top: 80px;
+    height: auto;
+  }
+
   .grow-hero h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
   }
 
   .grow-hero p {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
   }
 
   .opportunities-grid {
@@ -2384,12 +2394,20 @@ iframe {
 }
 
 @media (max-width: 768px) {
+  .build-hero {
+    padding: 50px 20px;
+    padding-top: 80px;
+    height: auto;
+  }
+
   .build-hero h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
   }
 
   .build-hero p {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
   }
 
   .event-creation-form,
@@ -2675,12 +2693,20 @@ iframe {
     grid-template-columns: 1fr;
   }
 
+  .connect-hero {
+    padding: 50px 20px;
+    padding-top: 80px;
+    height: auto;
+  }
+
   .connect-hero h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
   }
 
   .connect-hero p {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
   }
 }
 
@@ -2889,12 +2915,20 @@ iframe {
     grid-template-columns: 1fr;
   }
 
+  .connect-hero {
+    padding: 50px 20px;
+    padding-top: 80px;
+    height: auto;
+  }
+
   .connect-hero h1 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
   }
 
   .connect-hero p {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
   }
 }
 
@@ -5069,8 +5103,7 @@ footer a:hover {
 
 .contact-hero {
   height: 40vh;
-  background: linear-gradient(135deg, rgba(44, 62, 80, 0.7) 0%, rgba(110, 139, 168, 0.7) 100%),
-    url('images/stock/20250621_153316.jpg') center/cover;
+  background: linear-gradient(135deg, rgba(44, 62, 80, 0.7) 0%, rgba(110, 139, 168, 0.7) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
