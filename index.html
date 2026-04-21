@@ -100,7 +100,7 @@
         <div class="section-container">
             <h2 style="font-family: 'Playfair Display'; font-size: 2.8rem; color: #2c3e50;">Intention is the new
                 Currency.</h2>
-            <p style="color: #666; max-width: 600px; margin: 20px auto 0;">We swapped the addiction of the global
+            <p style="color: #666; max-width: 600px; margin: 20px auto 50px;">We swapped the addiction of the global
                 algorithm for the impact of local intention.</p>
 
             <div class="reality-grid">
@@ -113,6 +113,7 @@
                         It was designed to keep you <strong>watching</strong> while the real world passed you by.
                         Isolated connectivity that leaves you empty.
                     </p>
+                    <img src="images/home/the_scroll.jpeg" alt="Person scrolling on phone" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-top: 15px;">
                 </div>
 
                 <!-- Right Side: The Solution -->
@@ -125,6 +126,7 @@
                         collective action, and career-shifting mentorship.
                         Built to keep you <strong>doing</strong>, locally.
                     </p>
+                    <img src="images/home/the_village.jpeg" alt="People collaborating and connecting" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-top: 15px;">
                 </div>
             </div>
         </div>
@@ -244,6 +246,33 @@
     <footer style="background: #111; color: white; padding: 60px 20px; text-align: center;">
         <p>&copy; 2024 We The Village. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-open');
+        });
+
+        // Close menu when a link is clicked
+        const navItems = navLinks.querySelectorAll('a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('mobile-open');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('mobile-open')) {
+                if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                    navLinks.classList.remove('mobile-open');
+                }
+            }
+        });
+    </script>
 
 </body>
 

@@ -134,7 +134,7 @@
         </div>
 
         <div class="nav-search">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search..." aria-label="Search connections">
         </div>
 
         <div class="nav-right">
@@ -148,7 +148,7 @@
     <div class="dashboard-mobile-header">
         <div class="mobile-logo">We The Village</div>
         <div class="mobile-search">
-            <input type="text" placeholder="Search connections...">
+            <input type="text" placeholder="Search connections..." aria-label="Search for connections">
         </div>
     </div>
 
@@ -157,7 +157,7 @@
         <!-- COLUMN 1: LEFT SIDEBAR (Profile & Nav) -->
         <aside class="left-sidebar">
             <div class="profile-card">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
+                <img src="images/profiles/candice_user.jpg"
                     alt="Candice Miller profile photo" class="avatar-large">
                 <h2>Candice Miller</h2>
                 <p>Austin, TX</p>
@@ -214,6 +214,7 @@
 
                 <!-- Search and Filter -->
                 <div style="display: flex; gap: 8px; align-items: center; margin-top: 15px;">
+                    <label for="searchConnections" style="display: none;">Search connections</label>
                     <input type="text" id="searchConnections" placeholder="Search by name, profession, or location..."
                         style="flex: 1; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.9rem; font-family: 'Inter', sans-serif;">
                     <button id="filterBtn"
@@ -231,7 +232,7 @@
                     <div class="connection-card pending">
                         <div class="connection-header">
                             <div style="display: flex; gap: 15px; align-items: center; flex: 1;">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&q=80"
+                                <img src="images/profiles/connections_profiles/alex_jordan.jpg"
                                     alt="Alex Jordan profile photo" class="connection-avatar">
                                 <div>
                                     <div style="margin: 0; color: var(--primary);">Alex Jordan</div>
@@ -251,7 +252,7 @@
                     <div class="connection-card pending">
                         <div class="connection-header">
                             <div style="display: flex; gap: 15px; align-items: center; flex: 1;">
-                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=60&q=80"
+                                <img src="images/profiles/connections_profiles/morgan_blake.jpg"
                                     alt="Morgan" class="connection-avatar">
                                 <div>
                                     <div style="margin: 0; color: var(--primary);">Morgan Blake</div>
@@ -277,7 +278,7 @@
                     <div class="connection-card accepted">
                         <div class="connection-header">
                             <div style="display: flex; gap: 15px; align-items: center; flex: 1;">
-                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=60&q=80"
+                                <img src="images/profiles/connections_profiles/mike_rodriguez.jpg"
                                     alt="Mike" class="connection-avatar">
                                 <div>
                                     <div style="margin: 0; color: var(--primary);">Mike Rodriguez</div>
@@ -298,7 +299,7 @@
                     <div class="connection-card accepted">
                         <div class="connection-header">
                             <div style="display: flex; gap: 15px; align-items: center; flex: 1;">
-                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=60&q=80"
+                                <img src="images/profiles/connections_profiles/sarah_chen.jpg"
                                     alt="Sarah Chen profile photo" class="connection-avatar">
                                 <div>
                                     <div style="margin: 0; color: var(--primary);">Sarah Chen</div>
@@ -319,7 +320,7 @@
                     <div class="connection-card accepted">
                         <div class="connection-header">
                             <div style="display: flex; gap: 15px; align-items: center; flex: 1;">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&q=80"
+                                <img src="images/profiles/connections_profiles/james_wilson.jpg"
                                     alt="James Wilson profile photo" class="connection-avatar">
                                 <div>
                                     <div style="margin: 0; color: var(--primary);">James Wilson</div>
@@ -350,17 +351,17 @@
                     Create Group</h3>
                 <form id="createGroupForm" style="display: flex; flex-direction: column; gap: 0;">
                     <div style="margin-bottom: 10px;">
-                        <label
+                        <label for="groupNameInput1"
                             style="display: block; font-size: 0.85rem; font-weight: 600; color: #333; margin-bottom: 6px;">Group
                             Name</label>
-                        <input type="text" placeholder="Enter group name" required
+                        <input type="text" id="groupNameInput1" placeholder="Enter group name" required
                             style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.85rem; font-family: 'Inter', sans-serif; box-sizing: border-box; color: #333;">
                     </div>
                     <div style="margin-bottom: 10px;">
-                        <label
+                        <label for="groupPurposeInput1"
                             style="display: block; font-size: 0.85rem; font-weight: 600; color: #333; margin-bottom: 6px;">Purpose
                             & Goals</label>
-                        <textarea placeholder="Describe the group's purpose and goals..." required
+                        <textarea id="groupPurposeInput1" placeholder="Describe the group's purpose and goals..." required
                             style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.85rem; font-family: 'Inter', sans-serif; min-height: 60px; box-sizing: border-box; resize: vertical; color: #333;"></textarea>
                     </div>
                     <div style="margin-bottom: 10px;">
@@ -373,7 +374,7 @@
                                 onclick="toggleGroupMember(this, 'sarah')">
                                 <input type="checkbox" value="sarah"
                                     style="width: 16px; height: 16px; cursor: pointer;">
-                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=35&q=80"
+                                <img src="images/profiles/connections_profiles/sarah_chen.jpg"
                                     alt="Sarah"
                                     style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
                                 <span>Sarah Chen</span>
@@ -382,7 +383,7 @@
                                 onclick="toggleGroupMember(this, 'marcus')">
                                 <input type="checkbox" value="marcus"
                                     style="width: 16px; height: 16px; cursor: pointer;">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=35&q=80"
+                                <img src="images/profiles/marcus_brown.jpeg"
                                     alt="Marcus"
                                     style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
                                 <span>Marcus Brown</span>
@@ -390,7 +391,7 @@
                             <div style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; display: flex; gap: 10px; align-items: center;"
                                 onclick="toggleGroupMember(this, 'alex')">
                                 <input type="checkbox" value="alex" style="width: 16px; height: 16px; cursor: pointer;">
-                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=35&q=80"
+                                <img src="images/profiles/alex_rivera.jpeg"
                                     alt="Alex"
                                     style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
                                 <span>Alex Rivera</span>
@@ -399,7 +400,7 @@
                                 onclick="toggleGroupMember(this, 'jordan')">
                                 <input type="checkbox" value="jordan"
                                     style="width: 16px; height: 16px; cursor: pointer;">
-                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=35&q=80"
+                                <img src="images/profiles/jordan_lee.jpg"
                                     alt="Jordan"
                                     style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
                                 <span>Jordan Lee</span>
@@ -408,7 +409,7 @@
                                 onclick="toggleGroupMember(this, 'casey')">
                                 <input type="checkbox" value="casey"
                                     style="width: 16px; height: 16px; cursor: pointer;">
-                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=35&q=80"
+                                <img src="images/profiles/casey_morgan.jpg"
                                     alt="Casey"
                                     style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
                                 <span>Casey Morgan</span>
@@ -516,17 +517,17 @@
             <div class="sidebar-card" style="margin-bottom: 20px;">
                 <form id="createGroupFormMobile" style="display: flex; flex-direction: column; gap: 0;">
                     <div style="margin-bottom: 10px;">
-                        <label
+                        <label for="groupNameMobile"
                             style="display: block; font-size: 0.85rem; font-weight: 600; color: #333; margin-bottom: 6px;">Group
                             Name</label>
-                        <input type="text" placeholder="Enter group name" required
+                        <input type="text" id="groupNameMobile" placeholder="Enter group name" required
                             style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.85rem; font-family: 'Inter', sans-serif; box-sizing: border-box; color: #333;">
                     </div>
                     <div style="margin-bottom: 10px;">
-                        <label
+                        <label for="groupPurposeMobileInput"
                             style="display: block; font-size: 0.85rem; font-weight: 600; color: #333; margin-bottom: 6px;">Purpose
                             & Goals</label>
-                        <textarea placeholder="Describe the group's purpose and goals..." required
+                        <textarea id="groupPurposeMobileInput" placeholder="Describe the group's purpose and goals..." required
                             style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.85rem; font-family: 'Inter', sans-serif; min-height: 60px; box-sizing: border-box; resize: vertical; color: #333;"></textarea>
                     </div>
                     <div style="margin-bottom: 10px;">
@@ -539,7 +540,7 @@
                                 onclick="toggleGroupMember(this, 'sarah')">
                                 <input type="checkbox" value="sarah"
                                     style="width: 16px; height: 16px; cursor: pointer;">
-                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=35&q=80"
+                                <img src="images/profiles/connections_profiles/sarah_chen.jpg"
                                     alt="Sarah"
                                     style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
                                 <span>Sarah Chen</span>
@@ -548,7 +549,7 @@
                                 onclick="toggleGroupMember(this, 'marcus')">
                                 <input type="checkbox" value="marcus"
                                     style="width: 16px; height: 16px; cursor: pointer;">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=35&q=80"
+                                <img src="images/profiles/marcus_brown.jpeg"
                                     alt="Marcus"
                                     style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
                                 <span>Marcus Brown</span>
@@ -556,7 +557,7 @@
                             <div style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.85rem; display: flex; gap: 10px; align-items: center;"
                                 onclick="toggleGroupMember(this, 'alex')">
                                 <input type="checkbox" value="alex" style="width: 16px; height: 16px; cursor: pointer;">
-                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=35&q=80"
+                                <img src="images/profiles/alex_rivera.jpeg"
                                     alt="Alex"
                                     style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
                                 <span>Alex Rivera</span>
@@ -565,7 +566,7 @@
                                 onclick="toggleGroupMember(this, 'jordan')">
                                 <input type="checkbox" value="jordan"
                                     style="width: 16px; height: 16px; cursor: pointer;">
-                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=35&q=80"
+                                <img src="images/profiles/jordan_lee.jpg"
                                     alt="Jordan"
                                     style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
                                 <span>Jordan Lee</span>
@@ -574,7 +575,7 @@
                                 onclick="toggleGroupMember(this, 'casey')">
                                 <input type="checkbox" value="casey"
                                     style="width: 16px; height: 16px; cursor: pointer;">
-                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=35&q=80"
+                                <img src="images/profiles/casey_morgan.jpg"
                                     alt="Casey"
                                     style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
                                 <span>Casey Morgan</span>

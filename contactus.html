@@ -204,8 +204,13 @@
 
     <!-- NAV  -->
     <nav class="nav">
+        <div class="hamburger-menu" id="hamburger" role="button" aria-label="Toggle navigation menu" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <a href="index.html" class="logo">We The Village</a>
-        <div class="nav-links">
+        <div class="nav-links" id="navLinks">
             <a href="index.html">Home</a>
             <a href="connect.html">Connect</a>
             <a href="grow.html">Grow</a>
@@ -402,6 +407,31 @@
                 const icon = button.querySelector('.faq-icon');
                 icon.textContent = item.classList.contains('active') ? '−' : '+';
             });
+        });
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-open');
+        });
+
+        // Close menu when a link is clicked
+        const navItems = navLinks.querySelectorAll('a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('mobile-open');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('mobile-open')) {
+                if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                    navLinks.classList.remove('mobile-open');
+                }
+            }
         });
     </script>
 </body>
